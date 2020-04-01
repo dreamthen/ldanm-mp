@@ -1,11 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 
-import Index from './pages/index'
+import Index from './pages/index';
+import Login from "./pages/login";
 
-import store from './store'
-
-import './app.less'
+import store from './store';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -17,7 +16,8 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/login/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -25,7 +25,7 @@ class App extends Component {
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
     }
-  }
+  };
 
   componentDidMount () {}
 
@@ -41,6 +41,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Index />
+        <Login />
       </Provider>
     )
   }

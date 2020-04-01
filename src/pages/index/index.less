@@ -1,4 +1,17 @@
-.index {
-  flex-direction: column;
-  width: 100%;
+@import '../../stylesheets/base/index';
+
+page {
+  background-color: @base-background-color;
+
+  .component {
+    &-item {
+      height: 48PX;
+      line-height: 48PX;
+      text-align: center;
+      background-color: #fff;
+      border-top: 1PX solid @base-border-color;
+      border-bottom: 1PX solid @base-border-color;
+      color: @base-symbol-color;
+    }
+  }
 }

@@ -14,10 +14,23 @@ class AcLogin extends Component {
   };
 
   static propTypes = {
+    //使用code匹配token登录的url
+    url: PropTypes.string.isRequired,
+    //登录之后的回调
+    callBack: PropTypes.func.isRequired,
     className: PropTypes.string
   };
 
   componentDidMount() {
+    Taro.login({
+      success: (code) => {
+        
+      },
+      fail: () => {
+      },
+      complete: () => {
+      }
+    });
   }
 
   render() {

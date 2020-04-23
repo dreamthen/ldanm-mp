@@ -81,13 +81,6 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.7.2", "@babel/runtime@^7.8.7":
-  version "7.9.2"
-  resolved "http://hnpm.hupu.io/@babel%2fruntime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
-  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
-  dependencies:
-    regenerator-runtime "^0.13.4"
-
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "http://hnpm.hupu.io/@babel%2ftemplate/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
@@ -136,15 +129,15 @@
   resolved "http://hnpm.hupu.io/@nodelib%2ffs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@tarojs/components-qa@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2fcomponents-qa/-/components-qa-2.1.0.tgz#ab688a69d6802fd3f66c81ca51b34b714721031f"
-  integrity sha512-bM9GtREP+loYMqpVsGZ4lFk7GkudSnwS1Vnkd7P/qzAuK96B+DndaMNw7XF+Psni4lzbUk6hXltYaa7crjpVtw==
+"@tarojs/components-qa@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2fcomponents-qa/-/components-qa-2.1.5.tgz#4f00629310983281f248ced63b7fc6319d7d6fd2"
+  integrity sha1-TwBikxCYMoHySM7WO3/GMZ19b9I=
 
-"@tarojs/components@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2fcomponents/-/components-2.1.0.tgz#ea9d056df3a64f20f7e74a1319d9983950860fe5"
-  integrity sha512-gdpJgFBsStlqEDa5BCr6UMRHXnpzWY2p/3iLEW7u6lQB28rxgSSF8gL15lElZ99UCQfQwvVXz3PFWqwPHYIvwg==
+"@tarojs/components@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2fcomponents/-/components-2.1.5.tgz#c813faa01476f63b67d99f52ae1275287ffe6ddd"
+  integrity sha1-yBP6oBR29jtn2Z9SrhJ1KH/+bd0=
   dependencies:
     classnames "^2.2.5"
     intersection-observer "^0.7.0"
@@ -153,19 +146,20 @@
     swiper "4.4.2"
     weui "^1.1.2"
 
-"@tarojs/mini-runner@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2fmini-runner/-/mini-runner-2.1.0.tgz#9f172ee9973385608502d67babee2f1e549d0133"
-  integrity sha512-WThLc8qbVkmkC58ZKWBGZPWcGRZtm5eEFEkTSTiE3r3VqZ9C4qnQN5N9CH50CczCle835wSEDRpohPstp/Y8Cg==
+"@tarojs/mini-runner@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2fmini-runner/-/mini-runner-2.1.5.tgz#f5fddc245197898e531045bef00da49335ed9541"
+  integrity sha1-9f3cJFGXiY5TEEW+8A2kkzXtlUE=
   dependencies:
-    "@tarojs/runner-utils" "2.1.0"
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/transformer-wx" "2.1.0"
+    "@tarojs/runner-utils" "2.1.5"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/transformer-wx" "2.1.5"
     babel-core "^6.26.3"
     babel-generator "^6.26.1"
     babel-loader "^8.0.6"
     babel-plugin-danger-remove-unused-import "^1.1.2"
     babel-plugin-preval "1.6.2"
+    babel-plugin-transform-define "^1.3.0"
     babel-traverse "^6.26.0"
     babel-types "^6.26.0"
     better-babel-generator "^6.26.1"
@@ -186,7 +180,7 @@
     ora "^3.4.0"
     postcss-import "12.0.1"
     postcss-loader "^3.0.0"
-    postcss-pxtransform "2.1.0"
+    postcss-pxtransform "2.1.5"
     postcss-url "^8.0.0"
     request "^2.88.0"
     resolve "^2.0.0-next.0"
@@ -202,36 +196,36 @@
     webpack-format-messages "^2.0.5"
     yauzl "2.10.0"
 
-"@tarojs/plugin-sass@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2fplugin-sass/-/plugin-sass-2.1.0.tgz#1f39582dece6e60047663e6bccbaa420dd32e8b5"
-  integrity sha512-27+IFElO7c36wACo8IeQmxnyDLnFPhTcYLCWbMk6h2oCQYynCs2cA8NLnAUaJHO+eRPTtZNkp5OBG/7EtlEEqA==
+"@tarojs/plugin-sass@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2fplugin-sass/-/plugin-sass-2.1.5.tgz#f0ea12bb4269b9d778db204a18f15e6742a28fe5"
+  integrity sha1-8OoSu0Jpudd42yBKGPFeZ0Kij+U=
   dependencies:
     node-sass "^4.12.0"
     scss-bundle "^2.5.1"
 
-"@tarojs/redux-h5@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2fredux-h5/-/redux-h5-2.1.0.tgz#89e2d540f0c58a0e127126a66030b93157f4ba4b"
-  integrity sha512-cRCXyDbnaZ2u7nBexS5782zLtbgKFuDickhfe6loaIbV4t6AatPZd2JduFIn2Q7ZEETP9V4r74fZ1x0UxMaz+w==
+"@tarojs/redux-h5@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2fredux-h5/-/redux-h5-2.1.5.tgz#de53846947434a71fce7c5656910f4562f313fe1"
+  integrity sha1-3lOEaUdDSnH858VlaRD0Vi8xP+E=
   dependencies:
     hoist-non-react-statics "^2.5.0"
     invariant "^2.2.4"
     loose-envify "^1.1.0"
     prop-types "^15.6.1"
 
-"@tarojs/redux@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2fredux/-/redux-2.1.0.tgz#ea8a3a6882b759490584456b4b3f712061278d72"
-  integrity sha512-kn22CEEbmMSTp2YdfzC+a0DsKTTTUMulkjK4OTwAhJo82PqnE6U+WBHBWD2czAbk7ORN4CP4zO3oV3noipcKSg==
+"@tarojs/redux@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2fredux/-/redux-2.1.5.tgz#f186e50101fe5f8b234b12f446c1164f4370fcf1"
+  integrity sha1-8YblAQH+X4sjSxL0RsEWT0Nw/PE=
   dependencies:
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/utils" "2.1.5"
 
-"@tarojs/router@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2frouter/-/router-2.1.0.tgz#4c91b1411ed31cb3a1849473ce0a789f3574da0c"
-  integrity sha512-+0Dsw6DGyAL2pRIHaxdEh2FmYTXSw/dfTSZtzHss8pvRW/T96/y2vEeyu1uP5KQ2Ss/1AwdBjQIMU6mwspX7EA==
+"@tarojs/router@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2frouter/-/router-2.1.5.tgz#c6466f4f07d7962627bf8b293263e1130e27cb4f"
+  integrity sha1-xkZvTwfXliYnv4spMmPhEw4ny08=
   dependencies:
     invariant "2.2.4"
     lodash "4.17.13"
@@ -240,27 +234,27 @@
     value-equal "0.4.0"
     warning "4.0.2"
 
-"@tarojs/runner-utils@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2frunner-utils/-/runner-utils-2.1.0.tgz#b2956d63062816e1ce855a99fca70c6ba531248b"
-  integrity sha512-+HpDijZXckMeR3h+mIqyHeoSsQKJRlZUKv0a11APSUdQF/KFRC25BS5pR7urCzCxfPH1H8WxwygyXa5rQYjmRw==
+"@tarojs/runner-utils@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2frunner-utils/-/runner-utils-2.1.5.tgz#95abb05f13eaf4014604f4120be13a95601186e5"
+  integrity sha1-lauwXxPq9AFGBPQSC+E6lWARhuU=
   dependencies:
     scss-bundle "^3.0.2"
 
-"@tarojs/taro-alipay@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-alipay/-/taro-alipay-2.1.0.tgz#293ad0ef19165619a6495cfca5158121ea8bbdd6"
-  integrity sha512-10jHTOJvS8g8ImOKGxVWsI3EjNAdVywVpPz5NkPzffPYRACQiwbQUp2fiVTOMqm8/JoaAEY2ZZhu6Pr5QFWXmg==
+"@tarojs/taro-alipay@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-alipay/-/taro-alipay-2.1.5.tgz#ec662fb9875a8e39c7e971e1dc94c8e1ab794ff7"
+  integrity sha1-7GYvuYdajjnH6XHh3JTI4at5T/c=
   dependencies:
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/utils" "2.1.5"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-h5@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-h5/-/taro-h5-2.1.0.tgz#f1675286b85dda80d615625db892540b0c523ff4"
-  integrity sha512-IZQxhF9ck028+8yE0Ht/FrEZbdmaUoKHWC9DPhOj7RzuLUbsbkXYvpU5oFl41s/fAm5pdVtTo3t8SO09gLAFZQ==
+"@tarojs/taro-h5@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-h5/-/taro-h5-2.1.5.tgz#16e0d120f7ffe87d7ca250f53b2fa19a15d4f153"
+  integrity sha1-FuDRIPf/6H18olD1Oy+hmhXU8VM=
   dependencies:
     base64-js "^1.3.0"
     jsonp-retry "^1.0.3"
@@ -268,67 +262,67 @@
     raf "^3.4.1"
     whatwg-fetch "^2.0.4"
 
-"@tarojs/taro-qq@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-qq/-/taro-qq-2.1.0.tgz#cffc97cabe0933e56986cd36448b02a2152043cc"
-  integrity sha512-Qmc6ZWHcnypEXmwsII1u6skdqpxEvbEAA8IGye3LPOHCLXEPDpKhnJznxoX+69IiYoyoXA/Wl2X0BFsnHImlOg==
+"@tarojs/taro-qq@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-qq/-/taro-qq-2.1.5.tgz#c1ec2f5e7663be04a76454b7a75ba3e0a2d1541f"
+  integrity sha1-wewvXnZjvgSnZFS3p1uj4KLRVB8=
   dependencies:
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/utils" "2.1.5"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-quickapp@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-quickapp/-/taro-quickapp-2.1.0.tgz#9e3402cd010aa87468b08d059050cc5c8105c14e"
-  integrity sha512-W7DAzzLZXzNUNBWq3pBORDpIfeEFTVNcca13GVdKuwLgQYSUe2jF8sUtkORatoMpN5YkLIE9ArSo3s8aNOPwkQ==
+"@tarojs/taro-quickapp@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-quickapp/-/taro-quickapp-2.1.5.tgz#90363f08a81d8df39d8bb75f10fd997418e06910"
+  integrity sha1-kDY/CKgdjfOdi7dfEP2ZdBjgaRA=
   dependencies:
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/utils" "2.1.5"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-swan@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-swan/-/taro-swan-2.1.0.tgz#b643f231464332efcb25618d72a1a86691cc269c"
-  integrity sha512-qJzdpCDlO1pTcBBMNcoBvjmJro/n5hm7ZA5edIR/7IBrFnsNncZP9N/sfF+o5SMTdOUysTHiRorWv5c93VO2fA==
+"@tarojs/taro-swan@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-swan/-/taro-swan-2.1.5.tgz#eab0484338310091cab46ad3c57f2c6481a505aa"
+  integrity sha1-6rBIQzgxAJHKtGrTxX8sZIGlBao=
   dependencies:
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/utils" "2.1.5"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-tt@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-tt/-/taro-tt-2.1.0.tgz#d6a8cbf1ec163133858cfe5ddfffe3f6746480e0"
-  integrity sha512-yRXazd70XcHUDSBdZ29Jeq99gfcI24M/zJt5CASb0g3yKGVWOZ449pc6p0ytqDJI3wMZnojOs1GkqTvHaSCkxw==
+"@tarojs/taro-tt@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-tt/-/taro-tt-2.1.5.tgz#ed4364c182ea59c5aebc5f6c83570d59a13f4932"
+  integrity sha1-7UNkwYLqWcWuvF9sg1cNWaE/STI=
   dependencies:
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/utils" "2.1.5"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro-weapp@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-weapp/-/taro-weapp-2.1.0.tgz#3ebb4a24d33cd6d0e8805cc7471227f846f33170"
-  integrity sha512-eRdPc+rmEbu5ke6XX5j7YEnIX0rSP6RRzEO1B7wovHYDpgFnvLedzGG95LSRr7BDxwkiC3M+PwLz3z5T6TH83w==
+"@tarojs/taro-weapp@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro-weapp/-/taro-weapp-2.1.5.tgz#df88d807ed8fc6f5df445fad9138f6c2ab409fb3"
+  integrity sha1-34jYB+2PxvXfRF+tkTj2wqtAn7M=
   dependencies:
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/utils" "2.1.5"
     lodash "^4.17.10"
     prop-types "^15.6.1"
 
-"@tarojs/taro@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftaro/-/taro-2.1.0.tgz#0e07d1a6298a46cb9f0c9d10c4d05be5b4ef8892"
-  integrity sha512-qprmtTovr2g1Y8lfvzKbwaj4rERnorn1pjfClDNX8JUDV7cqXbrZteJgz5K1ZhjSCfmFm+o3NkXd9zhmHp59mw==
+"@tarojs/taro@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftaro/-/taro-2.1.5.tgz#9d6d14a3edcc19075846d7177d6e070b4736fca9"
+  integrity sha1-nW0Uo+3MGQdYRtcXfW4HC0c2/Kk=
   dependencies:
-    "@tarojs/utils" "2.1.0"
+    "@tarojs/utils" "2.1.5"
 
-"@tarojs/transformer-wx@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2ftransformer-wx/-/transformer-wx-2.1.0.tgz#7ee277615a9a8114a590bb29288cc79078314207"
-  integrity sha512-4iDQ3IdcLetwQA+bJx6OCJc8uv7wI1XyDjePI5R6wmMbvf1/wPvZGnqrJLFRY0wmNyKHDNBsvCMYRuWR+2yFaA==
+"@tarojs/transformer-wx@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2ftransformer-wx/-/transformer-wx-2.1.5.tgz#9ab61c86bab2d43ad52f1d9d581ba8b5a6c0b108"
+  integrity sha1-mrYchrqy1DrVLx2dWBuotabAsQg=
   dependencies:
     "@babel/code-frame" "^7.0.0-beta.44"
     babel-core "^6.26.3"
@@ -338,7 +332,7 @@
     babel-helper-remove-or-void "^0.4.3"
     babel-plugin-danger-remove-unused-import "^1.1.1"
     babel-plugin-minify-dead-code "^1.3.2"
-    babel-plugin-preval "^1.6.4"
+    babel-plugin-preval "1.6.2"
     babel-plugin-syntax-dynamic-import "^6.18.0"
     babel-plugin-transform-class-properties "^6.24.1"
     babel-plugin-transform-define "^1.3.0"
@@ -350,32 +344,32 @@
     babel-types "^6.26.0"
     eslint "5.16.0"
     eslint-plugin-react "7.10.0"
-    eslint-plugin-taro "2.1.0"
+    eslint-plugin-taro "2.1.5"
     html "^1.0.0"
     lodash "^4.17.5"
     prettier "^1.14.2"
     typescript "^3.2.2"
 
-"@tarojs/utils@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2futils/-/utils-2.1.0.tgz#7e7527937f0b5a0d51a3bc82d4c8a2d73c01897b"
-  integrity sha512-Y+bkeotCVujudIf4MehfU5qIhYC2HsV16AK3KjgnfXmhL7mo0sbytnwnpTFkza6nc5YDyQ9YPYKuf6btO+uOKA==
+"@tarojs/utils@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2futils/-/utils-2.1.5.tgz#055cd8f8b240eeb1cee398ffbbe726ba7a49fcd5"
+  integrity sha1-BVzY+LJA7rHO45j/u+cmunpJ/NU=
 
-"@tarojs/webpack-runner@2.1.0":
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/@tarojs%2fwebpack-runner/-/webpack-runner-2.1.0.tgz#0b04706a834cd4a66f5101e4d45b793bf6bb0ec5"
-  integrity sha512-uNE/+bGRW4QfQT0z9A1tpmm7XsgDy+4ZcbsJN0I9P+sq5VRuW31pWhQRd359DKWN5GSJ9L+kE7pmps5fEbYxAw==
+"@tarojs/webpack-runner@2.1.5":
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/@tarojs%2fwebpack-runner/-/webpack-runner-2.1.5.tgz#8e534031b936d27e2e8cb94deadd2ba4e2bc8558"
+  integrity sha1-jlNAMbk20n4ujLlN6t0rpOK8hVg=
   dependencies:
-    "@tarojs/plugin-sass" "2.1.0"
-    "@tarojs/runner-utils" "2.1.0"
-    "@tarojs/taro" "2.1.0"
-    "@tarojs/taro-h5" "2.1.0"
+    "@tarojs/plugin-sass" "2.1.5"
+    "@tarojs/runner-utils" "2.1.5"
+    "@tarojs/taro" "2.1.5"
+    "@tarojs/taro-h5" "2.1.5"
     autoprefixer "8.6.4"
     babel-core "6.26.0"
     babel-loader "7.1.4"
     babel-plugin-syntax-dynamic-import "6.18.0"
     babel-plugin-transform-react-jsx "6.24.1"
-    babel-plugin-transform-taroapi "2.1.0"
+    babel-plugin-transform-taroapi "2.1.5"
     babel-types "6.26.0"
     chalk "2.4.2"
     copy-webpack-plugin "^5.0.3"
@@ -392,8 +386,8 @@
     opn "5.3.0"
     ora "2.1.0"
     postcss-loader "2.1.6"
-    postcss-plugin-constparse "2.1.0"
-    postcss-pxtransform "2.1.0"
+    postcss-plugin-constparse "2.1.5"
+    postcss-pxtransform "2.1.5"
     resolve "1.8.1"
     resolve-url-loader "2.3.0"
     sass "^1.23.1"
@@ -473,11 +467,6 @@
   version "13.9.8"
   resolved "http://hnpm.hupu.io/@types%2fnode/-/node-13.9.8.tgz#09976420fc80a7a00bf40680c63815ed8c7616f4"
   integrity sha512-1WgO8hsyHynlx7nhP1kr0OFzsgKz5XDQL+Lfc3b1Q3qIln/n8cKD4m09NJ0+P1Rq7Zgnc7N0+SsMnoD1rEb0kA==
-
-"@types/parse-json@^4.0.0":
-  version "4.0.0"
-  resolved "http://hnpm.hupu.io/@types%2fparse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
-  integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -1470,15 +1459,6 @@ babel-plugin-danger-remove-unused-import@^1.1.1, babel-plugin-danger-remove-unus
   resolved "http://hnpm.hupu.io/babel-plugin-danger-remove-unused-import/-/babel-plugin-danger-remove-unused-import-1.1.2.tgz#ac39c30edfe524ef8cfc411fec5edc479d19e132"
   integrity sha512-3bNmVAaakP3b1aROj7O3bOWj2kBa85sZR5naZ3Rn8L9buiZaAyZLgjfrPDL3zhX4wySOA5jrTm/wSmJPsMm3cg==
 
-babel-plugin-macros@^2.0.0:
-  version "2.8.0"
-  resolved "http://hnpm.hupu.io/babel-plugin-macros/-/babel-plugin-macros-2.8.0.tgz#0f958a7cc6556b1e65344465d99111a1e5e10138"
-  integrity sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==
-  dependencies:
-    "@babel/runtime" "^7.7.2"
-    cosmiconfig "^6.0.0"
-    resolve "^1.12.0"
-
 babel-plugin-minify-dead-code@^1.3.2:
   version "1.3.2"
   resolved "http://hnpm.hupu.io/babel-plugin-minify-dead-code/-/babel-plugin-minify-dead-code-1.3.2.tgz#7cd45c95c52700f00680a37377e00accad45b188"
@@ -1492,16 +1472,6 @@ babel-plugin-preval@1.6.2:
   integrity sha512-o/65+qySRSkh10QPqEk9dbudYCjRNHc4lZYb7EH838Ri7ATwhw/o/09tr72yJGiOaGO7GFa1MszUg8dN7TAjXQ==
   dependencies:
     babel-macros "^1.1.1"
-    babel-register "^6.26.0"
-    babylon "^6.18.0"
-    require-from-string "^2.0.1"
-
-babel-plugin-preval@^1.6.4:
-  version "1.6.4"
-  resolved "http://hnpm.hupu.io/babel-plugin-preval/-/babel-plugin-preval-1.6.4.tgz#96febe8172b3ca6c3d03ed96eeb0382ba4b18056"
-  integrity sha512-XuNaiZ76CsdWialH2co05YRra9NlsyriTUbJ+56MAcWN9v33drTm5ovBRFuEKVj1dNRhEdBjeEyYtkkaRE8drw==
-  dependencies:
-    babel-plugin-macros "^2.0.0"
     babel-register "^6.26.0"
     babylon "^6.18.0"
     require-from-string "^2.0.1"
@@ -1866,10 +1836,10 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
-babel-plugin-transform-taroapi@2.1.0:
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/babel-plugin-transform-taroapi/-/babel-plugin-transform-taroapi-2.1.0.tgz#5ed051db6085a2de6d96f0903820cbe8382c44e4"
-  integrity sha512-DIYnGD/uvOhsujLVviqMZBVKT5mandMF6df8wXSKbidmlEI6u4Zr9qzibfGa1R1tGZKMClsiZTWdE8r51795bA==
+babel-plugin-transform-taroapi@2.1.5:
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/babel-plugin-transform-taroapi/-/babel-plugin-transform-taroapi-2.1.5.tgz#26773fdf270648d933f738bfbd984778ceba670a"
+  integrity sha1-Jnc/3ycGSNkz9zi/vZhHeM66Zwo=
 
 babel-preset-env@^1.6.1:
   version "1.7.0"
@@ -2883,17 +2853,6 @@ cosmiconfig@^5.0.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-cosmiconfig@^6.0.0:
-  version "6.0.0"
-  resolved "http://hnpm.hupu.io/cosmiconfig/-/cosmiconfig-6.0.0.tgz#da4fee853c52f6b1e6935f41c1a2fc50bd4a9982"
-  integrity sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg==
-  dependencies:
-    "@types/parse-json" "^4.0.0"
-    import-fresh "^3.1.0"
-    parse-json "^5.0.0"
-    path-type "^4.0.0"
-    yaml "^1.7.2"
-
 create-ecdh@^4.0.0:
   version "4.0.3"
   resolved "http://hnpm.hupu.io/create-ecdh/-/create-ecdh-4.0.3.tgz#c9111b6f33045c4697f144787f9254cdc77c45ff"
@@ -3610,12 +3569,12 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   resolved "http://hnpm.hupu.io/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-taro@2.1.0:
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/eslint-config-taro/-/eslint-config-taro-2.1.0.tgz#6cafcbfc7dc22b18bf57e7f4abf967de283776fc"
-  integrity sha512-On6n3he7wdKnxf48LM71gasGeLCaD7lzgvzaFfiaHohbSBfAPksXOqF1X4Q07ZLJWp9WnihjDcMEjeF0HSOZrw==
+eslint-config-taro@2.1.5:
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/eslint-config-taro/-/eslint-config-taro-2.1.5.tgz#52b04e30317e368f85ee84252c54ab8353b5bc63"
+  integrity sha1-UrBOMDF+No+F7oQlLFSrg1O1vGM=
   dependencies:
-    eslint-plugin-taro "2.1.0"
+    eslint-plugin-taro "2.1.5"
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.3"
@@ -3684,10 +3643,10 @@ eslint-plugin-react@^7.8.2:
     string.prototype.matchall "^4.0.2"
     xregexp "^4.3.0"
 
-eslint-plugin-taro@2.1.0:
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/eslint-plugin-taro/-/eslint-plugin-taro-2.1.0.tgz#8f7e45251965e530850f1fd0288e84fc2c82c871"
-  integrity sha512-MU2D1GiMwoom0Zsg1fu5KYCtkAp1hSoBCLx8vJ/qUQ6XsPQMSQdSOPfPLGCpxpf683nlYMuJem1Mxdd96xRf0Q==
+eslint-plugin-taro@2.1.5:
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/eslint-plugin-taro/-/eslint-plugin-taro-2.1.5.tgz#c624dac53a61b5c5327b7d4cfce7901e6405079a"
+  integrity sha1-xiTaxTphtcUye31M/OeQHmQFB5o=
   dependencies:
     has "^1.0.1"
 
@@ -4906,7 +4865,7 @@ import-fresh@^2.0.0:
     caller-path "^2.0.0"
     resolve-from "^3.0.0"
 
-import-fresh@^3.0.0, import-fresh@^3.1.0:
+import-fresh@^3.0.0:
   version "3.2.1"
   resolved "http://hnpm.hupu.io/import-fresh/-/import-fresh-3.2.1.tgz#633ff618506e793af5ac91bf48b72677e15cbe66"
   integrity sha512-6e1q1cnWP2RXD9/keSkxHScg508CdXqXWgWBaETNhyuBFz+kUZlKboh+ISK+bU++DmbHimVBrOz/zzPe0sZ3sQ==
@@ -5660,11 +5619,6 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lines-and-columns@^1.1.6:
-  version "1.1.6"
-  resolved "http://hnpm.hupu.io/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
-  integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "http://hnpm.hupu.io/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -6359,7 +6313,7 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "http://hnpm.hupu.io/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-nerv-devtools@^1.5.5:
+nerv-devtools@^1.5.6:
   version "1.5.6"
   resolved "http://hnpm.hupu.io/nerv-devtools/-/nerv-devtools-1.5.6.tgz#2af0ef109918e5a5a7282f2cfb8a0d7e4a2858be"
   integrity sha512-Gn9my/yXcPliVukpwxJrdctTsBI5QOgTB96wUo4ZsrseIoY+IJx43sZr3LOZWpADg0TuVDkN65BDbkPcS6AnYA==
@@ -6378,7 +6332,7 @@ nerv-utils@1.4.5:
   resolved "http://hnpm.hupu.io/nerv-utils/-/nerv-utils-1.4.5.tgz#3e017a8a1b605b35ee31ad396a038207fbc597b0"
   integrity sha512-9XeifC0l+aDXhA0aXcklxS2o7o87xJxMQAl1+iIHrD5Sei/61ubap0oOzb4t9VMhSEvwWm4/rJRd8PGMKZiwiA==
 
-nervjs@1.5.6, nervjs@^1.5.5:
+nervjs@1.5.6, nervjs@^1.5.6:
   version "1.5.6"
   resolved "http://hnpm.hupu.io/nervjs/-/nervjs-1.5.6.tgz#0451dd06993f7e3a885a6d1be3ea049ac51f1abd"
   integrity sha512-2v8VkGCTUfOaD3C3s9fmCSRnYOw+6UWfbdVk3+vZZF+oD1Hp8+KpcObUV8EZL0GlWa9FhziDYGHOy4M70Fd6KA==
@@ -6946,16 +6900,6 @@ parse-json@^4.0.0:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
 
-parse-json@^5.0.0:
-  version "5.0.0"
-  resolved "http://hnpm.hupu.io/parse-json/-/parse-json-5.0.0.tgz#73e5114c986d143efa3712d4ea24db9a4266f60f"
-  integrity sha512-OOY5b7PAEFV0E2Fir1KOkxchnZNCdowAJgQ5NuxjpBKTRP3pQhwkrkxqQjeoKJ+fO7bCpmIZaogI4eZGDMEGOw==
-  dependencies:
-    "@babel/code-frame" "^7.0.0"
-    error-ex "^1.3.1"
-    json-parse-better-errors "^1.0.1"
-    lines-and-columns "^1.1.6"
-
 parseurl@~1.3.2, parseurl@~1.3.3:
   version "1.3.3"
   resolved "http://hnpm.hupu.io/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
@@ -7040,11 +6984,6 @@ path-type@^3.0.0:
   integrity sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==
   dependencies:
     pify "^3.0.0"
-
-path-type@^4.0.0:
-  version "4.0.0"
-  resolved "http://hnpm.hupu.io/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
-  integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
 pbkdf2@^3.0.3:
   version "3.0.17"
@@ -7256,10 +7195,10 @@ postcss-modules-values@^3.0.0:
     icss-utils "^4.0.0"
     postcss "^7.0.6"
 
-postcss-plugin-constparse@2.1.0:
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/postcss-plugin-constparse/-/postcss-plugin-constparse-2.1.0.tgz#8963e5aa782f6ea150064741ece39df156a92da2"
-  integrity sha512-2DoExLvUd/D58zGPRsn3Ls3g5gOMV74lRJ+Q84ISOsy70uEB0RPgMw7zsnfvCTT+FbWNcI9VDZrwkc2PfmjCrg==
+postcss-plugin-constparse@2.1.5:
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/postcss-plugin-constparse/-/postcss-plugin-constparse-2.1.5.tgz#e531f918645915e8e680d80eac2a84105e5998ce"
+  integrity sha1-5TH5GGRZFejmgNgOrCqEEF5ZmM4=
   dependencies:
     postcss "^6.0.22"
 
@@ -7271,10 +7210,10 @@ postcss-pxtorem@^4.0.1:
     object-assign "^4.1.0"
     postcss "^5.2.10"
 
-postcss-pxtransform@2.1.0:
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/postcss-pxtransform/-/postcss-pxtransform-2.1.0.tgz#9915fc8cc6b7e3baa6b34a2080fd2e1e1715502f"
-  integrity sha512-SZbDv/0fhjcC58uECgQDyy36qylWZe2kiNIe08B8tdTb6dMpPYDbsP5Kn3oTERDTMgn9zAZ+a+pg284JJgPRIw==
+postcss-pxtransform@2.1.5:
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/postcss-pxtransform/-/postcss-pxtransform-2.1.5.tgz#ccdb6831fb4ed81f9500a7d2af7c897cffb2147c"
+  integrity sha1-zNtoMftO2B+VAKfSr3yJfP+yFHw=
   dependencies:
     postcss "^6.0.16"
     postcss-pxtorem "^4.0.1"
@@ -8950,15 +8889,15 @@ style-search@^0.1.0:
   resolved "http://hnpm.hupu.io/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
-stylelint-config-taro-rn@2.1.0:
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/stylelint-config-taro-rn/-/stylelint-config-taro-rn-2.1.0.tgz#72488e0c3c6c33f8a1e18d5f7f923939369d0d19"
-  integrity sha512-PYB0clH/l/GcyWy/M8KZ5d72Q1EeR7Btwu5wbqvm8GO5vIbKF0POUwr04Qg+2DCr2Cnmj4OhrhhVQNX8itkWKw==
+stylelint-config-taro-rn@2.1.5:
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/stylelint-config-taro-rn/-/stylelint-config-taro-rn-2.1.5.tgz#92fbadf8a7aef78e7d4e9888fd62caccf11077b1"
+  integrity sha1-kvut+Keu9459TpiI/WLKzPEQd7E=
 
-stylelint-taro-rn@2.1.0:
-  version "2.1.0"
-  resolved "http://hnpm.hupu.io/stylelint-taro-rn/-/stylelint-taro-rn-2.1.0.tgz#877e3ccea9a892c232011b7b6dce34eb1e55852d"
-  integrity sha512-v4a2gn8xN6DX+nuTLsZkpuzkB6xgpYiGyh2arbPCpP4XjIfrqWjJFVjQ5Oekgtp0Lv+stEG5RWMnqxvtUx/DvQ==
+stylelint-taro-rn@2.1.5:
+  version "2.1.5"
+  resolved "http://hnpm.hupu.io/stylelint-taro-rn/-/stylelint-taro-rn-2.1.5.tgz#4eeabeba536cbb7a10515ae14807bccaaae69723"
+  integrity sha1-Tuq+ulNsu3oQUVrhSAe8yqrmlyM=
   dependencies:
     react-native-known-styling-properties "^1.0.4"
 
@@ -10033,13 +9972,6 @@ yallist@^3.0.2:
   version "3.1.1"
   resolved "http://hnpm.hupu.io/yallist/-/yallist-3.1.1.tgz#dbb7daf9bfd8bac9ab45ebf602b8cbad0d5d08fd"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
-
-yaml@^1.7.2:
-  version "1.8.3"
-  resolved "http://hnpm.hupu.io/yaml/-/yaml-1.8.3.tgz#2f420fca58b68ce3a332d0ca64be1d191dd3f87a"
-  integrity sha512-X/v7VDnK+sxbQ2Imq4Jt2PRUsRsP7UcpSl3Llg6+NRRqWLIvxkMFYtH1FmvwNGYRKKPa+EPA4qDBlI9WVG1UKw==
-  dependencies:
-    "@babel/runtime" "^7.8.7"
 
 yargs-parser@^10.0.0, yargs-parser@^10.1.0:
   version "10.1.0"

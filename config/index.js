@@ -1,3 +1,6 @@
+//查看打出包的体积、分布和chunks入口部分的功能
+const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const config = {
   projectName: 'Ac_mp',
   date: '2020-4-1',
@@ -21,17 +24,48 @@ const config = {
       'transform-class-properties',
       'transform-object-rest-spread',
       ['transform-runtime', {
-          helpers: false,
-          polyfill: false,
-          regenerator: true,
-          moduleName: 'babel-runtime'
-        }
+        helpers: false,
+        polyfill: false,
+        regenerator: true,
+        moduleName: 'babel-runtime'
+      }
       ]
     ]
   },
-  defineConstants: {
-  },
+  defineConstants: {},
   mini: {
+    //自定义webpack插件
+    webpackChain(chain, webpack) {
+      chain.plugin('bundleAnalyzer').use(new BundleAnalyzer(), []);
+      chain.plugin('contextReplacement').use(new webpack.ContextReplacementPlugin(/\/[\\]?locale/, /zh-cn/), []);
+      chain.optimization.splitChunks({
+        chunks: 'all',
+        name: 'vendors',
+        maxInitialRequests: Infinity,
+        minSize: 0,
+        cacheGroups: {
+          common: {
+            name: !!chain.isBuildPlugin ? 'plugin/common' : 'common',
+            minSize: 0,
+            minChunks: 2,
+            chunks: 'initial',
+            priority: 1
+          },
+          vendors: {
+            name: !!chain.isBuildPlugin ? 'plugin/vendors' : 'vendors',
+            minSize: 0,
+            minChunks: 2,
+            chunks: 'initial',
+            priority: 10,
+            test: (module) => {
+              // 如果需要自定义配置，PARSE_AST_TYPE 可以从 webpackChain 第三个参数获得
+              return /[\\/]node_modules[\\/]/.test(module.resource);
+            }
+          }
+        }
+      });
+    },
+    commonChunks: ['runtime', 'vendors', 'common'],
     postcss: {
       autoprefixer: {
         enable: true,
@@ -45,9 +79,7 @@ const config = {
       },
       pxtransform: {
         enable: true,
-        config: {
-
-        }
+        config: {}
       },
       url: {
         enable: true,

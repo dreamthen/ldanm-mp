@@ -4,6 +4,8 @@ import {
 } from '@tarojs/components';
 import PropTypes from 'prop-types';
 
+import Anchor from "../utils";
+
 /**
  * 拓海功能组件
  * 登录
@@ -16,19 +18,59 @@ class AcLogin extends Component {
   static propTypes = {
     //使用code匹配token登录的url
     url: PropTypes.string.isRequired,
+    //使用code匹配token登录的请求方式
+    method: PropTypes.string.isRequired,
+    //使用code匹配token登录的请求头部
+    headers: PropTypes.object.isRequired,
     //登录之后的回调
     callBack: PropTypes.func.isRequired,
-    className: PropTypes.string
+    //外部传入样式表
+    className: PropTypes.string,
+    //登录完全完成的回调
+    done: PropTypes.func.isRequired
   };
 
   componentDidMount() {
+    let {
+      url = '',
+      method = 'get',
+      headers = {},
+      callBack = () => {
+      },
+      done = () => {
+      }
+    } = this.props;
+    method = method.toUpperCase();
+    headers = Object.assign({}, {'content-type': 'application/json'}, headers);
+
     Taro.login({
-      success: (code) => {
-        
+      success: ({code}) => {
+        Anchor.request({
+          url,
+          method,
+          headers,
+          data: {
+            code
+          },
+          success: (data, statusCode) => {
+            callBack(data, statusCode);
+          },
+          fail: (res = {}) => {
+            callBack(res);
+          },
+          complete: (res = {}) => {
+            done(res);
+          }
+        });
       },
-      fail: () => {
+      fail: (res = {}) => {
+        Taro.showModal({
+          title: '登录api错误',
+          content: '检测您是否处在小程序环境下调用此api',
+          showCancel: false
+        });
       },
-      complete: () => {
+      complete: (res = {}) => {
       }
     });
   }

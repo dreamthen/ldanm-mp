@@ -25,7 +25,16 @@ function requestConfig({
     url,
     method,
     headers,
-
+    data,
+    success: ({data = {}, statusCode = ''}) => {
+      success(data, statusCode);
+    },
+    fail: (res) => {
+      fail(res);
+    },
+    complete: (res) => {
+      complete(res);
+    }
   });
 }
 

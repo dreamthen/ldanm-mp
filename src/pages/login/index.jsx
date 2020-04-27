@@ -29,14 +29,14 @@ class Login extends Component {
         <AcLogin
           url='https://huya-dev.hupu.com/public/index.php/program/login'
           method='post'
-          headers={{
+          header={{
             'content-type': 'application/x-www-form-urlencoded'
           }}
           callBack={(data, statusCode) => {
             if (statusCode === 200) {
               console.log(data);
             } else {
-
+              console.log(data);
             }
           }}
           done={(res) => {

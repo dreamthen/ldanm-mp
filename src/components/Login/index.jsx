@@ -21,7 +21,7 @@ class AcLogin extends Component {
     //使用code匹配token登录的请求方式
     method: PropTypes.string.isRequired,
     //使用code匹配token登录的请求头部
-    headers: PropTypes.object.isRequired,
+    header: PropTypes.object.isRequired,
     //登录之后的回调
     callBack: PropTypes.func.isRequired,
     //外部传入样式表
@@ -34,21 +34,18 @@ class AcLogin extends Component {
     let {
       url = '',
       method = 'get',
-      headers = {},
+      header = {},
       callBack = () => {
       },
       done = () => {
       }
     } = this.props;
-    method = method.toUpperCase();
-    headers = Object.assign({}, {'content-type': 'application/json'}, headers);
-
     Taro.login({
       success: ({code}) => {
         Anchor.request({
           url,
           method,
-          headers,
+          header,
           data: {
             code
           },

@@ -7,7 +7,7 @@ import {contentType} from '../../constants';
 function requestConfig({
                          url = '',
                          method = 'get',
-                         headers = {},
+                         header = {},
                          data = {},
                          success = () => {
                          },
@@ -17,14 +17,14 @@ function requestConfig({
                          }
                        }) {
   method = method.toUpperCase();
-  headers = Object.assign({}, {
+  header = Object.assign({}, {
     'content-type': 'application/json'
-  }, headers);
-  data = headers['content-type'].includes(contentType) ? querystring.stringify(data) : data;
+  }, header);
+  data = header['content-type'].includes(contentType) ? querystring.stringify(data) : data;
   return this.request({
     url,
     method,
-    headers,
+    header,
     data,
     success: ({data = {}, statusCode = ''}) => {
       success(data, statusCode);

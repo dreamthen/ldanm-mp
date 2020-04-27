@@ -1,5 +1,5 @@
 //文档类型
-const contentType = 'x-www-urlencoded';
+const contentType = 'x-www-form-urlencoded';
 
 export {
   contentType

@@ -24,7 +24,7 @@ class Login extends Component {
   render() {
     const {token = ''} = this.state;
     return (
-      <View>
+      <View className='hupu-login'>
         token: {token}
         <AcLogin
           url='https://huya-dev.hupu.com/public/index.php/program/login'

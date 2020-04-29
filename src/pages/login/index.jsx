@@ -13,8 +13,6 @@ class Login extends Component {
   };
 
   state = {
-    //登录使用code获取到的token
-    token: '暂无登录'
   };
 
   config = {
@@ -22,11 +20,11 @@ class Login extends Component {
   };
 
   render() {
-    const {token = ''} = this.state;
     return (
       <View className='hupu-login'>
-        token: {token}
+        直接登录:
         <AcLogin
+          canClick={false}
           url='https://huya-dev.hupu.com/public/index.php/program/login'
           method='post'
           header={{
@@ -43,6 +41,28 @@ class Login extends Component {
             console.log(res);
           }}
         />
+        点击按钮登录:
+        <AcLogin
+          canClick
+          className='hupu-login-button'
+          url='https://huya-dev.hupu.com/public/index.php/program/login'
+          method='post'
+          header={{
+            'content-type': 'application/x-www-form-urlencoded'
+          }}
+          callBack={(data, statusCode) => {
+            if (statusCode === 200) {
+              console.log(data);
+            } else {
+              console.log(data);
+            }
+          }}
+          done={(res) => {
+            console.log(res);
+          }}
+        >
+          点击登录
+        </AcLogin>
       </View>
     )
   }

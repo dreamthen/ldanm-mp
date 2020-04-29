@@ -1,6 +1,7 @@
 import Taro, {Component} from '@tarojs/taro';
 import {
-  View
+  View,
+  Button
 } from '@tarojs/components';
 import PropTypes from 'prop-types';
 
@@ -8,7 +9,7 @@ import Anchor from "../utils";
 
 /**
  * 拓海功能组件
- * 登录
+ * 个人信息
  */
 class AcUserInfo extends Component {
   static options = {
@@ -16,17 +17,19 @@ class AcUserInfo extends Component {
   };
 
   static propTypes = {
-    //使用code匹配token登录的url
+    //是否保存至服务端
+    isSave: PropTypes.bool.isRequired,
+    //保存个人信息至服务端的url
     url: PropTypes.string.isRequired,
-    //使用code匹配token登录的请求方式
+    //保存个人信息至服务端的请求方式
     method: PropTypes.string.isRequired,
-    //使用code匹配token登录的请求头部
+    //保存个人信息至服务端的请求头部
     header: PropTypes.object.isRequired,
-    //登录之后的回调
+    //保存或者获取用户个人信息之后的回调
     callBack: PropTypes.func.isRequired,
     //外部传入样式表
     className: PropTypes.string,
-    //登录完全完成的回调
+    //保存或者获取用户个人信息完全完成的回调
     done: PropTypes.func.isRequired
   };
 
@@ -40,36 +43,7 @@ class AcUserInfo extends Component {
       done = () => {
       }
     } = this.props;
-    Taro.login({
-      success: ({code}) => {
-        Anchor.request({
-          url,
-          method,
-          header,
-          data: {
-            code
-          },
-          success: (data, statusCode) => {
-            callBack(data, statusCode);
-          },
-          fail: (res = {}) => {
-            callBack(res);
-          },
-          complete: (res = {}) => {
-            done(res);
-          }
-        });
-      },
-      fail: (res = {}) => {
-        Taro.showModal({
-          title: '登录api错误',
-          content: '检测您是否处在小程序环境下调用此api',
-          showCancel: false
-        });
-      },
-      complete: (res = {}) => {
-      }
-    });
+
   }
 
   render() {

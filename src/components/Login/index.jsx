@@ -3,6 +3,7 @@ import {
   View
 } from '@tarojs/components';
 import PropTypes from 'prop-types';
+import cns from 'classnames';
 
 import Anchor from "../utils";
 
@@ -16,6 +17,8 @@ class AcLogin extends Component {
   };
 
   static propTypes = {
+    //是否是点击登录
+    canClick: PropTypes.bool.isRequired,
     //使用code匹配token登录的url
     url: PropTypes.string.isRequired,
     //使用code匹配token登录的请求方式
@@ -31,6 +34,18 @@ class AcLogin extends Component {
   };
 
   componentDidMount() {
+    const {canClick = false} = this.props;
+    const {
+      loginHandler = () => {
+      }
+    } = this;
+    !canClick && loginHandler();
+  }
+
+  /**
+   * 进行登录
+   */
+  loginHandler = () => {
     let {
       url = '',
       method = 'get',
@@ -70,11 +85,17 @@ class AcLogin extends Component {
       complete: (res = {}) => {
       }
     });
-  }
+  };
 
   render() {
+    const {canClick = false, className = ''} = this.props;
+    const {
+      loginHandler = () => {
+      }
+    } = this;
     return (
-      <View>
+      <View className={cns('hupu-basic-login', className)} onClick={() => {canClick && loginHandler();}}>
+        {canClick && this.props.children}
       </View>
     )
   }

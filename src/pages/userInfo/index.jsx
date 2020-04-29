@@ -1,6 +1,7 @@
 import Taro, {Component} from '@tarojs/taro';
 import {
-  View
+  View,
+  Button
 } from '@tarojs/components';
 import {
   AcUserInfo
@@ -13,8 +14,6 @@ class UserInfo extends Component {
   };
 
   state = {
-    //登录使用code获取到的token
-    token: '暂无登录'
   };
 
   config = {
@@ -22,9 +21,9 @@ class UserInfo extends Component {
   };
 
   render() {
-    const {token = ''} = this.state;
     return (
       <View className='hupu-userInfo'>
+        <AcUserInfo />
       </View>
     )
   }

@@ -3,6 +3,7 @@ import { Provider } from '@tarojs/redux'
 
 import Index from './pages/index';
 import Login from "./pages/login";
+import UserInfo from "./pages/userInfo";
 
 import store from './store';
 
@@ -17,7 +18,8 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/login/index'
+      'pages/login/index',
+      'pages/userInfo/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -42,6 +44,7 @@ class App extends Component {
       <Provider store={store}>
         <Index />
         <Login />
+        <UserInfo />
       </Provider>
     )
   }

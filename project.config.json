@@ -40,6 +40,13 @@
 					"id": -1,
 					"name": "登录功能组件",
 					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/userInfo/index",
 					"scene": null
 				}
 			]

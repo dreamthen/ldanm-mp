@@ -5,6 +5,7 @@ import {
 } from '@tarojs/components';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
+import * as constants from './constants';
 
 /**
  * 拓海功能组件
@@ -16,6 +17,8 @@ class AcUserInfo extends Component {
   };
 
   static propTypes = {
+    //选择类型
+    type: PropTypes.string.isRequired,
     //是否显示点击获取个人信息的按钮
     visible: PropTypes.bool,
     //保存或者获取用户个人信息之后的回调
@@ -35,12 +38,7 @@ class AcUserInfo extends Component {
 
   static getDerivedStateFromProps(props) {
     const {visible = true} = props;
-    if (!visible) {
-      return {
-        show: visible
-      };
-    }
-    return null;
+    return {show: visible};
   }
 
   componentWillMount() {
@@ -49,31 +47,39 @@ class AcUserInfo extends Component {
   componentDidMount() {
     const {
       callBack = () => {
-      }
+      },
+      type = ''
     } = this.props;
-    Taro.getSetting({
-      success: ({authSetting = {}}) => {
-        if (authSetting['scope.userInfo']) {
-          Taro.getUserInfo({
-            success: (res = {}) => {
-              callBack({detail: {...res}});
-            },
-            fail: (res = {}) => {
-            },
-            complete: (res = {}) => {
+    switch (type) {
+      case 'userInfo': {
+        Taro.getSetting({
+          success: ({authSetting = {}}) => {
+            if (authSetting['scope.userInfo']) {
+              Taro.getUserInfo({
+                success: (res = {}) => {
+                  callBack({detail: {...res}});
+                },
+                fail: (res = {}) => {
+                },
+                complete: (res = {}) => {
+                }
+              });
+            } else {
+              this.setState({
+                show: true
+              });
             }
-          });
-        } else {
-          this.setState({
-            show: true
-          });
-        }
-      },
-      fail: (res) => {
-      },
-      complete: (res) => {
+          },
+          fail: (res) => {
+          },
+          complete: (res) => {
+          }
+        });
       }
-    });
+      default: {
+        break;
+      }
+    }
   }
 
   /**
@@ -88,7 +94,7 @@ class AcUserInfo extends Component {
   };
 
   render() {
-    const {className = '', text = ''} = this.props;
+    const {className = '', text = '', type = ''} = this.props;
     const {show = false} = this.state;
     const {
       getUserInfoHandler = () => {
@@ -97,7 +103,12 @@ class AcUserInfo extends Component {
     return (
       <View className={cns('hupu-userInfo', className)}>
         {
-          show ? text ? <Button className='hupu-userInfo-get' openType='getUserInfo' onGetUserInfo={getUserInfoHandler}>
+          show ? text ? <Button
+            className='hupu-userInfo-get'
+            openType={constants.typeConfig[type]}
+            onGetUserInfo={getUserInfoHandler}
+            onGetPhoneNumber={getUserInfoHandler}
+          >
             {text}
           </Button> : this.props.renderButtonDetail : this.props.children
         }

@@ -57,9 +57,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "个人信息",
+					"id": 1,
+					"name": "获取个人信息",
 					"pathName": "pages/userInfo/index",
+					"query": "",
 					"scene": null
 				}
 			]

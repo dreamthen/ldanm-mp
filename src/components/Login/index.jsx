@@ -5,7 +5,7 @@ import {
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import Anchor from "../utils";
+import Anchor from '../utils';
 
 /**
  * 拓海功能组件

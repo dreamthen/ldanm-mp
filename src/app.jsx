@@ -2,8 +2,8 @@ import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 
 import Index from './pages/index';
-import Login from "./pages/login";
-import UserInfo from "./pages/userInfo";
+import Login from './pages/login';
+import UserInfo from './pages/userInfo';
 
 import store from './store';
 

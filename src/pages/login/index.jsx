@@ -1,6 +1,7 @@
 import Taro, {Component} from '@tarojs/taro';
 import {
-  View
+  View,
+  Button
 } from '@tarojs/components';
 import {
   AcLogin
@@ -12,8 +13,7 @@ class Login extends Component {
     addGlobalClass: true
   };
 
-  state = {
-  };
+  state = {};
 
   config = {
     navigationBarTitleText: '登录'
@@ -61,7 +61,9 @@ class Login extends Component {
             console.log(res);
           }}
         >
-          点击登录
+          <Button>
+            点击登录
+          </Button>
         </AcLogin>
       </View>
     )

@@ -12,7 +12,7 @@ const mpFuncConfig = [{
   }
 }, {
   id: 'userInfo',
-  name: '个人信息',
+  name: '获取个人信息',
   className: 'component-userInfo',
   onClick: () => {
     Taro.navigateTo({

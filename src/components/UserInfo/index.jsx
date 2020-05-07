@@ -4,8 +4,7 @@ import {
   Button
 } from '@tarojs/components';
 import PropTypes from 'prop-types';
-
-import Anchor from "../utils";
+import cns from 'classnames';
 
 /**
  * 拓海功能组件
@@ -17,38 +16,91 @@ class AcUserInfo extends Component {
   };
 
   static propTypes = {
-    //是否保存至服务端
-    isSave: PropTypes.bool.isRequired,
-    //保存个人信息至服务端的url
-    url: PropTypes.string.isRequired,
-    //保存个人信息至服务端的请求方式
-    method: PropTypes.string.isRequired,
-    //保存个人信息至服务端的请求头部
-    header: PropTypes.object.isRequired,
+    //是否显示点击获取个人信息的按钮
+    visible: PropTypes.bool,
     //保存或者获取用户个人信息之后的回调
     callBack: PropTypes.func.isRequired,
+    //点击获取用户个人信息按钮的文案
+    text: PropTypes.string.isRequired,
+    //是否自定义获取用户个人信息按钮的文案信息
+    renderButtonDetail: PropTypes.element,
     //外部传入样式表
-    className: PropTypes.string,
-    //保存或者获取用户个人信息完全完成的回调
-    done: PropTypes.func.isRequired
+    className: PropTypes.string
   };
 
-  componentDidMount() {
-    let {
-      url = '',
-      method = 'get',
-      header = {},
-      callBack = () => {
-      },
-      done = () => {
-      }
-    } = this.props;
+  state = {
+    //是否显示点击获取用户个人信息的按钮
+    show: false
+  };
 
+  static getDerivedStateFromProps(props) {
+    const {visible = true} = props;
+    if (!visible) {
+      return {
+        show: visible
+      };
+    }
+    return null;
   }
 
+  componentWillMount() {
+  }
+
+  componentDidMount() {
+    const {
+      callBack = () => {
+      }
+    } = this.props;
+    Taro.getSetting({
+      success: ({authSetting = {}}) => {
+        if (authSetting['scope.userInfo']) {
+          Taro.getUserInfo({
+            success: (res = {}) => {
+              callBack({detail: {...res}});
+            },
+            fail: (res = {}) => {
+            },
+            complete: (res = {}) => {
+            }
+          });
+        } else {
+          this.setState({
+            show: true
+          });
+        }
+      },
+      fail: (res) => {
+      },
+      complete: (res) => {
+      }
+    });
+  }
+
+  /**
+   * 点击按钮获取用户的个人信息
+   */
+  getUserInfoHandler = (res = {}) => {
+    const {
+      callBack = () => {
+      }
+    } = this.props;
+    callBack(res);
+  };
+
   render() {
+    const {className = '', text = ''} = this.props;
+    const {show = false} = this.state;
+    const {
+      getUserInfoHandler = () => {
+      }
+    } = this;
     return (
-      <View>
+      <View className={cns('hupu-userInfo', className)}>
+        {
+          show ? text ? <Button className='hupu-userInfo-get' openType='getUserInfo' onGetUserInfo={getUserInfoHandler}>
+            {text}
+          </Button> : this.props.renderButtonDetail : this.props.children
+        }
       </View>
     )
   }

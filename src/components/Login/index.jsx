@@ -8,10 +8,10 @@ import cns from 'classnames';
 import Anchor from '../utils';
 
 /**
- * 拓海功能组件
+ * 功能组件
  * 登录
  */
-class AcLogin extends Component {
+class KeryiLogin extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -94,11 +94,11 @@ class AcLogin extends Component {
       }
     } = this;
     return (
-      <View className={cns('hupu-basic-login', className)} onClick={() => {canClick && loginHandler();}}>
+      <View className={cns('keryi-basic-login', className)} onClick={() => {canClick && loginHandler();}}>
         {canClick && this.props.children}
       </View>
     )
   }
 }
 
-export default AcLogin;
+export default KeryiLogin;

@@ -8,10 +8,10 @@ import cns from 'classnames';
 import * as constants from './constants';
 
 /**
- * 拓海功能组件
+ * 功能组件
  * 个人信息
  */
-class AcUserInfo extends Component {
+class KeryiUserInfo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -109,10 +109,10 @@ class AcUserInfo extends Component {
       }
     } = this;
     return (
-      <View className={cns('hupu-userInfo', className)}>
+      <View className={cns('keryi-userInfo', className)}>
         {
           show ? text ? <Button
-            className='hupu-userInfo-get'
+            className='keryi-userInfo-get'
             openType={constants.typeConfig[type]}
             onGetUserInfo={getUserInfoHandler}
             onGetPhoneNumber={getUserInfoHandler}
@@ -125,4 +125,4 @@ class AcUserInfo extends Component {
   }
 }
 
-export default AcUserInfo;
+export default KeryiUserInfo;

@@ -1,7 +1,7 @@
-import AcLogin from './Login';
+import KeryiLogin from './Login';
 import AcUserInfo from './UserInfo';
 
 export {
-  AcLogin,
+  KeryiLogin,
   AcUserInfo
 };

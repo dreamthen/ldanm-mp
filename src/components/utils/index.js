@@ -1,8 +1,8 @@
 import Taro from '@tarojs/taro';
 import * as requestApi from './request';
 
-const Anchor = (() => {
-  class Anchors {
+const Keryi = (() => {
+  class Keryi {
     constructor() {
       this.wx = Taro;
     }
@@ -17,7 +17,7 @@ const Anchor = (() => {
     };
   }
 
-  return new Anchors();
+  return new Keryi();
 })();
 
-export default Anchor;
+export default Keryi;

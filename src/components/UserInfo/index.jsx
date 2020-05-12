@@ -48,7 +48,7 @@ class AcUserInfo extends Component {
     const {
       callBack = () => {
       },
-      type = ''
+      type = 'userInfo'
     } = this.props;
     switch (type) {
       case 'userInfo': {
@@ -94,7 +94,7 @@ class AcUserInfo extends Component {
   };
 
   render() {
-    const {className = '', text = '', type = ''} = this.props;
+    const {className = '', text = '', type = 'userInfo'} = this.props;
     const {show = false} = this.state;
     const {
       getUserInfoHandler = () => {

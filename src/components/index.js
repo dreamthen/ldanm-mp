@@ -1,7 +1,7 @@
 import KeryiLogin from './Login';
-import AcUserInfo from './UserInfo';
+import KeryiUserInfo from './UserInfo';
 
 export {
   KeryiLogin,
-  AcUserInfo
+  KeryiUserInfo
 };

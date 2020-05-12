@@ -23,7 +23,8 @@
 | :----: | :----: | :----: | :----: |
 | type | string | 选择个人信息的类型('userInfo' or 'phone') | 'userInfo' |
 | visible | boolean | 是否显示点击获取个人信息的按钮 | true |
-| callBack | function | 保存或者获取用户个人信息之后的回调 | (res) => {} |
+| callBack | function | 保存或者获取用户个人信息成功之后的回调 | (res) => {} |
 | text | string | 点击获取用户个人信息按钮的文案 | '' |
 | renderButtonDetail | ReactElement | 是否自定义获取用户个人信息按钮的文案信息 | {} |
 | className | string | 外部传入样式表 | '' |
+| done | function | 保存或者获取用户个人信息完成之后的回调 | (res) => {} |

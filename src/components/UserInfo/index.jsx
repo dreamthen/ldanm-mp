@@ -21,14 +21,16 @@ class AcUserInfo extends Component {
     type: PropTypes.string.isRequired,
     //是否显示点击获取个人信息的按钮
     visible: PropTypes.bool,
-    //保存或者获取用户个人信息之后的回调
+    //保存或者获取用户个人信息成功之后的回调
     callBack: PropTypes.func.isRequired,
     //点击获取用户个人信息按钮的文案
     text: PropTypes.string.isRequired,
     //是否自定义获取用户个人信息按钮的文案信息
     renderButtonDetail: PropTypes.element,
     //外部传入样式表
-    className: PropTypes.string
+    className: PropTypes.string,
+    //保存或者获取用户个人信息完成之后的回调
+    done: PropTypes.func
   };
 
   state = {
@@ -48,6 +50,8 @@ class AcUserInfo extends Component {
     const {
       callBack = () => {
       },
+      done = () => {
+      },
       type = 'userInfo'
     } = this.props;
     switch (type) {
@@ -60,8 +64,10 @@ class AcUserInfo extends Component {
                   callBack({detail: {...res}});
                 },
                 fail: (res = {}) => {
+                  callBack(res);
                 },
                 complete: (res = {}) => {
+                  done(res);
                 }
               });
             } else {
@@ -71,8 +77,10 @@ class AcUserInfo extends Component {
             }
           },
           fail: (res) => {
+            callBack(res);
           },
           complete: (res) => {
+            done(res);
           }
         });
       }

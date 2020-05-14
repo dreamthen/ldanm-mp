@@ -37,7 +37,7 @@ class KeryiNavBar extends Component {
     //左边第一个图标类型点击事件
     onClickLeftIcon: PropTypes.func,
     //是否传入的是图片，而不是icon，如果为图片就使用图片，否则使用icon
-    imgs: PropTypes.string
+    imgs: PropTypes.any
   };
 
   state = {

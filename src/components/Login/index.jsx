@@ -5,7 +5,7 @@ import {
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import Anchor from '../utils';
+import Keryi from '../utils';
 
 /**
  * 功能组件
@@ -57,7 +57,7 @@ class KeryiLogin extends Component {
     } = this.props;
     Taro.login({
       success: ({code}) => {
-        Anchor.request({
+        Keryi.request({
           url,
           method,
           header,

@@ -62,6 +62,12 @@
 					"pathName": "pages/userInfo/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "自定义导航",
+					"pathName": "pages/navBar/index",
+					"scene": null
 				}
 			]
 		}

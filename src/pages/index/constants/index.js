@@ -19,6 +19,15 @@ const mpFuncConfig = [{
       url: pageCurrentList[2]
     });
   }
+}, {
+  id: 'navBar',
+  name: '顶部自定义导航栏',
+  className: 'component-navBar',
+  onClick: () => {
+    Taro.navigateTo({
+      url: pageCurrentList[3]
+    });
+  }
 }];
 
 export {

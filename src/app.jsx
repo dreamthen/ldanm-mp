@@ -4,6 +4,7 @@ import { Provider } from '@tarojs/redux'
 import Index from './pages/index';
 import Login from './pages/login';
 import UserInfo from './pages/userInfo';
+import NavBar from "./pages/NavBar";
 
 import store from './store';
 
@@ -19,7 +20,8 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/login/index',
-      'pages/userInfo/index'
+      'pages/userInfo/index',
+      'pages/navBar/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -45,6 +47,7 @@ class App extends Component {
         <Index />
         <Login />
         <UserInfo />
+        <NavBar />
       </Provider>
     )
   }

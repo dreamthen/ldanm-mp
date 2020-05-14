@@ -3,7 +3,7 @@ import {
   View
 } from '@tarojs/components';
 import {
-  AcUserInfo
+  KeryiUserInfo
 } from '../../components';
 
 
@@ -68,13 +68,13 @@ class UserInfo extends Component {
     const {nickName = '', avatar = '', show = true, showPhone = true, phone = ''} = this.state;
     return (
       <View className='hupu-userInfo'>
-        <AcUserInfo visible={show} type='userInfo' text='获取个人信息' callBack={getUserInfoHandler}>
+        <KeryiUserInfo visible={show} type='userInfo' text='获取个人信息' callBack={getUserInfoHandler}>
           用户名: {nickName}
           头像: {avatar}
-        </AcUserInfo>
-        <AcUserInfo visible={showPhone} type='phone' text='获取手机号码' callBack={getPhoneNumberHandler}>
+        </KeryiUserInfo>
+        <KeryiUserInfo visible={showPhone} type='phone' text='获取手机号码' callBack={getPhoneNumberHandler}>
           手机号码: {phone}
-        </AcUserInfo>
+        </KeryiUserInfo>
       </View>
     )
   }

@@ -49,10 +49,13 @@
 
 | 属性名 | 属性类型 | 属性描述 | 默认值 |
 | :----: | :----: | :----: | :----: |
-| title | string | 自定义顶部导航栏的标题 | '' |
 | className | string | 外部传入样式表 | '' |
-| color | string | 链接文字跟图标颜色,不包括标题 | '' |
-| leftIconPrefixClass | string | 左边图标className 前缀,用于第三方字体图标库,比如'iconfont' | '' |
-| leftIconType | string | 左边图标类型,与leftIconPrefixClass关联,如果leftIconPrefixClass设置的为iconfont,那么此值设置后,结果就是iconfont-xxx | '' |
-| onClickLeftIcon | function | 左边第一个图标类型点击事件 | (event) => {} ) |
-| imgs | any | 是否传入的是图片，而不是icon，如果为图片就使用图片，否则使用icon | '' |
+| tabList | array<object> | tab 静态配置列表,必填 | [] |
+| fontSize | number | 字体大小 | 14 |
+| iconSize | number | 图标大小 | 24 |
+| backgroundColor | string | 背景颜色 | '#fff' ) |
+| fixed | boolean | 是否固定底部 | false |
+| selectedColor | string | 选中标签字体与图标颜色 | #6190E8 |
+| color | string | 未选中标签字体与图标颜色| #333 |
+| current | number | 当前选中的标签索引值，从0计数 | 0 |
+| onChange | function | 点击触发事件，开发者需要通过 onClick 事件来更新 current 值变化,必填 | (current) => {} |

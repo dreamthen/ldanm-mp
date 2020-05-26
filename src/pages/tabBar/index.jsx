@@ -16,7 +16,10 @@ class TabBar extends Component {
     addGlobalClass: true
   };
 
-  state = {};
+  state = {
+    //当前选中的标签索引值，从0计数
+    current: 0
+  };
 
   config = {
     navigationBarTitleText: '底部自定义导航栏'
@@ -28,17 +31,21 @@ class TabBar extends Component {
   /**
    * 切换tab时进行监听的方法
    */
-  onChangeHandler = () => {
-
+  onChangeHandler = (current) => {
+    this.setState({
+      current
+    });
   };
 
   render() {
     const {onChangeHandler} = this;
+    const {current = 0} = this.state;
     return (
       <View className='hupu-tabBar'>
         <KeryiTabBar
           fixed
           tabList={constants.tabBarConfig}
+          current={current}
           onChange={onChangeHandler}
         />
       </View>

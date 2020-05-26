@@ -93,7 +93,7 @@ PS: 需要node > 8的node版本
 | tabList | array<object> | tab 静态配置列表,必填 | [] |
 | fontSize | number | 字体大小 | 14 |
 | iconSize | number | 图标大小 | 24 |
-| backgroundColor | string | 背景颜色 | '#fff' ) |
+| backgroundColor | string | 背景颜色 | '#fff' |
 | fixed | boolean | 是否固定底部 | false |
 | selectedColor | string | 选中标签字体与图标颜色 | #6190E8 |
 | color | string | 未选中标签字体与图标颜色| #333 |

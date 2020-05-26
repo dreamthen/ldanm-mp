@@ -1,10 +1,11 @@
-import Taro, { Component } from '@tarojs/taro'
-import { Provider } from '@tarojs/redux'
+import Taro, {Component} from '@tarojs/taro'
+import {Provider} from '@tarojs/redux'
 
 import Index from './pages/index';
 import Login from './pages/login';
 import UserInfo from './pages/userInfo';
 import NavBar from "./pages/NavBar";
+import TabBar from "./pages/tabBar";
 
 import store from './store';
 
@@ -21,7 +22,8 @@ class App extends Component {
       'pages/index/index',
       'pages/login/index',
       'pages/userInfo/index',
-      'pages/navBar/index'
+      'pages/navBar/index',
+      'pages/tabBar/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -31,26 +33,31 @@ class App extends Component {
     }
   };
 
-  componentDidMount () {}
+  componentDidMount() {
+  }
 
-  componentDidShow () {}
+  componentDidShow() {
+  }
 
-  componentDidHide () {}
+  componentDidHide() {
+  }
 
-  componentDidCatchError () {}
+  componentDidCatchError() {
+  }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Provider store={store}>
-        <Index />
-        <Login />
-        <UserInfo />
-        <NavBar />
+        <Index/>
+        <Login/>
+        <UserInfo/>
+        <NavBar/>
+        <TabBar/>
       </Provider>
     )
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App/>, document.getElementById('app'))

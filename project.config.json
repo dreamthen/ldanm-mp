@@ -67,6 +67,13 @@
 					"id": -1,
 					"name": "自定义导航",
 					"pathName": "pages/navBar/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "底部自定义导航",
+					"pathName": "pages/tabBar/index",
 					"scene": null
 				}
 			]

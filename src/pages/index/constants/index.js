@@ -28,6 +28,15 @@ const mpFuncConfig = [{
       url: pageCurrentList[3]
     });
   }
+}, {
+  id: 'tabBar',
+  name: '底部自定义导航栏',
+  className: 'component-tabBar',
+  onClick: () => {
+    Taro.navigateTo({
+      url: pageCurrentList[4]
+    });
+  }
 }];
 
 export {

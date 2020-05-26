@@ -26,7 +26,7 @@ class KeryiNavBar extends Component {
   static propTypes = {
     //顶部导航栏的标题
     title: PropTypes.string.isRequired,
-    //顶部导航栏的样式
+    //顶部导航栏的外部传入样式
     className: PropTypes.string,
     //链接文字跟图标颜色，不包括标题
     color: PropTypes.string,

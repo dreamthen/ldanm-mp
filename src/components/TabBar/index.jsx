@@ -8,6 +8,9 @@ import {
   AtTabBar
 } from 'taro-ui';
 
+import Keryi from "../utils";
+import * as constants from './constants';
+
 import './index.less';
 
 /**
@@ -70,9 +73,12 @@ class KeryiTabBar extends Component {
       onChange = () => {
       }
     } = this.props;
+    const {isX} = Keryi.adaptationNavBar();
     return (
       <View className={cns('keryi-tabBar', className)}>
         <AtTabBar
+          className='keryi-tabBar-component'
+          customStyle={{height: `${constants.tabBarConstantsHeight[isX]}PX`, padding: 0}}
           tabList={tabList}
           onClick={onChange}
           current={current}

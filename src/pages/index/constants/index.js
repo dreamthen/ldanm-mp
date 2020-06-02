@@ -37,6 +37,15 @@ const mpFuncConfig = [{
       url: pageCurrentList[4]
     });
   }
+}, {
+  id: 'upload',
+  name: '上传文件',
+  className: 'component-upload',
+  onClick: () => {
+    Taro.navigateTo({
+      url: pageCurrentList[5]
+    });
+  }
 }];
 
 export {

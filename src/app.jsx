@@ -6,6 +6,7 @@ import Login from './pages/login';
 import UserInfo from './pages/userInfo';
 import NavBar from "./pages/NavBar";
 import TabBar from "./pages/tabBar";
+import Upload from './pages/upload';
 
 import store from './store';
 
@@ -23,7 +24,8 @@ class App extends Component {
       'pages/login/index',
       'pages/userInfo/index',
       'pages/navBar/index',
-      'pages/tabBar/index'
+      'pages/tabBar/index',
+      'pages/userInfo/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -55,6 +57,7 @@ class App extends Component {
         <UserInfo/>
         <NavBar/>
         <TabBar/>
+        <Upload/>
       </Provider>
     )
   }

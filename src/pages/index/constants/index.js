@@ -38,9 +38,9 @@ const mpFuncConfig = [{
     });
   }
 }, {
-  id: 'upload',
-  name: '上传文件',
-  className: 'component-upload',
+  id: 'imagePicker',
+  name: '图片选择器',
+  className: 'component-imagePicker',
   onClick: () => {
     Taro.navigateTo({
       url: pageCurrentList[5]

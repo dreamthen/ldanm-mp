@@ -6,7 +6,7 @@ import {
 import './index.less';
 
 
-class UserInfo extends Component {
+class ImagePicker extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -16,7 +16,7 @@ class UserInfo extends Component {
   };
 
   config = {
-    navigationBarTitleText: '上传文件'
+    navigationBarTitleText: '图片选择器'
   };
 
   componentDidMount() {
@@ -25,10 +25,10 @@ class UserInfo extends Component {
 
   render() {
     return (
-      <View className='hupu-upload'>
+      <View className='hupu-imagePicker'>
       </View>
     )
   }
 }
 
-export default UserInfo;
+export default ImagePicker;

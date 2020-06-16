@@ -6,9 +6,10 @@ import Login from './pages/login';
 import UserInfo from './pages/userInfo';
 import NavBar from "./pages/NavBar";
 import TabBar from "./pages/tabBar";
-import Upload from './pages/upload';
+import ImagePicker from './pages/imagePicker';
 
 import store from './store';
+import {Image} from "@tarojs/components";
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -22,7 +23,7 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/login/index',
-      'pages/userInfo/index',
+      'pages/imagePicker/index',
       'pages/navBar/index',
       'pages/tabBar/index',
       'pages/userInfo/index'
@@ -57,7 +58,7 @@ class App extends Component {
         <UserInfo/>
         <NavBar/>
         <TabBar/>
-        <Upload/>
+        <ImagePicker/>
       </Provider>
     )
   }

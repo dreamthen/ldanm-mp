@@ -22,7 +22,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -77,6 +77,14 @@
 					"id": -1,
 					"name": "底部自定义导航",
 					"pathName": "pages/tabBar/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图片选择器",
+					"pathName": "pages/imagePicker/index",
+					"query": "",
 					"scene": null
 				}
 			]

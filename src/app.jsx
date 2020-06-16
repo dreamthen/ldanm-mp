@@ -4,12 +4,12 @@ import {Provider} from '@tarojs/redux'
 import Index from './pages/index';
 import Login from './pages/login';
 import UserInfo from './pages/userInfo';
-import NavBar from "./pages/NavBar";
-import TabBar from "./pages/tabBar";
+import NavBar from './pages/NavBar';
+import TabBar from './pages/tabBar';
 import ImagePicker from './pages/imagePicker';
 
 import store from './store';
-import {Image} from "@tarojs/components";
+import {Image} from '@tarojs/components';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：

@@ -8,7 +8,7 @@ import {
   AtTabBar
 } from 'taro-ui';
 
-import Keryi from "../utils";
+import Keryi from '../utils';
 import * as constants from './constants';
 
 import './index.less';

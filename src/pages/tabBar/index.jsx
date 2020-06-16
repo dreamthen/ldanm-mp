@@ -7,8 +7,8 @@ import {
   KeryiTabBar
 } from '../../components';
 
-import "taro-ui/dist/style/components/tab-bar.scss";
-import "taro-ui/dist/style/components/badge.scss";
+import 'taro-ui/dist/style/components/tab-bar.scss';
+import 'taro-ui/dist/style/components/badge.scss';
 
 
 class TabBar extends Component {

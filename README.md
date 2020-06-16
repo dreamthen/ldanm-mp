@@ -108,7 +108,7 @@ PS: 需要node > 8的node版本
 | :----: | :----: | :----: | :----: |
 | className | string | 外部传入样式表 | '' |
 | files | array<object> | 图片文件数组,元素为对象,包含属性 url（必选) | [] |
-| mode | enum | 图片预览模式，详见(微信开发者文档) | 'scaleToFill'|'aspectFit'|'aspectFill'|'widthFix'|'top'|'bottom'|'center'|'left'|'right'|'top left'|'top right'|'bottom left'|'bottom |
+| mode | enum | 图片预览模式,详见(微信开发者文档) | 'scaleToFill' |
 | showAddBtn | boolean | 是否显示添加图片按钮 | true |
 | multiple | boolean | 是否支持多选 | false |
 | count | number | 最多可以选择的图片张数,2.0.2版本起支持 | 9 |

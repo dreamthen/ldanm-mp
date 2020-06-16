@@ -4,7 +4,7 @@ import {
 } from '@tarojs/components';
 import {
   LdanmUserInfo
-} from '../../components';
+} from 'ldanm-taro-frc';
 
 
 class UserInfo extends Component {

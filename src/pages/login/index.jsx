@@ -3,9 +3,7 @@ import {
   View,
   Button
 } from '@tarojs/components';
-import {
-  LdanmLogin
-} from '../../components';
+import {LdanmLogin} from 'ldanm-taro-frc';
 
 
 class Login extends Component {

@@ -5,7 +5,7 @@ import {
 import * as constants from './constants';
 import {
   LdanmTabBar
-} from '../../components';
+} from 'ldanm-taro-frc';
 
 import 'taro-ui/dist/style/components/tab-bar.scss';
 import 'taro-ui/dist/style/components/badge.scss';

@@ -4,7 +4,7 @@ import {
 } from '@tarojs/components';
 import {
   LdanmImagePicker
-} from '../../components';
+} from 'ldanm-taro-frc';
 
 import 'taro-ui/dist/style/components/image-picker.scss';
 import 'taro-ui/dist/style/components/icon.scss';

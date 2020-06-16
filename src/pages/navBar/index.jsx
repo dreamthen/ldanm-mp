@@ -4,7 +4,7 @@ import {
 } from '@tarojs/components';
 import {
   LdanmNavBar
-} from '../../components';
+} from 'ldanm-taro-frc';
 
 import {imgs} from '../../assets';
 

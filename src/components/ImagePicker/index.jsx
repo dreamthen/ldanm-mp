@@ -63,11 +63,37 @@ class KeryiImagePicker extends Component {
 
   render() {
     const {
-      className = ''
+      className = '',
+      files = [],
+      mode = 'scaleToFill',
+      showAddBtn = true,
+      multiple = false,
+      count = 9,
+      sizeType = [],
+      sourceType = [],
+      length = 3,
+      onChange = () => {
+      },
+      onImageClick = () => {
+      },
+      onFail = () => {
+      }
     } = this.props;
     return (
       <View className={cns('keryi-imagePicker', className)}>
-        <AtImagePicker {...this.props} />
+        <AtImagePicker
+          files={files}
+          mode={mode}
+          showAddBtn={showAddBtn}
+          multiple={multiple}
+          count={count}
+          sizeType={sizeType}
+          sourceType={sourceType}
+          length={length}
+          onChange={onChange}
+          onImageClick={onImageClick}
+          onFail={onFail}
+        />
       </View>
     )
   }

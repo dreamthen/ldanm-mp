@@ -17,17 +17,7 @@ class ImagePicker extends Component {
   };
 
   state = {
-    files: [
-      {
-        url: 'https://prod-pet.oss.1jtec.com/postcard/c4449804706476352_1.jpg@ListViewIMG',
-      },
-      {
-        url: 'https://prod-pet.oss.1jtec.com/postcard/c4449804706476352_2.jpg@ListViewIMG',
-      },
-      {
-        url: 'https://prod-pet.oss.1jtec.com/postcard/c4448657899797351_2.jpg@ListViewIMG',
-      }
-    ]
+    files: []
   };
 
   config = {
@@ -38,13 +28,13 @@ class ImagePicker extends Component {
   }
 
   /**
-   * 图片组变化修改时所触发的事件
-   * @param files
+   * 图片组变化添加时所触发的事件
+   * @param file
    */
-  onChange = (files) => {
+  onAdd = (file) => {
     this.setState({
-      files
-    })
+      files: file
+    });
   }
 
   /**
@@ -71,16 +61,19 @@ class ImagePicker extends Component {
       },
       onImageClick = () => {
       },
-      onChange = () => {
+      onAdd = () => {
       }
     } = this;
     return (
       <View className='hupu-imagePicker'>
         <KeryiImagePicker
+          action='https://pet.api.1jtec.com/tinyStatics/uploadImg/v2'
+          name='file'
           files={files}
+          data={{type: 'ORMAL'}}
           onFail={onFail}
           onImageClick={onImageClick}
-          onChange={onChange}
+          onAdd={onAdd}
         />
       </View>
     )

@@ -3,7 +3,7 @@ import {
   View
 } from '@tarojs/components';
 import {
-  KeryiNavBar
+  LdanmNavBar
 } from '../../components';
 
 import {imgs} from '../../assets';
@@ -42,7 +42,7 @@ class NavBar extends Component {
     } = this;
     return (
       <View className='keryi-NavBar'>
-        <KeryiNavBar
+        <LdanmNavBar
           title='自定义导航'
           imgs={imgs.back}
           onClickLeftIcon={onBackHandler}

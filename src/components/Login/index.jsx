@@ -5,13 +5,13 @@ import {
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import Keryi from '../utils';
+import Ldanm from '../utils';
 
 /**
  * 功能组件
  * 登录
  */
-class KeryiLogin extends Component {
+class LdanmLogin extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -57,7 +57,7 @@ class KeryiLogin extends Component {
     } = this.props;
     Taro.login({
       success: ({code}) => {
-        Keryi.request({
+        Ldanm.request({
           url,
           method,
           header,
@@ -101,4 +101,4 @@ class KeryiLogin extends Component {
   }
 }
 
-export default KeryiLogin;
+export default LdanmLogin;

@@ -8,7 +8,7 @@ import {
   AtTabBar
 } from 'taro-ui';
 
-import Keryi from '../utils';
+import Ldanm from '../utils';
 import * as constants from './constants';
 
 import './index.less';
@@ -17,7 +17,7 @@ import './index.less';
  * 抽象分享页面业务组件
  * @尹文楷
  */
-class KeryiTabBar extends Component {
+class LdanmTabBar extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -73,7 +73,7 @@ class KeryiTabBar extends Component {
       onChange = () => {
       }
     } = this.props;
-    const {isX} = Keryi.adaptationNavBar();
+    const {isX} = Ldanm.adaptationNavBar();
     return (
       <View className={cns('keryi-tabBar', className)}>
         <AtTabBar
@@ -94,4 +94,4 @@ class KeryiTabBar extends Component {
   }
 }
 
-export default KeryiTabBar;
+export default LdanmTabBar;

@@ -4,7 +4,7 @@ import {
   Button
 } from '@tarojs/components';
 import {
-  KeryiLogin
+  LdanmLogin
 } from '../../components';
 
 
@@ -23,7 +23,7 @@ class Login extends Component {
     return (
       <View className='keryi-login'>
         直接登录:
-        <KeryiLogin
+        <LdanmLogin
           canClick={false}
           url='https://huya-dev.hupu.com/public/index.php/program/login'
           method='post'
@@ -42,7 +42,7 @@ class Login extends Component {
           }}
         />
         点击按钮登录:
-        <KeryiLogin
+        <LdanmLogin
           canClick
           className='keryi-login-button'
           url='https://huya-dev.hupu.com/public/index.php/program/login'
@@ -64,7 +64,7 @@ class Login extends Component {
           <Button>
             点击登录
           </Button>
-        </KeryiLogin>
+        </LdanmLogin>
       </View>
     )
   }

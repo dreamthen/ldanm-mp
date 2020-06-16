@@ -1,8 +1,8 @@
 import Taro from '@tarojs/taro';
 import * as requestApi from './request';
 
-const Keryi = (() => {
-  class Keryi {
+const Ldanm = (() => {
+  class Ldanm {
     constructor() {
       this.wx = Taro;
     }
@@ -52,7 +52,7 @@ const Keryi = (() => {
     }
   }
 
-  return new Keryi();
+  return new Ldanm();
 })();
 
-export default Keryi;
+export default Ldanm;

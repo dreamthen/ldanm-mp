@@ -14,7 +14,7 @@ import './index.less';
  * 抽象图片选择器
  * @尹文楷
  */
-class KeryiImagePicker extends Component {
+class LdanmImagePicker extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -163,4 +163,4 @@ class KeryiImagePicker extends Component {
   }
 }
 
-export default KeryiImagePicker;
+export default LdanmImagePicker;

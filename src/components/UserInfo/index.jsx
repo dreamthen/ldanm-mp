@@ -11,7 +11,7 @@ import * as constants from './constants';
  * 功能组件
  * 个人信息
  */
-class KeryiUserInfo extends Component {
+class LdanmUserInfo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -125,4 +125,4 @@ class KeryiUserInfo extends Component {
   }
 }
 
-export default KeryiUserInfo;
+export default LdanmUserInfo;

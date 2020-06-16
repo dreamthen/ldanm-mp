@@ -1,6 +1,6 @@
 import Taro, {Component} from '@tarojs/taro';
 import PropTypes from 'prop-types';
-import Keryi from '../utils';
+import Ldanm from '../utils';
 import {
   Block,
   Image,
@@ -18,7 +18,7 @@ import './index.less';
  * 抽象分享页面业务组件
  * @尹文楷
  */
-class KeryiNavBar extends Component {
+class LdanmNavBar extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -68,7 +68,7 @@ class KeryiNavBar extends Component {
   render() {
     const {title, className = '', color, leftIconPrefixClass, leftIconType, onClickLeftIcon, imgs = ''} = this.props;
     const {height = 0} = this.state;
-    const {statusBarClassName} = Keryi.adaptationNavBar() || {};
+    const {statusBarClassName} = Ldanm.adaptationNavBar() || {};
     return (
       <Block>
         <View
@@ -119,4 +119,4 @@ class KeryiNavBar extends Component {
   }
 }
 
-export default KeryiNavBar;
+export default LdanmNavBar;

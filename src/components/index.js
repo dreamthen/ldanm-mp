@@ -1,13 +1,13 @@
-import KeryiLogin from './Login';
-import KeryiUserInfo from './UserInfo';
-import KeryiNavBar from './NavBar';
-import KeryiTabBar from './TabBar';
-import KeryiImagePicker from './ImagePicker';
+import LdanmLogin from './Login';
+import LdanmUserInfo from './UserInfo';
+import LdanmNavBar from './NavBar';
+import LdanmTabBar from './TabBar';
+import LdanmImagePicker from './ImagePicker';
 
 export {
-  KeryiLogin,
-  KeryiUserInfo,
-  KeryiNavBar,
-  KeryiTabBar,
-  KeryiImagePicker
+  LdanmLogin,
+  LdanmUserInfo,
+  LdanmNavBar,
+  LdanmTabBar,
+  LdanmImagePicker
 };

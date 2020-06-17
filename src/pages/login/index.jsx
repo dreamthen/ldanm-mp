@@ -17,6 +17,9 @@ class LoginDemo extends Component {
     navigationBarTitleText: '登录'
   };
 
+  componentDidMount() {
+  }
+
   render() {
     return (
       <View className='keryi-login'>
@@ -28,12 +31,8 @@ class LoginDemo extends Component {
           header={{
             'content-type': 'application/x-www-form-urlencoded'
           }}
-          callBack={(data, statusCode) => {
-            if (statusCode === 200) {
-              console.log(data);
-            } else {
-              console.log(data);
-            }
+          callBack={(data, header) => {
+            console.log(data);
           }}
           done={(res) => {
             console.log(res);

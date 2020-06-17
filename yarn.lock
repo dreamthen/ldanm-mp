@@ -1007,6 +1007,18 @@
     swiper "4.4.2"
     weui "^1.1.2"
 
+"@tarojs/components@2.2.9":
+  version "2.2.9"
+  resolved "https://registry.npm.taobao.org/@tarojs/components/download/@tarojs/components-2.2.9.tgz#832c6ea09ba1ac763363a7e82185ece61d990882"
+  integrity sha1-gyxuoJuhrHYzY6foIYXs5h2ZCII=
+  dependencies:
+    classnames "^2.2.5"
+    intersection-observer "^0.7.0"
+    omit.js "^1.0.0"
+    resolve-pathname "^3.0.0"
+    swiper "4.4.2"
+    weui "^1.1.2"
+
 "@tarojs/helper@^2.2.7", "@tarojs/helper@^2.2.8":
   version "2.2.8"
   resolved "https://registry.npm.taobao.org/@tarojs/helper/download/@tarojs/helper-2.2.8.tgz?cache=0&sync_timestamp=1592206600786&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40tarojs%2Fhelper%2Fdownload%2F%40tarojs%2Fhelper-2.2.8.tgz#67a3df846fd07056166d91d4c6697164a43b64b3"
@@ -1233,6 +1245,13 @@
   dependencies:
     "@tarojs/utils" "^2.2.7"
 
+"@tarojs/taro@2.2.9":
+  version "2.2.9"
+  resolved "https://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-2.2.9.tgz#b507dc3813c0c3c5ee5265aba183aa19247bc68f"
+  integrity sha1-tQfcOBPAw8XuUmWroYOqGSR7xo8=
+  dependencies:
+    "@tarojs/utils" "^2.2.9"
+
 "@tarojs/taro@^2.2.7", "@tarojs/taro@^2.2.8":
   version "2.2.8"
   resolved "https://registry.npm.taobao.org/@tarojs/taro/download/@tarojs/taro-2.2.8.tgz#73d7f3aa10a940fb5d3bf2108c096dcdade69290"
@@ -1271,7 +1290,7 @@
     prettier "^1.14.2"
     typescript "^3.2.2"
 
-"@tarojs/utils@^2.2.7", "@tarojs/utils@^2.2.8":
+"@tarojs/utils@^2.2.7", "@tarojs/utils@^2.2.8", "@tarojs/utils@^2.2.9":
   version "2.2.9"
   resolved "https://registry.npm.taobao.org/@tarojs/utils/download/@tarojs/utils-2.2.9.tgz?cache=0&sync_timestamp=1592323861746&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40tarojs%2Futils%2Fdownload%2F%40tarojs%2Futils-2.2.9.tgz#8e5fcf573c45aea66243398290ab7e058fd8c050"
   integrity sha1-jl/PVzxFrqZiQzmCkKt+BY/YwFA=
@@ -6436,13 +6455,13 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-ldanm-taro-frc@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.npm.taobao.org/ldanm-taro-frc/download/ldanm-taro-frc-0.0.6.tgz#be27c836544a6da3cfb7644f07311a5c9247097b"
-  integrity sha1-vifINlRKbaPPt2RPBzEaXJJHCXs=
+ldanm-taro-frc@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.npm.taobao.org/ldanm-taro-frc/download/ldanm-taro-frc-0.0.9.tgz#09908a74ae411620481618f3c57b1cf21af6b750"
+  integrity sha1-CZCKdK5BFiBIFhjzxXsc8hr2t1A=
   dependencies:
-    "@tarojs/components" "2.2.7"
-    "@tarojs/taro" "2.2.7"
+    "@tarojs/components" "2.2.9"
+    "@tarojs/taro" "2.2.9"
     classnames "^2.2.6"
     prop-types "^15.7.2"
     taro-ui "^2.3.4"

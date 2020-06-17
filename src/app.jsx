@@ -9,7 +9,6 @@ import TabBar from './pages/tabBar';
 import ImagePicker from './pages/imagePicker';
 
 import store from './store';
-import {Image} from '@tarojs/components';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：

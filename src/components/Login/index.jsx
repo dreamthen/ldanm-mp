@@ -11,7 +11,7 @@ import Ldanm from '../utils';
  * 功能组件
  * 登录
  */
-class LdanmLogin extends Component {
+class Login extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -101,4 +101,4 @@ class LdanmLogin extends Component {
   }
 }
 
-export default LdanmLogin;
+export default Login;

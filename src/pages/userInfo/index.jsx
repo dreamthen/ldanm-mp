@@ -2,9 +2,7 @@ import Taro, {Component} from '@tarojs/taro';
 import {
   View
 } from '@tarojs/components';
-import {
-  UserInfo
-} from 'ldanm-taro-frc';
+import UserInfo from "../../components/UserInfo";
 
 
 class UserInfoDemo extends Component {

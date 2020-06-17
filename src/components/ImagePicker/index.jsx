@@ -14,7 +14,7 @@ import './index.less';
  * 抽象图片选择器
  * @尹文楷
  */
-class LdanmImagePicker extends Component {
+class ImagePicker extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -163,4 +163,4 @@ class LdanmImagePicker extends Component {
   }
 }
 
-export default LdanmImagePicker;
+export default ImagePicker;

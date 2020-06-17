@@ -2,9 +2,7 @@ import Taro, {Component} from '@tarojs/taro';
 import {
   View
 } from '@tarojs/components';
-import {
-  NavBar
-} from 'ldanm-taro-frc';
+import NavBar from "../../components/NavBar";
 
 import {imgs} from '../../assets';
 

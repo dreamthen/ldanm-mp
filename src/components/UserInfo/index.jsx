@@ -11,7 +11,7 @@ import * as constants from './constants';
  * 功能组件
  * 个人信息
  */
-class LdanmUserInfo extends Component {
+class UserInfo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -125,4 +125,4 @@ class LdanmUserInfo extends Component {
   }
 }
 
-export default LdanmUserInfo;
+export default UserInfo;

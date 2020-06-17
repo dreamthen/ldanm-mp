@@ -17,7 +17,7 @@ import './index.less';
  * 抽象分享页面业务组件
  * @尹文楷
  */
-class LdanmTabBar extends Component {
+class TabBar extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -94,4 +94,4 @@ class LdanmTabBar extends Component {
   }
 }
 
-export default LdanmTabBar;
+export default TabBar;

@@ -18,7 +18,7 @@ import './index.less';
  * 抽象分享页面业务组件
  * @尹文楷
  */
-class LdanmNavBar extends Component {
+class NavBar extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -119,4 +119,4 @@ class LdanmNavBar extends Component {
   }
 }
 
-export default LdanmNavBar;
+export default NavBar;

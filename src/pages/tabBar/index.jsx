@@ -3,9 +3,7 @@ import {
   View
 } from '@tarojs/components';
 import * as constants from './constants';
-import {
-  TabBar
-} from 'ldanm-taro-frc';
+import TabBar from "../../components/TabBar";
 
 import 'taro-ui/dist/style/components/tab-bar.scss';
 import 'taro-ui/dist/style/components/badge.scss';

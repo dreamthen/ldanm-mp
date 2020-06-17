@@ -3,7 +3,7 @@ import {
   View
 } from '@tarojs/components';
 import {
-  LdanmImagePicker
+  ImagePicker
 } from 'ldanm-taro-frc';
 
 import 'taro-ui/dist/style/components/image-picker.scss';
@@ -66,7 +66,7 @@ class ImagePicker extends Component {
     } = this;
     return (
       <View className='hupu-imagePicker'>
-        <LdanmImagePicker
+        <ImagePicker
           action='https://pet.api.1jtec.com/tinyStatics/uploadImg/v2'
           name='file'
           files={files}

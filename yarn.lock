@@ -6436,10 +6436,10 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-ldanm-taro-frc@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npm.taobao.org/ldanm-taro-frc/download/ldanm-taro-frc-0.0.4.tgz?cache=0&sync_timestamp=1592324867596&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fldanm-taro-frc%2Fdownload%2Fldanm-taro-frc-0.0.4.tgz#c4a5dd848de00a061d8c212a789339fd7c8b2744"
-  integrity sha1-xKXdhI3gCgYdjCEqeJM5/XyLJ0Q=
+ldanm-taro-frc@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npm.taobao.org/ldanm-taro-frc/download/ldanm-taro-frc-0.0.5.tgz?cache=0&sync_timestamp=1592374608663&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fldanm-taro-frc%2Fdownload%2Fldanm-taro-frc-0.0.5.tgz#fc36804150090f8eb0e6d12bdcc621581a1a2dff"
+  integrity sha1-/DaAQVAJD46w5tEr3MYhWBoaLf8=
   dependencies:
     "@tarojs/components" "2.2.7"
     "@tarojs/taro" "2.2.7"

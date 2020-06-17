@@ -4,7 +4,7 @@ import {
 } from '@tarojs/components';
 import * as constants from './constants';
 import {
-  LdanmTabBar
+  TabBar
 } from 'ldanm-taro-frc';
 
 import 'taro-ui/dist/style/components/tab-bar.scss';
@@ -42,7 +42,7 @@ class TabBar extends Component {
     const {current = 0} = this.state;
     return (
       <View className='hupu-tabBar'>
-        <LdanmTabBar
+        <TabBar
           fixed
           tabList={constants.tabBarConfig}
           current={current}

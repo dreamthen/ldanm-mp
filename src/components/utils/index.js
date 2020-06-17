@@ -13,7 +13,7 @@ const Ldanm = (() => {
      * @returns {*}
      */
     request = (...params) => {
-      return requestApi.requestConfig.apply(this.wx, params);
+      return requestApi.requests.apply(this.wx, [...params, this]);
     };
 
     /**

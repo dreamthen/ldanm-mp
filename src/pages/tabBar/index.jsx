@@ -11,7 +11,7 @@ import 'taro-ui/dist/style/components/tab-bar.scss';
 import 'taro-ui/dist/style/components/badge.scss';
 
 
-class TabBar extends Component {
+class TabBarDemo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -53,4 +53,4 @@ class TabBar extends Component {
   }
 }
 
-export default TabBar;
+export default TabBarDemo;

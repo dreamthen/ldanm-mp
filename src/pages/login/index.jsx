@@ -6,7 +6,7 @@ import {
 import {Login} from 'ldanm-taro-frc';
 
 
-class Login extends Component {
+class LoginDemo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -68,4 +68,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default LoginDemo;

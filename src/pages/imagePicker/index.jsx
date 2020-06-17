@@ -11,7 +11,7 @@ import 'taro-ui/dist/style/components/icon.scss';
 import './index.less';
 
 
-class ImagePicker extends Component {
+class ImagePickerDemo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -80,4 +80,4 @@ class ImagePicker extends Component {
   }
 }
 
-export default ImagePicker;
+export default ImagePickerDemo;

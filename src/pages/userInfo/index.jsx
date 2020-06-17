@@ -7,7 +7,7 @@ import {
 } from 'ldanm-taro-frc';
 
 
-class UserInfo extends Component {
+class UserInfoDemo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -80,4 +80,4 @@ class UserInfo extends Component {
   }
 }
 
-export default UserInfo;
+export default UserInfoDemo;

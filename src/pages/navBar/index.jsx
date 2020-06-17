@@ -9,7 +9,7 @@ import {
 import {imgs} from '../../assets';
 
 
-class NavBar extends Component {
+class NavBarDemo extends Component {
   static options = {
     addGlobalClass: true
   };
@@ -55,4 +55,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default NavBarDemo;

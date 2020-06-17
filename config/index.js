@@ -10,6 +10,10 @@ const config = {
     '750': 1,
     '828': 1.81 / 2
   },
+  plugins: [
+    "@tarojs/plugin-less",
+    "@tarojs/plugin-sass"
+  ],
   sourceRoot: 'src',
   outputRoot: 'dist',
   babel: {
@@ -38,34 +42,34 @@ const config = {
     webpackChain(chain, webpack) {
       chain.plugin('bundleAnalyzer').use(new BundleAnalyzer(), []);
       chain.plugin('contextReplacement').use(new webpack.ContextReplacementPlugin(/\/[\\]?locale/, /zh-cn/), []);
-      chain.optimization.splitChunks({
-        chunks: 'all',
-        name: 'vendors',
-        maxInitialRequests: Infinity,
-        minSize: 0,
-        cacheGroups: {
-          common: {
-            name: !!chain.isBuildPlugin ? 'plugin/common' : 'common',
-            minSize: 0,
-            minChunks: 2,
-            chunks: 'initial',
-            priority: 1
-          },
-          vendors: {
-            name: !!chain.isBuildPlugin ? 'plugin/vendors' : 'vendors',
-            minSize: 0,
-            minChunks: 2,
-            chunks: 'initial',
-            priority: 10,
-            test: (module) => {
-              // 如果需要自定义配置，PARSE_AST_TYPE 可以从 webpackChain 第三个参数获得
-              return /[\\/]node_modules[\\/]/.test(module.resource);
-            }
-          }
-        }
-      });
+      // chain.optimization.splitChunks({
+      //   chunks: 'all',
+      //   name: 'vendors',
+      //   maxInitialRequests: Infinity,
+      //   minSize: 0,
+      //   cacheGroups: {
+      //     common: {
+      //       name: !!chain.isBuildPlugin ? 'plugin/common' : 'common',
+      //       minSize: 0,
+      //       minChunks: 2,
+      //       chunks: 'initial',
+      //       priority: 1
+      //     },
+      //     vendors: {
+      //       name: !!chain.isBuildPlugin ? 'plugin/vendors' : 'vendors',
+      //       minSize: 0,
+      //       minChunks: 2,
+      //       chunks: 'initial',
+      //       priority: 10,
+      //       test: (module) => {
+      //         // 如果需要自定义配置，PARSE_AST_TYPE 可以从 webpackChain 第三个参数获得
+      //         return /[\\/]node_modules[\\/]/.test(module.resource);
+      //       }
+      //     }
+      //   }
+      // });
     },
-    commonChunks: ['runtime', 'vendors', 'common'],
+    commonChunks: ['runtime', 'vendors', 'common', 'taro'],
     postcss: {
       autoprefixer: {
         enable: true,

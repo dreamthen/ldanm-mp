@@ -4,6 +4,7 @@ import {
   Button
 } from '@tarojs/components';
 import Login from "../../components/Login";
+import OutLogin from "../../components/OutLogin";
 
 
 class LoginDemo extends Component {
@@ -18,20 +19,19 @@ class LoginDemo extends Component {
   };
 
   componentDidMount() {
-    // console.log(OutLogin);
-    // OutLogin({
-    //   url: 'https://huya-dev.hupu.com/public/index.php/program/login',
-    //   method: 'post',
-    //   header: {
-    //     'content-type': 'application/x-www-form-urlencoded'
-    //   },
-    //   callBack: (data, header) => {
-    //     console.log(data);
-    //   },
-    //   done: (res) => {
-    //     console.log(res);
-    //   }
-    // });
+    OutLogin({
+      url: 'https://huya-dev.hupu.com/public/index.php/program/login',
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      callBack: (data, header) => {
+        console.log(data);
+      },
+      done: (res) => {
+        console.log(res);
+      }
+    });
   }
 
   render() {

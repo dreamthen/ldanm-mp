@@ -54,7 +54,7 @@ class UserInfo extends Component {
   componentWillMount() {
   }
 
-  componentDidMount() {
+  componentDidShow() {
     const {
       callBack = () => {
       },

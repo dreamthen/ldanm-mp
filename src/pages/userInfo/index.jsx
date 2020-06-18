@@ -37,23 +37,31 @@ class UserInfoDemo extends Component {
   /**
    * 获取用户的个人信息
    */
-  getUserInfoHandler = ({detail: {userInfo}}) => {
-    const {nickName = '', avatarUrl = ''} = userInfo;
-    this.setState({
-      nickName,
-      avatar: avatarUrl,
-      show: false
-    });
+  getUserInfoHandler = (res = {}) => {
+    const {detail = {}} = res;
+    const {userInfo} = detail;
+    if (userInfo) {
+      const {nickName = '', avatarUrl = ''} = userInfo;
+      this.setState({
+        nickName,
+        avatar: avatarUrl,
+        show: false
+      });
+    }
   };
 
   /**
    * 获取用户的手机号码
    */
-  getPhoneNumberHandler = ({detail: {errMsg}}) => {
-    this.setState({
-      showPhone: false,
-      phone: errMsg
-    });
+  getPhoneNumberHandler = (res = {}) => {
+    const {detail = {}} = res;
+    const {errMsg} = detail;
+    if (errMsg) {
+      this.setState({
+        showPhone: false,
+        phone: errMsg
+      });
+    }
   }
 
   render() {

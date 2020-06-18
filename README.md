@@ -141,7 +141,6 @@ PS: 需要node > 8的node版本
 | callBack | function | 登录之后的回调函数 | (res) => {} |
 | done | function | 登录完全完成的回调函数 | (res) => {} |
 
-
 > 使用
 
 ```jsx

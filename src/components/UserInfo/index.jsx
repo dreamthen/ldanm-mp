@@ -17,8 +17,14 @@ class UserInfo extends Component {
   };
 
   static propTypes = {
+    //指定返回用户信息的语言,zh_CN简体中文,zh_TW繁体中文,en英文
+    lang: PropTypes.string,
+    //按钮的尺寸
+    size: PropTypes.string,
+    //按钮类型
+    buttonType: PropTypes.string,
     //选择类型
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
     //是否显示点击获取个人信息的按钮
     visible: PropTypes.bool,
     //保存或者获取用户个人信息成功之后的回调
@@ -102,7 +108,14 @@ class UserInfo extends Component {
   };
 
   render() {
-    const {className = '', text = '', type = 'userInfo'} = this.props;
+    const {
+      className = '',
+      size = 'default',
+      text = '',
+      type = 'userInfo',
+      lang = 'zh_CN',
+      buttonType = 'primary'
+    } = this.props;
     const {show = false} = this.state;
     const {
       getUserInfoHandler = () => {
@@ -112,6 +125,9 @@ class UserInfo extends Component {
       <View className={cns('ldm-userInfo', className)}>
         {
           show ? text ? <Button
+            size={size}
+            type={buttonType}
+            lang={lang}
             className='ldm-userInfo-get'
             openType={constants.typeConfig[type]}
             onGetUserInfo={getUserInfoHandler}

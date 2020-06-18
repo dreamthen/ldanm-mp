@@ -61,6 +61,9 @@ PS: 需要node > 8的node版本
 
 | 属性名 | 属性类型 | 属性描述 | 默认值 |
 | :----: | :----: | :----: | :----: |
+| lang | string | 返回用户信息的语言 | 'zh_CN' |
+| buttonType | string | 按钮类型 | 'primary' |
+| size | string | 按钮尺寸 | 'default' |
 | type | string | 选择个人信息的类型('userInfo' or 'phone') | 'userInfo' |
 | visible | boolean | 是否显示点击获取个人信息的按钮 | true |
 | callBack | function | 保存或者获取用户个人信息成功之后的回调 | (res) => {} |

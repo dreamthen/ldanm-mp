@@ -1,18 +1,18 @@
 {
 	"name": "ldm-taro-frc",
-	"version": "0.2.5",
+	"version": "0.2.6",
 	"description": "拉旦木小程序-功能组件(基于taro)",
 	"templateInfo": {
 		"name": "redux",
 		"typescript": false,
 		"css": "less"
 	},
-  "keywords": [
-    "ldm",
-    "taro",
-    "mp",
-    "frc"
-  ],
+	"keywords": [
+		"ldm",
+		"taro",
+		"mp",
+		"frc"
+	],
 	"main": "dist/index.js",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"

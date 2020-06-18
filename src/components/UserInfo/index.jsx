@@ -82,6 +82,7 @@ class UserInfo extends Component {
               this.setState({
                 show: true
               });
+              callBack({});
             }
           },
           fail: (res) => {

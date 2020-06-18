@@ -1,7 +1,3 @@
-import Taro from '@tarojs/taro'
-
-Taro.initPxTransform({ designWidth: 750, deviceRatio: {} })
-
 export { default as LdmLogin } from './components/Login';
 export { default as LdmUserInfo } from './components/UserInfo';
 // export { default as LdmNavBar } from './components/NavBar';

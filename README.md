@@ -89,7 +89,7 @@ PS: 需要node > 8的node版本
             直接登录:
             <LdmLogin
               canClick={false}
-              url='https://huya-dev.hupu.com/public/index.php/program/login'
+              url='https://hupu.com/public/index.php/program/login'
               method='post'
               header={{
                 'content-type': 'application/x-www-form-urlencoded'
@@ -105,7 +105,7 @@ PS: 需要node > 8的node版本
             <LdmLogin
               canClick
               className='ldm-login-button'
-              url='https://huya-dev.hupu.com/public/index.php/program/login'
+              url='https://hupu.com/public/index.php/program/login'
               method='post'
               header={{
                 'content-type': 'application/x-www-form-urlencoded'
@@ -166,7 +166,7 @@ PS: 需要node > 8的node版本
     
       componentDidMount() {
           LdmOutLogin({
-            url: 'https://huya-dev.hupu.com/public/index.php/program/login',
+            url: 'https://hupu.com/public/index.php/program/login',
             method: 'post',
             header: {
               'content-type': 'application/x-www-form-urlencoded'

@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import cns from 'classnames';
 import * as constants from './constants';
 
+import './index.less';
+
 /**
  * 功能组件
  * 个人信息

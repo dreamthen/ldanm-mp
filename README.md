@@ -55,6 +55,144 @@ PS: 需要node > 8的node版本
 | className | string | 外部传入样式表 | '' |
 | done | function | 登录完全完成的回调函数 | (res) => {} |
 
+> 使用
+
+```jsx
+    import Taro, {Component} from '@tarojs/taro';
+    import {
+      View,
+      Button
+    } from '@tarojs/components';
+    import {
+        LdmLogin,
+        LdmOutLogin
+    } from 'ldm-taro-frc';
+    
+    
+    class LoginDemo extends Component {
+      static options = {
+        addGlobalClass: true
+      };
+    
+      state = {};
+    
+      config = {
+        navigationBarTitleText: '登录'
+      };
+    
+      componentDidMount() {
+      }
+    
+      render() {
+        return (
+          <View className='ldm-login'>
+            直接登录:
+            <LdmLogin
+              canClick={false}
+              url='https://huya-dev.hupu.com/public/index.php/program/login'
+              method='post'
+              header={{
+                'content-type': 'application/x-www-form-urlencoded'
+              }}
+              callBack={(data, header) => {
+                console.log(data);
+              }}
+              done={(res) => {
+                console.log(res);
+              }}
+            />
+            点击按钮登录:
+            <LdmLogin
+              canClick
+              className='ldm-login-button'
+              url='https://huya-dev.hupu.com/public/index.php/program/login'
+              method='post'
+              header={{
+                'content-type': 'application/x-www-form-urlencoded'
+              }}
+              callBack={(data, header) => {
+                console.log(data);
+              }}
+              done={(res) => {
+                console.log(res);
+              }}
+            >
+              <Button>
+                点击登录
+              </Button>
+            </LdmLogin>
+          </View>
+        )
+      }
+    }
+    
+    export default LoginDemo;
+```
+
+### 外部登录
+
+> OutLogin
+
+| 属性名 | 属性类型 | 属性描述 | 默认值 |
+| :----: | :----: | :----: | :----: |
+| url | string | 匹配token登录的url | '' |
+| method | string | 匹配token登录的请求方式 | 'get' |
+| header | object | 匹配token登录的请求头部 | {'content-type': 'application/json'} |
+| callBack | function | 登录之后的回调函数 | (res) => {} |
+| done | function | 登录完全完成的回调函数 | (res) => {} |
+
+
+> 使用
+
+```jsx
+    import Taro, {Component} from '@tarojs/taro';
+    import {
+      View
+    } from '@tarojs/components';
+    import {
+        LdmOutLogin
+    } from 'ldm-taro-frc';
+    
+    
+    class OutLoginDemo extends Component {
+      static options = {
+        addGlobalClass: true
+      };
+    
+      state = {};
+    
+      config = {
+        navigationBarTitleText: '登录'
+      };
+    
+      componentDidMount() {
+          LdmOutLogin({
+            url: 'https://huya-dev.hupu.com/public/index.php/program/login',
+            method: 'post',
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            callBack: (data, header) => {
+              console.log(data);
+            },
+            done: (res) => {
+              console.log(res);
+            }
+          });
+      }
+    
+      render() {
+        return (
+          <View className='ldm-login'>
+           
+          </View>
+        )
+      }
+    }
+    
+    export default OutLoginDemo;
+```
+
 ### 获取个人信息
 
 > UserInfo

@@ -39,7 +39,7 @@ class NavBarDemo extends Component {
       }
     } = this;
     return (
-      <View className='keryi-NavBar'>
+      <View className='ldm-navBar'>
         <NavBar
           title='自定义导航'
           imgs={imgs.back}

@@ -36,7 +36,7 @@ class LoginDemo extends Component {
 
   render() {
     return (
-      <View className='keryi-login'>
+      <View className='ldm-login'>
         直接登录:
         <Login
           canClick={false}
@@ -55,7 +55,7 @@ class LoginDemo extends Component {
         点击按钮登录:
         <Login
           canClick
-          className='keryi-login-button'
+          className='ldm-login-button'
           url='https://huya-dev.hupu.com/public/index.php/program/login'
           method='post'
           header={{

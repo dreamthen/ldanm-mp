@@ -56,6 +56,7 @@ class Login extends Component {
       }
     } = this.props;
     Taro.login({
+      timeout: 5000,
       success: ({code}) => {
         Ldanm.request({
           url,

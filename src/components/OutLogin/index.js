@@ -11,6 +11,7 @@ export default function OutLogin({
                                    }
                                  }) {
   Taro.login({
+    timeout: 5000,
     success: ({code}) => {
       Ldanm.request({
         url,

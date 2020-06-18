@@ -144,7 +144,7 @@ class ImagePicker extends Component {
       }
     } = this;
     return (
-      <View className={cns('keryi-imagePicker', className)}>
+      <View className={cns('ldm-imagePicker', className)}>
         <AtImagePicker
           files={filesList}
           mode={mode}

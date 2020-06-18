@@ -74,7 +74,7 @@ class NavBar extends Component {
         <View
           id='navBar'
           className={cns(
-            'keryi-navBar',
+            'ldm-navBar',
             statusBarClassName,
             className
           )}

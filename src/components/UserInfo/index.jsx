@@ -109,10 +109,10 @@ class UserInfo extends Component {
       }
     } = this;
     return (
-      <View className={cns('keryi-userInfo', className)}>
+      <View className={cns('ldm-userInfo', className)}>
         {
           show ? text ? <Button
-            className='keryi-userInfo-get'
+            className='ldm-userInfo-get'
             openType={constants.typeConfig[type]}
             onGetUserInfo={getUserInfoHandler}
             onGetPhoneNumber={getUserInfoHandler}

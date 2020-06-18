@@ -27,26 +27,26 @@ const Ldanm = (() => {
         if (model === 'iPhone X') {
           navBarAdaptation['navBarHeight'] = 184;
           navBarAdaptation['navBarPaddingTop'] = 82;
-          navBarAdaptation['statusBarClassName'] = 'keryi-iPhoneX-navBar';
+          navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneX-navBar';
           navBarAdaptation['isX'] = true;
         } else if (model.indexOf('iPhone X') !== -1) {
           navBarAdaptation['navBarHeight'] = 174;
           navBarAdaptation['navBarPaddingTop'] = 82;
-          navBarAdaptation['statusBarClassName'] = 'keryi-iPhoneXM-navBar';
+          navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneXM-navBar';
           navBarAdaptation['isX'] = true;
         } else if (model === 'iPhone 5') {
           navBarAdaptation['navBarHeight'] = 158;
           navBarAdaptation['navBarPaddingTop'] = 82;
-          navBarAdaptation['statusBarClassName'] = 'keryi-iPhone5-navBar';
+          navBarAdaptation['statusBarClassName'] = 'ldm-iPhone5-navBar';
         } else if (model.indexOf('iPhone') !== -1) {
           navBarAdaptation['navBarHeight'] = 136;
           navBarAdaptation['navBarPaddingTop'] = 30;
-          navBarAdaptation['statusBarClassName'] = 'keryi-iPhone-navBar';
+          navBarAdaptation['statusBarClassName'] = 'ldm-iPhone-navBar';
         }
       } else if (system.indexOf('Android') !== -1) {
         navBarAdaptation['navBarHeight'] = 136;
         navBarAdaptation['navBarPaddingTop'] = 40;
-        navBarAdaptation['statusBarClassName'] = 'keryi-Android-navBar';
+        navBarAdaptation['statusBarClassName'] = 'ldm-Android-navBar';
       }
       return navBarAdaptation;
     }

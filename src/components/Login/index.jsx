@@ -95,7 +95,7 @@ class Login extends Component {
       }
     } = this;
     return (
-      <View className={cns('keryi-basic-login', className)} onClick={() => {canClick && loginHandler();}}>
+      <View className={cns('ldm-basic-login', className)} onClick={() => {canClick && loginHandler();}}>
         {canClick && this.props.children}
       </View>
     )

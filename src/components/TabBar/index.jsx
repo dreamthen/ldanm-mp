@@ -75,9 +75,9 @@ class TabBar extends Component {
     } = this.props;
     const {isX} = Ldanm.adaptationNavBar();
     return (
-      <View className={cns('keryi-tabBar', className)}>
+      <View className={cns('ldm-tabBar', className)}>
         <AtTabBar
-          className='keryi-tabBar-component'
+          className='ldm-tabBar-component'
           customStyle={{height: `${constants.tabBarConstantsHeight[isX]}PX`, padding: 0}}
           tabList={tabList}
           onClick={onChange}

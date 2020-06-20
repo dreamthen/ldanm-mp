@@ -8,14 +8,14 @@ import {
 } from '@tarojs/components';
 import {
   AtIcon
-} from 'taro-ui';
+} from './icon';
 import cns from 'classnames';
 
 import 'taro-ui/dist/style/components/flex.scss';
 import './index.less';
 
 /**
- * 抽象分享页面业务组件
+ * 抽象顶部自定义导航组件
  * @尹文楷
  */
 class NavBar extends Component {

@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro';
 import * as requestApi from './request';
+import * as packageApi from './package';
 
 const Ldanm = (() => {
   class Ldanm {
@@ -14,6 +15,10 @@ const Ldanm = (() => {
      */
     request = (...params) => {
       return requestApi.requests.apply(this.wx, [...params, this]);
+    };
+
+    initTest = () => {
+      return packageApi.initTest.initTestEnv();
     };
 
     /**

@@ -1,22 +1,19 @@
-import classNames from 'classnames'
-import PropTypes, { InferProps } from 'prop-types'
-import { AtIconProps } from 'types/icon'
-import { Text } from '@tarojs/components'
-import Taro from '@tarojs/taro'
-import AtComponent from '../../common/component'
-import { initTestEnv } from '../../common/utils'
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import {Text} from '@tarojs/components';
+import Taro from '@tarojs/taro';
+import AtComponent from '../../../common/component';
+import Ldanm from "../../utils";
 
-initTestEnv()
+Ldanm.initTest();
 
-export default class AtIcon extends AtComponent<AtIconProps> {
-  public static defaultProps: AtIconProps
-  public static propTypes: InferProps<AtIconProps>
+export default class AtIcon extends AtComponent {
 
-  private handleClick(): void {
-    this.props.onClick && this.props.onClick(arguments as any)
-  }
+  handleClick = () => {
+    this.props.onClick && this.props.onClick(arguments);
+  };
 
-  public render(): JSX.Element {
+  render(){
     const {
       customStyle,
       className,
@@ -35,7 +32,7 @@ export default class AtIcon extends AtComponent<AtIconProps> {
     return (
       <Text
         className={classNames(prefixClass, iconName, className)}
-        style={this.mergeStyle(rootStyle, customStyle as object)}
+        style={this.mergeStyle(rootStyle, customStyle)}
         onClick={this.handleClick.bind(this)}
       ></Text>
     )
@@ -49,7 +46,8 @@ AtIcon.defaultProps = {
   value: '',
   color: '',
   size: 24,
-  onClick: () => {}
+  onClick: () => {
+  }
 }
 
 AtIcon.propTypes = {

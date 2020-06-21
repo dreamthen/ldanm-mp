@@ -4,9 +4,9 @@ import {
   View
 } from '@tarojs/components';
 import cns from 'classnames';
-import {
-  AtImagePicker
-} from 'taro-ui';
+// import {
+//   AtImagePicker
+// } from 'taro-ui';
 
 import './index.less';
 
@@ -145,19 +145,19 @@ class ImagePicker extends Component {
     } = this;
     return (
       <View className={cns('ldm-imagePicker', className)}>
-        <AtImagePicker
-          files={filesList}
-          mode={mode}
-          showAddBtn={showAddBtn}
-          multiple={multiple}
-          count={count}
-          sizeType={sizeType}
-          sourceType={sourceType}
-          length={length}
-          onChange={onChangeHandler}
-          onImageClick={onImageClick}
-          onFail={onFail}
-        />
+        {/*<AtImagePicker*/}
+        {/*  files={filesList}*/}
+        {/*  mode={mode}*/}
+        {/*  showAddBtn={showAddBtn}*/}
+        {/*  multiple={multiple}*/}
+        {/*  count={count}*/}
+        {/*  sizeType={sizeType}*/}
+        {/*  sourceType={sourceType}*/}
+        {/*  length={length}*/}
+        {/*  onChange={onChangeHandler}*/}
+        {/*  onImageClick={onImageClick}*/}
+        {/*  onFail={onFail}*/}
+        {/*/>*/}
       </View>
     )
   }

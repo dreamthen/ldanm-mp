@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Image, View} from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import AtComponent from '../../../common/component';
-import Ldanm from "../../../components/utils";
+import Ldanm from "../../utils";
 
 // 生成 jsx 二维矩阵
 const generateMatrix = (

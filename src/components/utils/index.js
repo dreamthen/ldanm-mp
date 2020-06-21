@@ -17,8 +17,18 @@ const Ldanm = (() => {
       return requestApi.requests.apply(this.wx, [...params, this]);
     };
 
+    /**
+     * 初始化测试环境
+     */
     initTest = () => {
       return packageApi.initTest.initTestEnv();
+    };
+
+    /**
+     * 获取uuid
+     */
+    uuid = (...params) => {
+      return packageApi.uuid.uuid(...params);
     };
 
     /**

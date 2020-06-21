@@ -4,7 +4,9 @@ import {
   View
 } from '@tarojs/components';
 import cns from 'classnames';
+
 import AtImagePicker from "./image-picker";
+import Ldanm from "../utils";
 
 import './index.less';
 
@@ -46,6 +48,12 @@ class ImagePicker extends Component {
     length: PropTypes.number,
     //files 值发生添加触发的回调函数,operationType 操作类型有添加,移除,如果是移除操作,则第三个参数代表的是移除图片的索引
     onAdd: PropTypes.func,
+    //files 值发生添加触发前的回调函数
+    onAddBefore: PropTypes.func,
+    //files 值发生添加触发上传文件前的回调函数
+    onAddUploadBefore: PropTypes.func,
+    //files 值发生移除触发前的回调函数
+    onRemoveBefore: PropTypes.func,
     //files 值发生移除触发的回调函数,operationType 操作类型有添加,移除,如果是移除操作,则第三个参数代表的是移除图片的索引
     onRemove: PropTypes.func,
     //点击图片触发的回调
@@ -87,25 +95,35 @@ class ImagePicker extends Component {
       onAdd = () => {
       },
       onRemove = () => {
+      },
+      onAddBefore = () => {
+      },
+      onAddUploadBefore = () => {
+      },
+      onRemoveBefore = () => {
       }
     } = this.props;
     if (operationType === 'add') {
+      onAddBefore();
       this.setState({
         filesList: []
       }, () => {
         let {filesList = []} = this.state;
-        for (let fileItem of files) {
-          console.log(fileItem);
-          Taro.uploadFile({
+        const {length = 0} = files;
+        for (let [key, fileItem] of files.entries()) {
+          const {file: {size}} = fileItem;
+          onAddUploadBefore(fileItem);
+          Ldanm.uploadFile({
             url: action,
             method: 'post',
             filePath: fileItem.file.path,
             name,
+            size,
             header: Object.assign({}, {'content-type': 'multipart/form-data'}, header),
             formData: data,
-            success: ({data = '', statusCode = 200}) => {
+            success: (data = '', statusCode = 200) => {
               filesList = [...filesList, {url: data}];
-              onAdd(data, statusCode);
+              onAdd(data, statusCode, {key, value: fileItem, total: length});
             },
             fail: (res) => {
             },
@@ -115,6 +133,7 @@ class ImagePicker extends Component {
         }
       });
     } else {
+      onRemoveBefore();
       onRemove(files, index);
     }
   };

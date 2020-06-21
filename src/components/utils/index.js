@@ -18,6 +18,14 @@ const Ldanm = (() => {
     };
 
     /**
+     * wx上传文件方法封装
+     * @param params
+     */
+    uploadFile(...params) {
+      return requestApi.uploadFile.apply(this.wx, params);
+    }
+
+    /**
      * 初始化测试环境
      */
     initTest = () => {

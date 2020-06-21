@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {View} from '@tarojs/components';
-import AtComponent from '../../../common/component';
+import AtComponent from '../component';
 
 export default class AtBadge extends AtComponent {
 

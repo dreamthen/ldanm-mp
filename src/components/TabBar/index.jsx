@@ -4,9 +4,7 @@ import {
   View
 } from '@tarojs/components';
 import cns from 'classnames';
-import {
-  AtTabBar
-} from 'taro-ui';
+import AtTabBar from './tab-bar';
 
 import Ldanm from '../utils';
 import * as constants from './constants';

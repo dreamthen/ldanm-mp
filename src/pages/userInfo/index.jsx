@@ -2,7 +2,7 @@ import Taro, {Component} from '@tarojs/taro';
 import {
   View
 } from '@tarojs/components';
-import UserInfo from "../../components/UserInfo";
+import UserInfo from '../../components/UserInfo';
 
 
 class UserInfoDemo extends Component {
@@ -73,7 +73,7 @@ class UserInfoDemo extends Component {
     } = this;
     const {nickName = '', avatar = '', show = true, showPhone = true, phone = ''} = this.state;
     return (
-      <View className='hupu-userInfo'>
+      <View className='ldm-userInfo'>
         <UserInfo visible={show} type='userInfo' text='获取个人信息' callBack={getUserInfoHandler}>
           用户名: {nickName}
           头像: {avatar}

@@ -3,8 +3,8 @@ import {
   View,
   Button
 } from '@tarojs/components';
-import Login from "../../components/Login";
-import OutLogin from "../../components/OutLogin";
+import Login from '../../components/Login';
+import OutLogin from '../../components/OutLogin';
 
 
 class LoginDemo extends Component {

@@ -319,6 +319,72 @@ PS: 需要node > 8的node版本
 | onClickLeftIcon | function | 左边第一个图标类型点击事件 | (event) => {} ) |
 | imgs | any | 是否传入的是图片，而不是icon，如果为图片就使用图片，否则使用icon | '' |
 
+> 使用
+
+```jsx
+    import Taro, {Component} from '@tarojs/taro';
+    import {
+      View
+    } from '@tarojs/components';
+    import {
+        LdmNavBar
+    } from 'ldm-taro-frc';
+    
+    import {imgs} from '../../assets';
+    
+    import 'taro-ui/dist/style/components/icon.scss';
+    import 'taro-ui/dist/style/components/flex.scss';
+    
+    
+    class NavBarDemo extends Component {
+      static options = {
+        addGlobalClass: true
+      };
+    
+      state = {};
+    
+      config = {
+        navigationBarTitleText: '',
+        navigationStyle: 'custom'
+      };
+    
+      componentDidMount() {
+    
+      }
+    
+      /**
+       * 回到上一主页页面
+       */
+      onBackHandler = (e) => {
+        Taro.navigateBack({
+          delta: 1
+        });
+        e.stopPropagation();
+      };
+    
+      render() {
+        const {
+          onBackHandler = () => {
+          }
+        } = this;
+        return (
+          <View className='ldm-navBar'>
+            <LdmNavBar
+              title='自定义导航'
+              imgs={imgs.back}
+              onClickLeftIcon={onBackHandler}
+            />
+            <View>
+              你好,我叫尹文楷
+            </View>
+          </View>
+        )
+      }
+    }
+    
+    export default NavBarDemo;
+```
+
 ### 底部自定义导航
 
 > TabBar
@@ -335,6 +401,79 @@ PS: 需要node > 8的node版本
 | color | string | 未选中标签字体与图标颜色 | #333 |
 | current | number | 当前选中的标签索引值，从0计数 | 0 |
 | onChange | function | 点击触发事件，开发者需要通过 onClick 事件来更新 current 值变化,必填 | (current) => {} |
+
+> 使用
+
+```jsx
+    import Taro, {Component} from '@tarojs/taro';
+    import {
+      View
+    } from '@tarojs/components';
+    import {
+        LdmTabBar
+    } from 'ldm-taro-frc';
+    
+    import 'taro-ui/dist/style/components/tab-bar.scss';
+    import 'taro-ui/dist/style/components/badge.scss';
+    
+    
+    class TabBarDemo extends Component {
+      static options = {
+        addGlobalClass: true
+      };
+    
+      state = {
+        //当前选中的标签索引值，从0计数
+        current: 0
+      };
+    
+      config = {
+        navigationBarTitleText: '底部自定义导航栏'
+      };
+    
+      componentDidMount() {
+      }
+    
+      /**
+       * 切换tab时进行监听的方法
+       */
+      onChangeHandler = (current) => {
+        this.setState({
+          current
+        });
+      };
+    
+      render() {
+        const {onChangeHandler} = this;
+        const {current = 0} = this.state;
+        return (
+          <View className='hupu-tabBar'>
+            <LdmTabBar
+              fixed
+              tabList={[{
+                          title: '首页',
+                          image: 'https://hupu-soccer.oss-cn-hangzhou.aliyuncs.com/huya/smallprogram/footer/home.png',
+                          selectedImage: 'https://hupu-soccer.oss-cn-hangzhou.aliyuncs.com/huya/smallprogram/footer/home-selected.png'
+                        }, {
+                          title: '课程',
+                          image: 'https://hupu-soccer.oss-cn-hangzhou.aliyuncs.com/huya/smallprogram/footer/course.png',
+                          selectedImage: 'https://hupu-soccer.oss-cn-hangzhou.aliyuncs.com/huya/smallprogram/footer/course-selected.png'
+                        }, {
+                          title: '我的',
+                          image: 'https://hupu-soccer.oss-cn-hangzhou.aliyuncs.com/huya/smallprogram/footer/me.png',
+                          selectedImage: 'https://hupu-soccer.oss-cn-hangzhou.aliyuncs.com/huya/smallprogram/footer/me-selected.png'
+                        }
+              ]}
+              current={current}
+              onChange={onChangeHandler}
+            />
+          </View>
+        )
+      }
+    }
+    
+    export default TabBarDemo;
+```
 
 ### 图片选择器
 

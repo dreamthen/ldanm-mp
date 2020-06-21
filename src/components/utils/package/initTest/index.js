@@ -1,4 +1,4 @@
-import Taro from "@tarojs/taro";
+import Taro from '@tarojs/taro';
 
 function initTestEnv(){
   if (process.env.NODE_ENV === 'test') {

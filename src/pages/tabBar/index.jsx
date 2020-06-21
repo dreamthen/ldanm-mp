@@ -3,7 +3,7 @@ import {
   View
 } from '@tarojs/components';
 import * as constants from './constants';
-import TabBar from "../../components/TabBar";
+import TabBar from '../../components/TabBar';
 
 import 'taro-ui/dist/style/components/tab-bar.scss';
 import 'taro-ui/dist/style/components/badge.scss';
@@ -39,7 +39,7 @@ class TabBarDemo extends Component {
     const {onChangeHandler} = this;
     const {current = 0} = this.state;
     return (
-      <View className='hupu-tabBar'>
+      <View className='ldm-tabBar'>
         <TabBar
           fixed
           tabList={constants.tabBarConfig}

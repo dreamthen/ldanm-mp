@@ -2,7 +2,7 @@ import Taro, {Component} from '@tarojs/taro';
 import {
   View
 } from '@tarojs/components';
-import ImagePicker from "../../components/ImagePicker";
+import ImagePicker from '../../components/ImagePicker';
 
 import 'taro-ui/dist/style/components/image-picker.scss';
 import 'taro-ui/dist/style/components/icon.scss';

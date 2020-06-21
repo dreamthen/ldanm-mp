@@ -8,10 +8,9 @@ import {
 } from '@tarojs/components';
 import {
   AtIcon
-} from './icon';
+} from '../../common/icon';
 import cns from 'classnames';
 
-import 'taro-ui/dist/style/components/flex.scss';
 import './index.less';
 
 /**

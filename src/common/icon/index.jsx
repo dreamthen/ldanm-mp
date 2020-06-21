@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {Text} from '@tarojs/components';
 import Taro from '@tarojs/taro';
-import AtComponent from '../../../common/component';
-import Ldanm from "../../utils";
+import AtComponent from '../component';
+import Ldanm from '../../components/utils';
 
 Ldanm.initTest();
 

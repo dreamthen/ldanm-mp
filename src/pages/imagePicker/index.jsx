@@ -26,13 +26,29 @@ class ImagePickerDemo extends Component {
   }
 
   /**
-   * 图片组变化添加时所触发的事件
+   * 图片组添加时所触发的事件
    * @param file
    */
-  onAdd = (file) => {
-    this.setState({
-      files: file
-    });
+  onAdd = (data, statusCode, {key, value: fileItem, total: length}) => {
+  }
+
+  /**
+   * 图片组添加触发前所触发的事件
+   */
+  onAddBefore = () => {
+  }
+
+  /**
+   * 图片组添加触发上传文件前的回调函数
+   * @param file
+   */
+  onAddUploadBefore = (file) => {
+  }
+
+  /**
+   * 图片组移除文件的回调函数
+   */
+  onRemove = (file, index) => {
   }
 
   /**
@@ -60,6 +76,12 @@ class ImagePickerDemo extends Component {
       onImageClick = () => {
       },
       onAdd = () => {
+      },
+      onAddBefore = () => {
+      },
+      onAddUploadBefore = () => {
+      },
+      onRemove = () => {
       }
     } = this;
     return (
@@ -72,6 +94,10 @@ class ImagePickerDemo extends Component {
           onFail={onFail}
           onImageClick={onImageClick}
           onAdd={onAdd}
+          onAddBefore={onAddBefore}
+          onAddUploadBefore={onAddUploadBefore}
+          onRemoveBefore={() => {}}
+          onRemove={onRemove}
         />
       </View>
     )

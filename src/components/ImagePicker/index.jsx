@@ -21,7 +21,7 @@ class ImagePicker extends Component {
 
   static propTypes = {
     //上传图片的url
-    action: PropTypes.string.isRequired,
+    action: PropTypes.string,
     //文件对应的 key,开发者在服务端可以通过这个 key获取文件的二进制内容
     name: PropTypes.string,
     //HTTP请求 Header,Header中不能设置Referer

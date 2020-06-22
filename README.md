@@ -490,7 +490,125 @@ PS: 需要node > 8的node版本
 | sizeType | array | 所选的图片的尺寸,2.0.2版本起支持 | [] |
 | sourceType | array | 选择图片的来源,2.0.2版本起支持 | [] |
 | length | number | 单行的图片数量 | 3 |
-| onChange | function | files 值发生变化触发的回调函数,operationType 操作类型有添加,移除,如果是移除操作,则第三个参数代表的是移除图片的索引 | (files: Array, operationType: string, index: number) => void |
+| onAdd | function | files 值发生添加触发的回调函数,operationType 操作类型有添加,移除,如果是移除操作,则第三个参数代表的是移除图片的索引 | (data: {}, statusCode: number, {key: number, value: {}, total: number}) => void |
+| onAddBefore | function | files 值发生添加触发前的回调函数 | () => {} |
+| onAddUploadBefore | function | files 值发生添加触发上传文件前的回调函数 | (file) => {} |
+| onRemove | function | files 值发生移除触发的回调函数,operationType 操作类型有添加,移除,如果是移除操作,则第三个参数代表的是移除图片的索引 | (file, index) => {} |
+| onRemoveBefore | function | files 值发生移除触发前的回调函数 | (file, index) => {} | 
 | onImageClick | function | 点击图片触发的回调 | (index: number, file: Object) => void |
 | onFail | function | 选择失败触发的回调 | (msg: string) => void |
+
+> 使用
+
+```jsx
+    import Taro, {Component} from '@tarojs/taro';
+    import {
+      View
+    } from '@tarojs/components';
+    import {
+        LdmImagePicker
+    } from 'ldm-taro-frc';
+    
+    import 'taro-ui/dist/style/components/image-picker.scss';
+    import 'taro-ui/dist/style/components/icon.scss';
+    import './index.less';
+    
+    
+    class ImagePickerDemo extends Component {
+      static options = {
+        addGlobalClass: true
+      };
+    
+      state = {
+        files: []
+      };
+    
+      config = {
+        navigationBarTitleText: '图片选择器'
+      };
+    
+      componentDidMount() {
+      }
+    
+      /**
+       * 图片组添加时所触发的事件
+       * @param file
+       */
+      onAdd = (data, statusCode, {key, value: fileItem, total: length}) => {
+      }
+    
+      /**
+       * 图片组添加触发前所触发的事件
+       */
+      onAddBefore = () => {
+      }
+    
+      /**
+       * 图片组添加触发上传文件前的回调函数
+       * @param file
+       */
+      onAddUploadBefore = (file) => {
+      }
+    
+      /**
+       * 图片组移除文件的回调函数
+       */
+      onRemove = (file, index) => {
+      }
+    
+      /**
+       * 图片加载失败时所触发的事件
+       * @param mes
+       */
+      onFail(mes) {
+        console.log(mes)
+      }
+    
+      /**
+       * 点击预览图片时所触发的事件
+       * @param index
+       * @param file
+       */
+      onImageClick(index, file) {
+        console.log(index, file)
+      }
+    
+      render() {
+        const {files = []} = this.state;
+        const {
+          onFail = () => {
+          },
+          onImageClick = () => {
+          },
+          onAdd = () => {
+          },
+          onAddBefore = () => {
+          },
+          onAddUploadBefore = () => {
+          },
+          onRemove = () => {
+          }
+        } = this;
+        return (
+          <View className='hupu-imagePicker'>
+            <LdmImagePicker
+              action='https://pet.api.1jtec.com/tinyStatics/uploadImg/v2'
+              name='file'
+              files={files}
+              data={{type: 'ORMAL'}}
+              onFail={onFail}
+              onImageClick={onImageClick}
+              onAdd={onAdd}
+              onAddBefore={onAddBefore}
+              onAddUploadBefore={onAddUploadBefore}
+              onRemoveBefore={() => {}}
+              onRemove={onRemove}
+            />
+          </View>
+        )
+      }
+    }
+    
+    export default ImagePickerDemo;
+```
 

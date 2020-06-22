@@ -1,6 +1,6 @@
 {
 	"name": "ldm-taro-frc",
-	"version": "0.3.7",
+	"version": "0.3.8",
 	"description": "拉旦木小程序-功能组件(基于taro)",
 	"templateInfo": {
 		"name": "redux",
@@ -21,6 +21,14 @@
 		"dist/index.js",
 		"dist/weapp"
 	],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamthen/ldanm-mp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dreamthen/ldanm-mp/issues"
+  },
+  "homepage": "https://github.com/dreamthen/ldanm-mp#readme",
 	"scripts": {
 		"build": "cross-env TARO_BUILD_TYPE=component taro build --ui",
 		"build:weapp": "taro build --type weapp",

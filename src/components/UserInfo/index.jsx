@@ -60,6 +60,7 @@ class UserInfo extends Component {
       },
       done = () => {
       },
+      lang = 'zh_CN',
       type = 'userInfo'
     } = this.props;
     switch (type) {
@@ -68,6 +69,7 @@ class UserInfo extends Component {
           success: ({authSetting = {}}) => {
             if (authSetting['scope.userInfo']) {
               Taro.getUserInfo({
+                lang,
                 success: (res = {}) => {
                   callBack({detail: {...res}});
                 },

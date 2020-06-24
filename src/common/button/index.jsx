@@ -1,11 +1,9 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {Button, Form, View} from '@tarojs/components';
-import {ButtonProps} from '@tarojs/components/types/Button';
-import {BaseEventOrig, CommonEvent} from '@tarojs/components/types/common';
 import Taro from '@tarojs/taro';
 import AtComponent from '../../common/component';
-import AtLoading from '../loading/index'
+import AtLoading from '../loading';
 
 const SIZE_CLASS = {
   normal: 'normal',

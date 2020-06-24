@@ -1,0 +1,110 @@
+.ldm-communications {
+  &-communicationsBar {
+    width: 100%;
+    position: fixed;
+    height: 52PX;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    box-shadow: 0 0 5PX #eee;
+    background-color: white;
+    box-sizing: border-box;
+    transition: all .1s ease-in-out 0s;
+
+    &-addFunc {
+      width: 52px;
+      margin: 0 16px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    &-communicationsValue {
+      padding: 16px 0;
+      height: 36PX;
+      margin: 0;
+      display: flex;
+
+      &.at-input {
+        &:after {
+          border: none;
+        }
+      }
+
+      .at-input {
+
+        &__container {
+          width: 100%;
+        }
+
+        &__input {
+          padding: 16px 16px 16px 28px;
+          margin-left: 16px;
+          background-color: @base-symbol-input-backgroundColor;
+          border-radius: 36px;
+        }
+
+        &__children {
+          &:after {
+            border: none;
+          }
+        }
+      }
+    }
+
+    &-post {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      &-button {
+        width: 48PX;
+        height: 36PX;
+        line-height: 36PX;
+        background-color: #fb2a5d;
+        border-color: #fb2a5d;
+        color: #fff;
+      }
+    }
+
+    //.at-search-bar__input-cnt {
+    //
+    //    height: 36PX;
+    //
+    //  .at-search-bar__placeholder-wrap {
+    //
+    //
+    //      height: 36PX;
+    //      justify-content: flex-start;
+    //      padding-left: 4PX;
+    //
+    //    .at-icon {
+    //      display: none;
+    //    }
+    //  }
+    //
+    //  .at-search-bar__input {
+    //    height: 36PX !important;
+    //    font-size: 16PX !important;
+    //    padding-left: 8PX;
+    //  }
+    //
+    //  .at-search-bar__clear {
+    //    height: 36PX;
+    //    font-size: 16PX;
+    //  }
+    //}
+    //
+    //.at-search-bar__action {
+    //  height: 36PX;
+    //  line-height: 36PX;
+    //  background-color: #fb2a5d;
+    //}
+    //
+    //&-focus {
+    //  .at-search-bar__action {
+    //    margin-left: 10PX;
+    //  }
+    //}
+  }
+}

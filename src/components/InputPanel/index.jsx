@@ -102,10 +102,6 @@ class InputPanel extends Component {
   onFocusHandler = (value) => {
     const {onFocus = () => {}} = this.props;
     onFocus();
-    this.setState({
-      isFocus: true,
-      isPanel: false
-    });
   };
 
   render() {

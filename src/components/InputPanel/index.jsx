@@ -43,6 +43,8 @@ class InputPanel extends Component {
     onConfirm: PropTypes.func.isRequired,
     //输入框被选中时触发的事件
     onFocus: PropTypes.func,
+    //输入框失去焦点时触发的事件
+    onBlur: PropTypes.func,
     //键盘高度发生变化的时候触发此事件
     onKeyboardChange: PropTypes.func
   };
@@ -86,9 +88,11 @@ class InputPanel extends Component {
    * @尹文楷
    */
   onBlurHandler = (event) => {
-    const {isPanel} = this.state;
-    let new_state = Object.assign({}, {isFocus: false}, isPanel ? {} : {inputDistanceBoard: 0});
-    this.setState(new_state);
+    const {
+      onBlur = () => {
+      }
+    } = this.props;
+    onBlur(event);
   };
 
   /**

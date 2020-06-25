@@ -42,14 +42,15 @@ class Panel extends Component {
 
   render() {
     const {props} = this;
-    const {isPanel = false, style = {}} = props;
+    const {isPanel = false, style = {}, className = ''} = props;
     const {height = 0} = this.state;
     return (
       <View className={cns(
         'ldm-panel',
         {
           'ldm-panel-show': isPanel
-        }
+        },
+        className
       )}
             style={Object.assign({
               height: `${height}px`

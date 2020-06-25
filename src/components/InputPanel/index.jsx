@@ -153,6 +153,7 @@ class InputPanel extends Component {
               <Image
                 src={imgs.addMoreFunc}
                 mode='widthFix'
+                style={{width: '52rpx'}}
                 className='ldm-communications-communicationsBar-addFunc'
                 onClick={onGetMoreFunc}
               />

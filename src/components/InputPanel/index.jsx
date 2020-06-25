@@ -21,6 +21,8 @@ class InputPanel extends Component {
   };
 
   static propTypes = {
+    //是否存在面板浮层按钮
+    hasPanel: PropTypes.bool,
     //获取更多的功能(发送图片以及商品详情链接等等)
     onGetMoreFunc: PropTypes.func,
     //input消息功能发送输入框距离手机底部的距离
@@ -111,6 +113,7 @@ class InputPanel extends Component {
       isFocus = false
     } = this.state;
     const {
+      hasPanel = true,
       placeholder = '',
       value = '',
       className = '',
@@ -159,13 +162,15 @@ class InputPanel extends Component {
               onBlur={onBlurHandler}
               onConfirm={onConfirm}
             >
-              <Image
-                src={imgs.addMoreFunc}
-                mode='widthFix'
-                style={{width: '52rpx'}}
-                className='ldm-communications-communicationsBar-addFunc'
-                onClick={onGetMoreFunc}
-              />
+              {
+                hasPanel && <Image
+                  src={imgs.addMoreFunc}
+                  mode='widthFix'
+                  style={{width: '52rpx'}}
+                  className='ldm-communications-communicationsBar-addFunc'
+                  onClick={onGetMoreFunc}
+                />
+              }
             </AtInput>
           </View>
           <View className={cns('at-col-2',

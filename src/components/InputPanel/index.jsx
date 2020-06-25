@@ -137,6 +137,7 @@ class InputPanel extends Component {
             <AtInput
               type='text'
               maxLength={100}
+              customStyle={{padding: '16rpx 0'}}
               className={cns(
                 'ldm-communications-communicationsBar-communicationsValue',
                 {'ldm-communications-communicationsBar-communicationsValue-focus': !!isFocus}

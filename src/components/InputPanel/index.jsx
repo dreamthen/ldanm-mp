@@ -56,6 +56,15 @@ class InputPanel extends Component {
     super(props);
   }
 
+  static getDerivedStateFromProps(props, state) {
+    const {inputDistanceBoard = 0, isPanel = false, isFocus = false} = props;
+    return {
+      inputDistanceBoard,
+      isFocus,
+      isPanel
+    };
+  }
+
   /**
    * 监听键盘高度发生变化的时候触发此事件
    */
@@ -96,6 +105,7 @@ class InputPanel extends Component {
     const {
       placeholder = '',
       value = '',
+      className = '',
       onChange = () => {
       },
       onConfirm = () => {
@@ -116,7 +126,8 @@ class InputPanel extends Component {
         <View
           className={cns('at-row',
             'at-row--no-wrap',
-            'ldm-communications-communicationsBar')
+            'ldm-communications-communicationsBar',
+            className)
           }
           style={{bottom: `${inputDistanceBoard}px`}}
         >

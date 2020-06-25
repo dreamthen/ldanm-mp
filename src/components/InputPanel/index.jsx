@@ -24,7 +24,7 @@ class InputPanel extends Component {
     //获取更多的功能(发送图片以及商品详情链接等等)
     onGetMoreFunc: PropTypes.func,
     //input消息功能发送输入框距离手机底部的距离
-    inputDistanceBoard: PropTypes.number,
+    inputDistanceBoard: PropTypes.number.isRequired,
     //外部传入的样式表
     className: PropTypes.string,
     //是否存在弹出面板浮层
@@ -40,7 +40,9 @@ class InputPanel extends Component {
     //输入框值改变时触发的事件
     onChange: PropTypes.func.isRequired,
     //点击完成按钮时触发,可以获取 event 参数
-    onConfirm: PropTypes.func.isRequired
+    onConfirm: PropTypes.func.isRequired,
+    //输入框被选中时触发的事件
+    onFocus: PropTypes.func
   };
 
   state = {
@@ -90,6 +92,8 @@ class InputPanel extends Component {
    * @尹文楷
    */
   onFocusHandler = (value) => {
+    const {onFocus = () => {}} = this.props;
+    onFocus();
     this.setState({
       isFocus: true,
       isPanel: false

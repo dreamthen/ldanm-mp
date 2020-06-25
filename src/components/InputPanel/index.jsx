@@ -42,7 +42,9 @@ class InputPanel extends Component {
     //点击完成按钮时触发,可以获取 event 参数
     onConfirm: PropTypes.func.isRequired,
     //输入框被选中时触发的事件
-    onFocus: PropTypes.func
+    onFocus: PropTypes.func,
+    //键盘高度发生变化的时候触发此事件
+    onKeyboardChange: PropTypes.func
   };
 
   state = {
@@ -72,9 +74,11 @@ class InputPanel extends Component {
    */
   onKeyboardChangeHandler = (event = {}) => {
     const {currentTarget: {height = 0}} = event || {};
+    const {onKeyboardChange = () => {}} = this.props;
     this.setState({
       inputDistanceBoard: height
     });
+    onKeyboardChange(height);
   };
 
   /**

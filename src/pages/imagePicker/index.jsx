@@ -30,6 +30,9 @@ class ImagePickerDemo extends Component {
    * @param file
    */
   onAdd = (data, statusCode, {key, value: fileItem, total: length}) => {
+    if(statusCode === 200) {
+
+    }
   }
 
   /**

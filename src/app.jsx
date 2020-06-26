@@ -7,6 +7,7 @@ import UserInfo from './pages/userInfo';
 import NavBar from './pages/NavBar';
 import TabBar from './pages/tabBar';
 import ImagePicker from './pages/imagePicker';
+import InputPanel from "./pages/InputPanel";
 
 import store from './store';
 
@@ -25,7 +26,8 @@ class App extends Component {
       'pages/imagePicker/index',
       'pages/navBar/index',
       'pages/tabBar/index',
-      'pages/userInfo/index'
+      'pages/userInfo/index',
+      'pages/inputPanel/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -58,6 +60,7 @@ class App extends Component {
         <NavBar/>
         <TabBar/>
         <ImagePicker/>
+        <InputPanel/>
       </Provider>
     )
   }

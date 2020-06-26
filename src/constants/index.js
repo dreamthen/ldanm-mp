@@ -4,7 +4,8 @@ const pageCurrentList = [
   '/pages/userInfo/index',
   '/pages/navBar/index',
   '/pages/tabBar/index',
-  '/pages/imagePicker/index'
+  '/pages/imagePicker/index',
+  '/pages/inputPanel/index'
 ];
 
 export {

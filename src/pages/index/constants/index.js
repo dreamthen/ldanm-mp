@@ -46,6 +46,15 @@ const mpFuncConfig = [{
       url: pageCurrentList[5]
     });
   }
+}, {
+  id: 'inputPanel',
+  name: '消息功能发送',
+  className: 'component-inputPanel',
+  onClick: () => {
+    Taro.navigateTo({
+      url: pageCurrentList[6]
+    })
+  }
 }];
 
 export {

@@ -20,7 +20,7 @@ class LoginDemo extends Component {
 
   componentDidMount() {
     OutLogin({
-      url: 'https://huya-dev.hupu.com/public/index.php/program/login',
+      url: 'https://pet.api.1jtec.com/tinySession/login',
       method: 'post',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -40,7 +40,7 @@ class LoginDemo extends Component {
         直接登录:
         <Login
           canClick={false}
-          url='https://huya-dev.hupu.com/public/index.php/program/login'
+          url='https://pet.api.1jtec.com/tinySession/login'
           method='post'
           header={{
             'content-type': 'application/x-www-form-urlencoded'
@@ -56,7 +56,7 @@ class LoginDemo extends Component {
         <Login
           canClick
           className='ldm-login-button'
-          url='https://huya-dev.hupu.com/public/index.php/program/login'
+          url='https://pet.api.1jtec.com/tinySession/login'
           method='post'
           header={{
             'content-type': 'application/x-www-form-urlencoded'

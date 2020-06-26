@@ -22,7 +22,8 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": true,
+		"useIsolateContext": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -85,6 +86,12 @@
 					"name": "图片选择器",
 					"pathName": "pages/imagePicker/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息功能发送",
+					"pathName": "pages/inputPanel/index",
 					"scene": null
 				}
 			]

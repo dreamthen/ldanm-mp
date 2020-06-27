@@ -145,8 +145,8 @@ class ImagePicker extends Component {
       showAddBtn = true,
       multiple = false,
       count = 9,
-      sizeType = [],
-      sourceType = [],
+      sizeType,
+      sourceType,
       length = 3,
       onImageClick = () => {
       },

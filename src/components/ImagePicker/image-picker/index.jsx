@@ -91,11 +91,11 @@ export default class AtImagePicker extends AtComponent {
       mode,
       length = 4,
       showAddBtn = true
-    } = this.props
-    const rowLength = length <= 0 ? 1 : length
+    } = this.props;
+    const rowLength = length <= 0 ? 1 : length;
     // 行数
-    const matrix = generateMatrix(files, rowLength, showAddBtn)
-    const rootCls = classNames('at-image-picker', className)
+    const matrix = generateMatrix(files, rowLength, showAddBtn);
+    const rootCls = classNames('at-image-picker', className);
 
     return (
       <View className={rootCls} style={customStyle}>

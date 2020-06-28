@@ -1,5 +1,5 @@
 # ldm-taro-frc
-拉旦木微信小程序-功能组件(基于taro)
+拉旦木微信小程序-功能组件(基于taro以及taro-ui)
 
 PS: 需要node > 8的node版本
 
@@ -7,6 +7,7 @@ PS: 需要node > 8的node版本
 
 ```bash
     npm install -g @tarojs/cli
+    npm install taro-ui
 ```
 
 ```bash

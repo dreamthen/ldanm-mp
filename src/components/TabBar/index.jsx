@@ -12,7 +12,7 @@ import * as constants from './constants';
 import './index.less';
 
 /**
- * 抽象分享页面业务组件
+ * 抽象底部自定义导航栏组件
  * @尹文楷
  */
 class TabBar extends Component {

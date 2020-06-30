@@ -21,6 +21,8 @@ class Upload extends Component {
   };
 
   static propTypes = {
+    //外部传入样式表
+    className: PropTypes.string,
     //类型为图片时,最多可以选择的图片张数
     count: PropTypes.number,
     //类型为视频时,是否压缩所选择的视频文件
@@ -34,11 +36,13 @@ class Upload extends Component {
     //选择图片 or 视频的来源
     sourceType: PropTypes.array.isRequired,
     //所选的图片的尺寸
-    sizeType: PropTypes.array.isRequired,
+    sizeType: PropTypes.array,
     //上传文件组件内部文案
     text: PropTypes.string,
-    //上传文件组件自定义内容样式
-    renderInnerUpload: PropTypes.element
+    //上传文件成功或者失败之后的回调
+    callBack: PropTypes.func.isRequired,
+    //上传文件完成之后的回调
+    done: PropTypes.func.isRequired
   };
 
   state = {};
@@ -80,9 +84,9 @@ class Upload extends Component {
         >
           {
             text ? <Block>
-              <AtIcon value='add' size={24}/>
-              {text ? text : 'Upload'}
-            </Block> : this.props.renderInnerUpload
+              <AtIcon value='add' size={16} className='ldm-upload-add'/>
+              {text}
+            </Block> : this.props.children
           }
         </View>
       </View>

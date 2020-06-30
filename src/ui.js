@@ -5,3 +5,4 @@ export { default as LdmTabBar } from './components/TabBar';
 export { default as LdmImagePicker } from './components/ImagePicker';
 export { default as LdmOutLogin } from './components/OutLogin';
 export { default as LdmInputPanel } from './components/InputPanel';
+export { default as LdmUpload } from './components/Upload';

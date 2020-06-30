@@ -6,3 +6,4 @@ export { default as LdmImagePicker } from './components/ImagePicker';
 export { default as LdmOutLogin } from './components/OutLogin';
 // export { default as LdmPanel } from './components/Panel';
 export { default as LdmInputPanel } from './components/InputPanel';
+export { default as LdmUpload } from './components/Upload';

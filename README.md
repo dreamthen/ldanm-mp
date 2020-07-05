@@ -804,6 +804,8 @@ PS: 需要node > 8的node版本
     export default InputPanelDemo;
 ```
 
+> 样式
+
 ```less
     page {
       height: 100%;
@@ -900,4 +902,116 @@ PS: 需要node > 8的node版本
       }
     }
 ```
+
+### 上传图片或者视频
+
+> Upload
+
+| 属性名 | 属性类型 | 属性描述 | 默认值 |
+| :----: | :----: | :----: | :----: |
+| className | string | 外部传入样式表 | '' |
+| count | number | 类型为图片时,最多可以选择的图片张数 | 9 |
+| compressed | boolean | 类型为视频时,是否压缩所选择的视频文件 | true |
+| maxDuration | number | 类型为视频时,拍摄视频最长拍摄时间,单位秒 | 60 |
+| camera | string | 类型为视频时,默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效 | 'back' |
+| type | string | 选择上传文件的类型,'image' or 'video',必传 | '' |
+| sourceType | array | 选择图片 or 视频的来源,必传 | \['album'\] |
+| sizeType | array | 所选的图片的尺寸 | \['original'\] |
+| text | string | 上传文件组件内部文案 | '' |
+| callBack | function | 上传文件成功或者失败之后的回调,必传 | (tempFilePath, size, duration, height, width) => void |
+| done | function | 上传文件完成之后的回调,必传 | (res) => void |
+
+> 使用
+
+```jsx
+import Taro, {Component} from '@tarojs/taro';
+import {
+  View
+} from '@tarojs/components';
+import {
+    LdmUpload
+} from 'ldm-taro-frc';
+
+import 'taro-ui/dist/style/components/icon.scss';
+import './index.less';
+
+
+class UploadDemo extends Component {
+  static options = {
+    addGlobalClass: true
+  };
+
+  state = {};
+
+  config = {
+    navigationBarTitleText: '上传图片视频'
+  };
+
+  componentDidMount() {
+  }
+
+  render() {
+    const {} = this;
+    return (
+      <View className='ldm-upload'>
+        <View>
+          上传图片:
+          <LdmUpload
+            className='ldm-upload-image'
+            count={6}
+            text='upload image'
+            type='image'
+            sourceType={['album', 'camera']}
+            callBack={(path = '', size = 0) => {
+              console.log(path);
+            }}
+            done={(res = {}) => {
+              console.log(res);
+            }}
+          />
+        </View>
+        <View>
+          上传视频:
+          <LdmUpload
+            className='ldm-upload-video'
+            text='upload video'
+            type='video'
+            sourceType={['album', 'camera']}
+            maxDuration={40}
+            camera='back'
+            callBack={(path = '', size = 0) => {
+              console.log(path);
+            }}
+            done={(res = {}) => {
+              console.log(res);
+            }}
+          />
+        </View>
+      </View>
+    )
+  }
+}
+
+export default UploadDemo;
+```
+
+> 样式
+
+```less
+
+.ldm-upload {
+  &-image,
+  &-video {
+    width: 280px;
+    border: 2px solid #333;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+
+  &-add {
+    margin-right: 4px;
+  }
+}
+```
+
 

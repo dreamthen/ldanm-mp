@@ -32,7 +32,7 @@ class Upload extends Component {
     //类型为视频时,默认拉起的是前置或者后置摄像头。部分 Android 手机下由于系统 ROM 不支持无法生效
     camera: PropTypes.string,
     //选择上传文件的类型
-    type: PropTypes.array.isRequired,
+    type: PropTypes.string.isRequired,
     //选择图片 or 视频的来源
     sourceType: PropTypes.array.isRequired,
     //所选的图片的尺寸

@@ -482,6 +482,10 @@ PS: 需要node > 8的node版本
 
 | 属性名 | 属性类型 | 属性描述 | 默认值 |
 | :----: | :----: | :----: | :----: |
+| action | string | 上传图片的url | '' |
+| name | string | 文件对应的 key,开发者在服务端可以通过这个 key获取文件的二进制内容 | '' |
+| header | object | HTTP请求 Header,Header中不能设置Referer | {'content-type': 'multipart/form-data'} |
+| data | object | HTTP请求中其他额外的form data | {} |
 | className | string | 外部传入样式表 | '' |
 | files | array<object> | 图片文件数组,元素为对象,包含属性 url（必选) | [] |
 | mode | enum | 图片预览模式,详见(微信开发者文档) | 'scaleToFill' |

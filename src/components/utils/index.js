@@ -57,6 +57,11 @@ const Ldanm = (() => {
           navBarAdaptation['navBarPaddingTop'] = 82;
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneXM-navBar';
           navBarAdaptation['isX'] = true;
+        } else if (model.indexOf('-inch') !== -1) {
+          navBarAdaptation['navBarHeight'] = 184;
+          navBarAdaptation['navBarPaddingTop'] = 82;
+          navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneX-navBar';
+          navBarAdaptation['isX'] = true;
         } else if (model === 'iPhone 5') {
           navBarAdaptation['navBarHeight'] = 158;
           navBarAdaptation['navBarPaddingTop'] = 82;

@@ -1,4 +1,4 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 import {
@@ -11,10 +11,6 @@ import './index.less';
  * 抽象板块组件
  */
 class Panel extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   static propTypes = {
     //外部传入的样式表
     className: PropTypes.string,
@@ -27,17 +23,19 @@ class Panel extends Component {
   }
 
   state = {
-    height: 0
+    height: 0,
+    isPanel: false
   };
 
-  componentWillReceiveProps(nextProps, nextContext) {
-    const {isPanel = false, style = {}} = this.props;
-    const {isPanel: next_isPanel} = nextProps;
+  static getDerivedStateFromProps(props, state) {
+    const {isPanel = false, style = {}} = props;
+    const {isPanel: next_isPanel} = state;
     if (isPanel !== next_isPanel) {
-      this.setState({
+      return {
         height: next_isPanel ? style.height ? style.height : 180 : 0
-      });
+      }
     }
+    return null;
   }
 
   render() {
@@ -45,19 +43,18 @@ class Panel extends Component {
     const {isPanel = false, style = {}, className = ''} = props;
     const {height = 0} = this.state;
     return (
-      <View className={cns(
-        'ldm-panel',
-        {
-          'ldm-panel-show': isPanel
-        },
-        className
-      )}
-            style={Object.assign({
-              height: `${height}px`
-            }, style)}
-      >
-        {this.props.children}
-      </View>
+      React.createElement(View, {
+        className: cns(
+          'ldm-panel',
+          {
+            'ldm-panel-show': isPanel
+          },
+          className
+        ),
+        style: Object.assign({
+          height: `${height}px`
+        }, style)
+      }, this.props.children)
     )
   }
 }

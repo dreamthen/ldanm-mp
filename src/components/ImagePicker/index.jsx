@@ -1,4 +1,4 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {
   View
@@ -15,10 +15,6 @@ import './index.less';
  * @尹文楷
  */
 class ImagePicker extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   static propTypes = {
     //上传图片的url
     action: PropTypes.string,
@@ -161,21 +157,21 @@ class ImagePicker extends Component {
       }
     } = this;
     return (
-      <View className={cns('ldm-imagePicker', className)}>
-        <AtImagePicker
-          files={filesList}
-          mode={mode}
-          showAddBtn={showAddBtn}
-          multiple={multiple}
-          count={count}
-          sizeType={sizeType}
-          sourceType={sourceType}
-          length={length}
-          onChange={onChangeHandler}
-          onImageClick={onImageClick}
-          onFail={onFail}
-        />
-      </View>
+      React.createElement(View, {className: cns('ldm-imagePicker', className)}, React.createElement(
+        AtImagePicker, {
+          files: filesList,
+          mode,
+          showAddBtn,
+          multiple,
+          count,
+          sizeType,
+          sourceType,
+          length,
+          onChange: onChangeHandler,
+          onImageClick,
+          onFail,
+        }
+      ))
     )
   }
 }

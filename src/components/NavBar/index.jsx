@@ -1,4 +1,4 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Ldanm from '../utils';
 import {
@@ -18,10 +18,6 @@ import './index.less';
  * @尹文楷
  */
 class NavBar extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   static propTypes = {
     //顶部导航栏的标题
     title: PropTypes.string.isRequired,
@@ -69,51 +65,55 @@ class NavBar extends Component {
     const {height = 0} = this.state;
     const {statusBarClassName} = Ldanm.adaptationNavBar() || {};
     return (
-      <Block>
-        <View
-          id='navBar'
-          className={cns(
-            'ldm-navBar',
-            statusBarClassName,
-            className
-          )}
-        >
-          <View className={cns('at-row',
-            'at-row--no-wrap',
-            'nav-bar'
-          )}>
-            <View
-              className={cns('at-col',
-                'at-col-3',
-                'nav-bar-leftIcon'
-              )}
-              onClick={onClickLeftIcon}
-            >
-              {
-                imgs ? <Image
-                  src={imgs}
-                  mode='widthFix'
-                  className='nav-bar-image'
-                /> : <AtIcon
-                  prefixClass={leftIconPrefixClass ? leftIconPrefixClass : 'at-icon'}
-                  value={leftIconType}
-                  color={color}
-                  size={20}
-                />
-              }
-            </View>
-            <View className={cns('at-col',
-              'at-col-6',
-              'nav-bar-title'
-            )}>{title}</View>
-            <View className={cns('at-col',
-              'at-col-3'
-            )}> </View>
-          </View>
-        </View>
-        <View style={{height: `${height}PX`}}>
-        </View>
-      </Block>
+      React.createElement(Block, {},
+        React.createElement(View, {
+            id: 'navBar',
+            className: cns(
+              'ldm-navBar',
+              statusBarClassName,
+              className
+            )
+          },
+          React.createElement(View, {
+              className: cns('at-row',
+                'at-row--no-wrap',
+                'nav-bar'
+              )
+            },
+            React.createElement(View, {
+                className: cns('at-col',
+                  'at-col-3',
+                  'nav-bar-leftIcon'
+                ),
+                onClick: onClickLeftIcon
+              }, imgs ? React.createElement(Image, {
+                src: imgs,
+                mode: 'widthFix',
+                className: 'nav-bar-image'
+              }) : React.createElement(AtIcon, {
+                prefixClass: leftIconPrefixClass ? leftIconPrefixClass : 'at-icon',
+                value: leftIconType,
+                color,
+                size: 20
+              })
+            ),
+            React.createElement(View, {
+              className: cns('at-col',
+                'at-col-6',
+                'nav-bar-title'
+              )
+            }, title),
+            React.createElement(View, {
+              className: cns('at-col',
+                'at-col-3'
+              )
+            }, '')
+          )
+        ),
+        React.createElement(View, {
+          style: {height: `${height}PX`}
+        }, '')
+      )
     )
   }
 }

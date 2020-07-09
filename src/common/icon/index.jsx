@@ -1,55 +1,36 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import React from 'react';
 import {Text} from '@tarojs/components';
-import Taro from '@tarojs/taro';
-import AtComponent from '../component';
 import Ldanm from '../../components/utils';
 
-Ldanm.initTest();
-
-export default class AtIcon extends AtComponent {
-
-  handleClick = () => {
+export default class AtIcon extends React.Component {
+  handleClick() {
     this.props.onClick && this.props.onClick(arguments);
-  };
+  }
 
-  render(){
-    const {
-      customStyle,
-      className,
-      prefixClass,
-      value,
-      size,
-      color
-    } = this.props
-
+  render() {
+    const {customStyle, className, prefixClass, value, size, color} = this.props;
     const rootStyle = {
-      fontSize: `${Taro.pxTransform(parseInt(String(size)) * 2)}`,
+      fontSize: `${Ldanm.pxTransform(parseInt(String(size)) * 2)}`,
       color
-    }
-
-    const iconName = value ? `${prefixClass}-${value}` : ''
-    return (
-      <Text
-        className={classNames(prefixClass, iconName, className)}
-        style={this.mergeStyle(rootStyle, customStyle)}
-        onClick={this.handleClick.bind(this)}
-      ></Text>
-    )
+    };
+    const iconName = value ? `${prefixClass}-${value}` : '';
+    return (React.createElement(Text, {
+      className: classNames(prefixClass, iconName, className),
+      style: Ldanm.mergeStyle(rootStyle, customStyle),
+      onClick: this.handleClick.bind(this)
+    }));
   }
 }
-
 AtIcon.defaultProps = {
   customStyle: '',
   className: '',
   prefixClass: 'at-icon',
   value: '',
   color: '',
-  size: 24,
-  onClick: () => {
-  }
-}
-
+  size: 24
+};
 AtIcon.propTypes = {
   customStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
@@ -58,4 +39,5 @@ AtIcon.propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onClick: PropTypes.func
-}
+};
+//# sourceMappingURL=index.js.map

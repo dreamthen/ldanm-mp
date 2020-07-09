@@ -1,4 +1,4 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {
   View
@@ -16,10 +16,6 @@ import './index.less';
  * @尹文楷
  */
 class TabBar extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   static propTypes = {
     //底部导航栏的外部传入样式
     className: PropTypes.string,
@@ -73,21 +69,23 @@ class TabBar extends Component {
     } = this.props;
     const {isX} = Ldanm.adaptationNavBar();
     return (
-      <View className={cns('ldm-tabBar', className)}>
-        <AtTabBar
-          className='ldm-tabBar-component'
-          customStyle={{height: `${constants.tabBarConstantsHeight[isX]}PX`, padding: 0}}
-          tabList={tabList}
-          onClick={onChange}
-          current={current}
-          color={color}
-          selectedColor={selectedColor}
-          fixed={fixed}
-          backgroundColor={backgroundColor}
-          iconSize={iconSize}
-          fontSize={fontSize}
-        />
-      </View>
+      React.createElement(View, {
+          className: cns('ldm-tabBar', className)
+        },
+        React.createElement(AtTabBar, {
+          className: 'ldm-tabBar-component',
+          customStyle: {height: `${constants.tabBarConstantsHeight[isX]}PX`, padding: 0},
+          tabList,
+          onClick: onChange,
+          current,
+          color,
+          selectedColor,
+          fixed,
+          backgroundColor,
+          iconSize,
+          fontSize
+        })
+      )
     )
   }
 }

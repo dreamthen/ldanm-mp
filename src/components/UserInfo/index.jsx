@@ -1,4 +1,5 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
+import Taro from '@tarojs/taro';
 import {
   View,
   Button
@@ -14,10 +15,6 @@ import './index.less';
  * 个人信息
  */
 class UserInfo extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   static propTypes = {
     //指定返回用户信息的语言,zh_CN简体中文,zh_TW繁体中文,en英文
     lang: PropTypes.string,
@@ -127,21 +124,18 @@ class UserInfo extends Component {
       }
     } = this;
     return (
-      <View className={cns('ldm-userInfo', className)}>
-        {
-          show ? text ? <Button
-            size={size}
-            type={buttonType}
-            lang={lang}
-            className='ldm-userInfo-get'
-            openType={constants.typeConfig[type]}
-            onGetUserInfo={getUserInfoHandler}
-            onGetPhoneNumber={getUserInfoHandler}
-          >
-            {text}
-          </Button> : this.props.renderButtonDetail : this.props.children
-        }
-      </View>
+      React.createElement(View, {
+        className: cns('ldm-userInfo', className)
+      }, show ? text ?
+        React.createElement(Button, {
+          size,
+          type: buttonType,
+          lang,
+          className: 'ldm-userInfo-get',
+          openType: constants.typeConfig[type],
+          onGetUserInfo: getUserInfoHandler,
+          onGetPhoneNumber: getUserInfoHandler
+        }, text) : this.props.renderButtonDetail : this.props.children)
     )
   }
 }

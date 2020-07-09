@@ -1,4 +1,5 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
+import Taro from '@tarojs/taro';
 import {
   View
 } from '@tarojs/components';
@@ -12,10 +13,6 @@ import Ldanm from '../utils';
  * 登录
  */
 class Login extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   static propTypes = {
     //是否是点击登录
     canClick: PropTypes.bool.isRequired,
@@ -95,9 +92,12 @@ class Login extends Component {
       }
     } = this;
     return (
-      <View className={cns('ldm-basic-login', className)} onClick={() => {canClick && loginHandler();}}>
-        {canClick && this.props.children}
-      </View>
+      React.createElement(View, {
+        className: cns('ldm-basic-login', className),
+        onClick: () => {
+          canClick && loginHandler();
+        }
+      }, canClick && this.props.children)
     )
   }
 }

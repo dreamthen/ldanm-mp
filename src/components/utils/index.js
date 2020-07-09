@@ -40,6 +40,21 @@ const Ldanm = (() => {
     };
 
     /**
+     * 合并 style
+     */
+    mergeStyle = (...params) => {
+      return packageApi.mergeStyle.mergeStyle(...params);
+    };
+
+    /**
+     * 像素转换
+     * @param size
+     */
+    pxTransform = (size) => {
+      return packageApi.pxTransform.pxTransform(size);
+    };
+
+    /**
      * 适配各类手机,自定义导航栏高度
      */
     adaptationNavBar() {

@@ -1,4 +1,4 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {
   Block,
@@ -16,10 +16,6 @@ import './index.less';
  * @尹文楷
  */
 class Upload extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   static propTypes = {
     //外部传入样式表
     className: PropTypes.string,
@@ -78,18 +74,20 @@ class Upload extends Component {
       }
     } = this;
     return (
-      <View className={cns('ldm-upload', className)}>
-        <View className='ldm-upload-container'
-              onClick={onUploadHandler}
-        >
-          {
-            text ? <Block>
-              <AtIcon value='add' size={16} className='ldm-upload-add'/>
-              {text}
-            </Block> : this.props.children
-          }
-        </View>
-      </View>
+      React.createElement(View, {
+          className: cns('ldm-upload', className)
+        }, React.createElement(View, {
+          className: 'ldm-upload-container',
+          onClick: onUploadHandler
+        },
+        text ?
+          React.createElement(Block, {}, React.createElement(AtIcon, {
+            value: 'add',
+            size: 16,
+            className: 'ldm-upload-add'
+          }), text) :
+          this.props.children)
+      )
     )
   }
 }

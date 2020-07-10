@@ -157,21 +157,21 @@ class ImagePicker extends Component {
       }
     } = this;
     return (
-      React.createElement(View, {className: cns('ldm-imagePicker', className)}, React.createElement(
-        AtImagePicker, {
-          files: filesList,
-          mode,
-          showAddBtn,
-          multiple,
-          count,
-          sizeType,
-          sourceType,
-          length,
-          onChange: onChangeHandler,
-          onImageClick,
-          onFail,
-        }
-      ))
+      <View className={cns('ldm-imagePicker', className)}>
+        <AtImagePicker
+          files={filesList}
+          mode={mode}
+          showAddBtn={showAddBtn}
+          multiple={multiple}
+          count={count}
+          sizeType={sizeType}
+          sourceType={sourceType}
+          length={length}
+          onChange={onChangeHandler}
+          onImageClick={onImageClick}
+          onFail={onFail}
+        />
+      </View>
     )
   }
 }

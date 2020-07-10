@@ -69,23 +69,21 @@ class TabBar extends Component {
     } = this.props;
     const {isX} = Ldanm.adaptationNavBar();
     return (
-      React.createElement(View, {
-          className: cns('ldm-tabBar', className)
-        },
-        React.createElement(AtTabBar, {
-          className: 'ldm-tabBar-component',
-          customStyle: {height: `${constants.tabBarConstantsHeight[isX]}PX`, padding: 0},
-          tabList,
-          onClick: onChange,
-          current,
-          color,
-          selectedColor,
-          fixed,
-          backgroundColor,
-          iconSize,
-          fontSize
-        })
-      )
+      <View className={cns('ldm-tabBar', className)}>
+        <AtTabBar
+          className='ldm-tabBar-component'
+          customStyle={{height: `${constants.tabBarConstantsHeight[isX]}PX`, padding: 0}}
+          tabList={tabList}
+          onClick={onChange}
+          current={current}
+          color={color}
+          selectedColor={selectedColor}
+          fixed={fixed}
+          backgroundColor={backgroundColor}
+          iconSize={iconSize}
+          fontSize={fontSize}
+        />
+      </View>
     )
   }
 }

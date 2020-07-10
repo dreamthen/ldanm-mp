@@ -92,12 +92,9 @@ class Login extends Component {
       }
     } = this;
     return (
-      React.createElement(View, {
-        className: cns('ldm-basic-login', className),
-        onClick: () => {
-          canClick && loginHandler();
-        }
-      }, canClick && this.props.children)
+      <View className={cns('ldm-basic-login', className)} onClick={() => {canClick && loginHandler();}}>
+        {canClick && this.props.children}
+      </View>
     )
   }
 }

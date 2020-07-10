@@ -22,12 +22,6 @@ class Index extends Component {
   componentWillUnmount() {
   }
 
-  componentDidShow() {
-  }
-
-  componentDidHide() {
-  }
-
   render() {
     return (
       <View className='component'>

@@ -51,7 +51,7 @@ class UserInfo extends Component {
   componentWillMount() {
   }
 
-  componentDidShow() {
+  componentDidMount() {
     const {
       callBack = () => {
       },
@@ -60,42 +60,44 @@ class UserInfo extends Component {
       lang = 'zh_CN',
       type = 'userInfo'
     } = this.props;
-    switch (type) {
-      case 'userInfo': {
-        Taro.getSetting({
-          success: ({authSetting = {}}) => {
-            if (authSetting['scope.userInfo']) {
-              Taro.getUserInfo({
-                lang,
-                success: (res = {}) => {
-                  callBack({detail: {...res}});
-                },
-                fail: (res = {}) => {
-                  callBack(res);
-                },
-                complete: (res = {}) => {
-                  done(res);
-                }
-              });
-            } else {
-              this.setState({
-                show: true
-              });
-              callBack({});
+    Taro.nextTick(() => {
+      switch (type) {
+        case 'userInfo': {
+          Taro.getSetting({
+            success: ({authSetting = {}}) => {
+              if (authSetting['scope.userInfo']) {
+                Taro.getUserInfo({
+                  lang,
+                  success: (res = {}) => {
+                    callBack({detail: {...res}});
+                  },
+                  fail: (res = {}) => {
+                    callBack(res);
+                  },
+                  complete: (res = {}) => {
+                    done(res);
+                  }
+                });
+              } else {
+                this.setState({
+                  show: true
+                });
+                callBack({});
+              }
+            },
+            fail: (res) => {
+              callBack(res);
+            },
+            complete: (res) => {
+              done(res);
             }
-          },
-          fail: (res) => {
-            callBack(res);
-          },
-          complete: (res) => {
-            done(res);
-          }
-        });
+          });
+        }
+        default: {
+          break;
+        }
       }
-      default: {
-        break;
-      }
-    }
+    });
   }
 
   /**
@@ -124,18 +126,21 @@ class UserInfo extends Component {
       }
     } = this;
     return (
-      React.createElement(View, {
-        className: cns('ldm-userInfo', className)
-      }, show ? text ?
-        React.createElement(Button, {
-          size,
-          type: buttonType,
-          lang,
-          className: 'ldm-userInfo-get',
-          openType: constants.typeConfig[type],
-          onGetUserInfo: getUserInfoHandler,
-          onGetPhoneNumber: getUserInfoHandler
-        }, text) : this.props.renderButtonDetail : this.props.children)
+      <View className={cns('ldm-userInfo', className)}>
+        {
+          show ? text ? <Button
+            size={size}
+            type={buttonType}
+            lang={lang}
+            className='ldm-userInfo-get'
+            openType={constants.typeConfig[type]}
+            onGetUserInfo={getUserInfoHandler}
+            onGetPhoneNumber={getUserInfoHandler}
+          >
+            {text}
+          </Button> : this.props.renderButtonDetail : this.props.children
+        }
+      </View>
     )
   }
 }

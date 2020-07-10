@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -rf ./lib
 mkdir ./lib
 cd src
 cp -r ./index.js ../lib

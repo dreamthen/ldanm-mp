@@ -1,4 +1,5 @@
 .idea
+lib
 dist/
 deploy_versions/
 .temp/

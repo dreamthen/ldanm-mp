@@ -13,7 +13,7 @@
 		"mp",
 		"frc"
 	],
-	"main": "src/index.js",
+	"main": "lib/index.js",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/"
 	},
@@ -26,6 +26,7 @@
 	},
 	"homepage": "https://github.com/dreamthen/ldanm-mp#readme",
 	"scripts": {
+		"build:component": "node scripts/build.js",
 		"build:weapp": "taro build --type weapp",
 		"build:swan": "taro build --type swan",
 		"build:alipay": "taro build --type alipay",
@@ -105,9 +106,12 @@
 		"eslint-plugin-react": "^7.8.2",
 		"eslint-plugin-react-hooks": "^1.6.1",
 		"eslint-plugin-taro": "3.0.2",
+		"ora": "^4.0.4",
+		"shelljs": "^0.8.4",
 		"stylelint": "9.3.0",
 		"stylelint-config-taro-rn": "2.2.10",
 		"stylelint-taro-rn": "2.2.10",
-		"webpack-bundle-analyzer": "^3.7.0"
+		"webpack-bundle-analyzer": "^3.7.0",
+		"yargs": "^15.4.0"
 	}
 }

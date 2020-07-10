@@ -1,6 +1,6 @@
 {
 	"name": "ldm-taro-frc",
-	"version": "0.7.0",
+	"version": "0.7.1",
 	"description": "拉旦木小程序-功能组件(基于taro)",
 	"templateInfo": {
 		"name": "redux",
@@ -42,7 +42,8 @@
 		"dev:h5": "npm run build:h5 -- --watch",
 		"dev:rn": "npm run build:rn -- --watch",
 		"dev:qq": "npm run build:qq -- --watch",
-		"dev:quickapp": "npm run build:quickapp -- --watch"
+		"dev:quickapp": "npm run build:quickapp -- --watch",
+		"prepublish": "yarn run build:component"
 	},
 	"author": "",
 	"license": "MIT",

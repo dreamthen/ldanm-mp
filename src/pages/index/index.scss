@@ -1,7 +1,7 @@
 @import '../../stylesheets/base/index';
 
 page {
-  background-color: @base-background-color;
+  background-color: $base-background-color;
 
   .component {
     &-item {
@@ -9,9 +9,9 @@ page {
       line-height: 48PX;
       text-align: center;
       background-color: #fff;
-      border-top: 1PX solid @base-border-color;
-      border-bottom: 1PX solid @base-border-color;
-      color: @base-symbol-color;
+      border-top: 1PX solid $base-border-color;
+      border-bottom: 1PX solid $base-border-color;
+      color: $base-symbol-color;
     }
   }
 }

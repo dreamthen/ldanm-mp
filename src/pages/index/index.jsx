@@ -1,20 +1,15 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import {View} from '@tarojs/components';
-import {connect} from '@tarojs/redux';
+import {connect} from 'react-redux';
 import cns from 'classnames';
 
 import {mpFuncConfig} from './constants';
 
-import './index.less'
+import './index.scss'
 
 
 @connect((state) => ({}), (dispatch) => ({}))
 class Index extends Component {
-  //配置
-  config = {
-    navigationBarTitleText: '首页'
-  };
-
   componentWillMount() {
   }
 

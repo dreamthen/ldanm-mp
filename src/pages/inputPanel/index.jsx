@@ -1,22 +1,14 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import {
+  Block,
   View
 } from '@tarojs/components';
 import InputPanel from '../../components/InputPanel';
 
-import './index.less';
-
-import 'taro-ui/dist/style/components/flex.scss';
-import 'taro-ui/dist/style/components/button.scss';
-import 'taro-ui/dist/style/components/icon.scss';
-import 'taro-ui/dist/style/components/input.scss';
-import 'taro-ui/dist/style/components/loading.scss';
+import './index.scss';
 
 
 class InputPanelDemo extends Component {
-  static options = {
-    addGlobalClass: true
-  };
 
   state = {
     //是否输入咨询框聚焦
@@ -27,10 +19,6 @@ class InputPanelDemo extends Component {
     inputDistanceBoard: 0,
     //输入框当前值
     value: '',
-  };
-
-  config = {
-    navigationBarTitleText: '消息功能发送'
   };
 
   componentDidMount() {
@@ -67,15 +55,6 @@ class InputPanelDemo extends Component {
     const {isPanel} = this.state;
     let new_state = Object.assign({}, {isFocus: false}, isPanel ? {} : {inputDistanceBoard: 0});
     this.setState(new_state);
-  };
-
-  /**
-   * 监听键盘高度发生变化的时候触发此事件
-   */
-  onKeyboardChangeHandler = (height = 0) => {
-    this.setState({
-      inputDistanceBoard: height
-    });
   };
 
   /**
@@ -123,8 +102,6 @@ class InputPanelDemo extends Component {
       },
       onBlurHandler = () => {
       },
-      onKeyboardChangeHandler = () => {
-      },
       onPostMessageHandler = () => {
       },
       onGetMoreFuncHandler = () => {
@@ -149,7 +126,6 @@ class InputPanelDemo extends Component {
             onBlur={onBlurHandler}
             onChange={onChangeValueHandler}
             onConfirm={onPostMessageHandler}
-            onKeyboardChange={onKeyboardChangeHandler}
             onGetMoreFunc={onGetMoreFuncHandler}
             renderPanel={<View>
             </View>}

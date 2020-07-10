@@ -1,4 +1,4 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import {
   View
 } from '@tarojs/components';
@@ -6,10 +6,6 @@ import UserInfo from '../../components/UserInfo';
 
 
 class UserInfoDemo extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   state = {
     //用户昵称
     nickName: '',
@@ -21,10 +17,6 @@ class UserInfoDemo extends Component {
     show: true,
     //是否显示获取个人手机号码的按钮
     showPhone: true,
-  };
-
-  config = {
-    navigationBarTitleText: '个人信息'
   };
 
   componentDidMount() {

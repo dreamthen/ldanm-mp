@@ -1,23 +1,15 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import {
   View
 } from '@tarojs/components';
 import Upload from '../../components/Upload';
 
 import 'taro-ui/dist/style/components/icon.scss';
-import './index.less';
+import './index.scss';
 
 
 class UploadDemo extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   state = {};
-
-  config = {
-    navigationBarTitleText: '上传图片视频'
-  };
 
   componentDidMount() {
   }

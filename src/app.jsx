@@ -1,14 +1,5 @@
-import Taro, {Component} from '@tarojs/taro'
-import {Provider} from '@tarojs/redux'
-
-import Index from './pages/index';
-import Login from './pages/login';
-import UserInfo from './pages/userInfo';
-import NavBar from './pages/NavBar';
-import TabBar from './pages/tabBar';
-import ImagePicker from './pages/imagePicker';
-import InputPanel from "./pages/InputPanel";
-import Upload from "./pages/Upload";
+import React, {Component} from 'react';
+import {Provider} from 'react-redux';
 
 import store from './store';
 
@@ -19,26 +10,6 @@ import store from './store';
 // }
 
 class App extends Component {
-
-  config = {
-    pages: [
-      'pages/index/index',
-      'pages/login/index',
-      'pages/imagePicker/index',
-      'pages/navBar/index',
-      'pages/tabBar/index',
-      'pages/userInfo/index',
-      'pages/inputPanel/index',
-      'pages/upload/index'
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
-  };
-
   componentDidMount() {
   }
 
@@ -56,17 +27,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Index/>
-        <Login/>
-        <UserInfo/>
-        <NavBar/>
-        <TabBar/>
-        <ImagePicker/>
-        <InputPanel/>
-        <Upload />
+        {this.props.children}
       </Provider>
     )
   }
 }
 
-Taro.render(<App/>, document.getElementById('app'))
+export default App;

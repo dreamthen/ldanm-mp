@@ -8,7 +8,7 @@ import cns from 'classnames';
 import AtImagePicker from "./image-picker";
 import Ldanm from "../utils";
 
-import './index.less';
+import './index.scss';
 
 /**
  * 抽象图片选择器

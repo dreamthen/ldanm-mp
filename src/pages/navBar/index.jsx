@@ -1,4 +1,5 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from "react";
+import Taro from '@tarojs/taro';
 import {
   View
 } from '@tarojs/components';
@@ -6,21 +7,10 @@ import NavBar from '../../components/NavBar';
 
 import {imgs} from '../../assets';
 
-import 'taro-ui/dist/style/components/icon.scss';
-import 'taro-ui/dist/style/components/flex.scss';
-
 
 class NavBarDemo extends Component {
-  static options = {
-    addGlobalClass: true
-  };
 
   state = {};
-
-  config = {
-    navigationBarTitleText: '',
-    navigationStyle: 'custom'
-  };
 
   componentDidMount() {
 

@@ -11,7 +11,6 @@ const config = {
     '828': 1.81 / 2
   },
   plugins: [
-    '@tarojs/plugin-less',
     '@tarojs/plugin-sass',
     '@tarojs/plugin-terser'
   ],

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Taro from '@tarojs/taro';
 import PropTypes from 'prop-types';
 import Ldanm from '../utils';
 import {
@@ -6,18 +7,20 @@ import {
   Image,
   View
 } from '@tarojs/components';
-import {
-  AtIcon
-} from '../../common/icon';
+import AtIcon from '../../common/icon';
 import cns from 'classnames';
 
-import './index.less';
+import './index.scss';
 
 /**
  * 抽象顶部自定义导航组件
  * @尹文楷
  */
 class NavBar extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   static propTypes = {
     //顶部导航栏的标题
     title: PropTypes.string.isRequired,
@@ -44,14 +47,17 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
-    Taro.createSelectorQuery().in(this.$scope).select('#navBar').fields({
-      size: true
-    }, (res = {}) => {
-      const {height = 0} = res;
-      this.setState({
-        height
-      });
-    }).exec()
+    //使用nextTick在onReady函数dom节点完全渲染完成之后去获取元素信息
+    Taro.nextTick(() => {
+      Taro.createSelectorQuery().select('#navBar').fields({
+        size: true
+      }, (res = {}) => {
+        const {height = 0} = res;
+        this.setState({
+          height
+        });
+      }).exec()
+    });
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
@@ -65,55 +71,51 @@ class NavBar extends Component {
     const {height = 0} = this.state;
     const {statusBarClassName} = Ldanm.adaptationNavBar() || {};
     return (
-      React.createElement(Block, {},
-        React.createElement(View, {
-            id: 'navBar',
-            className: cns(
-              'ldm-navBar',
-              statusBarClassName,
-              className
-            )
-          },
-          React.createElement(View, {
-              className: cns('at-row',
-                'at-row--no-wrap',
-                'nav-bar'
-              )
-            },
-            React.createElement(View, {
-                className: cns('at-col',
-                  'at-col-3',
-                  'nav-bar-leftIcon'
-                ),
-                onClick: onClickLeftIcon
-              }, imgs ? React.createElement(Image, {
-                src: imgs,
-                mode: 'widthFix',
-                className: 'nav-bar-image'
-              }) : React.createElement(AtIcon, {
-                prefixClass: leftIconPrefixClass ? leftIconPrefixClass : 'at-icon',
-                value: leftIconType,
-                color,
-                size: 20
-              })
-            ),
-            React.createElement(View, {
-              className: cns('at-col',
-                'at-col-6',
-                'nav-bar-title'
-              )
-            }, title),
-            React.createElement(View, {
-              className: cns('at-col',
-                'at-col-3'
-              )
-            }, '')
-          )
-        ),
-        React.createElement(View, {
-          style: {height: `${height}PX`}
-        }, '')
-      )
+      <Block>
+        <View
+          id='navBar'
+          className={cns(
+            'ldm-navBar',
+            statusBarClassName,
+            className
+          )}
+        >
+          <View className={cns('at-row',
+            'at-row--no-wrap',
+            'nav-bar'
+          )}>
+            <View
+              className={cns('at-col',
+                'at-col-3',
+                'nav-bar-leftIcon'
+              )}
+              onClick={onClickLeftIcon}
+            >
+              {
+                imgs ? <Image
+                  src={imgs}
+                  mode='widthFix'
+                  className='nav-bar-image'
+                /> : <AtIcon
+                  prefixClass={leftIconPrefixClass ? leftIconPrefixClass : 'at-icon'}
+                  value={leftIconType}
+                  color={color}
+                  size={20}
+                />
+              }
+            </View>
+            <View className={cns('at-col',
+              'at-col-6',
+              'nav-bar-title'
+            )}>{title}</View>
+            <View className={cns('at-col',
+              'at-col-3'
+            )}> </View>
+          </View>
+        </View>
+        <View style={{height: `${height}PX`}}>
+        </View>
+      </Block>
     )
   }
 }

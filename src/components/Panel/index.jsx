@@ -5,7 +5,7 @@ import {
   View
 } from '@tarojs/components';
 
-import './index.less';
+import './index.scss';
 
 /**
  * 抽象板块组件
@@ -27,15 +27,14 @@ class Panel extends Component {
     isPanel: false
   };
 
-  static getDerivedStateFromProps(props, state) {
-    const {isPanel = false, style = {}} = props;
-    const {isPanel: next_isPanel} = state;
+  componentWillReceiveProps(nextProps, nextContext) {
+    const {isPanel = false, style = {}} = this.props;
+    const {isPanel: next_isPanel} = nextProps;
     if (isPanel !== next_isPanel) {
-      return {
+      this.setState({
         height: next_isPanel ? style.height ? style.height : 180 : 0
-      }
+      });
     }
-    return null;
   }
 
   render() {
@@ -43,18 +42,19 @@ class Panel extends Component {
     const {isPanel = false, style = {}, className = ''} = props;
     const {height = 0} = this.state;
     return (
-      React.createElement(View, {
-        className: cns(
-          'ldm-panel',
-          {
-            'ldm-panel-show': isPanel
-          },
-          className
-        ),
-        style: Object.assign({
-          height: `${height}px`
-        }, style)
-      }, this.props.children)
+      <View className={cns(
+        'ldm-panel',
+        {
+          'ldm-panel-show': isPanel
+        },
+        className
+      )}
+            style={Object.assign({
+              height: `${height}px`
+            }, style)}
+      >
+        {this.props.children}
+      </View>
     )
   }
 }

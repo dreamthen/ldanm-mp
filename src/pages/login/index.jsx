@@ -1,4 +1,4 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import {
   View,
   Button
@@ -6,17 +6,11 @@ import {
 import Login from '../../components/Login';
 import OutLogin from '../../components/OutLogin';
 
+import './index.scss';
+
 
 class LoginDemo extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   state = {};
-
-  config = {
-    navigationBarTitleText: '登录'
-  };
 
   componentDidMount() {
     OutLogin({

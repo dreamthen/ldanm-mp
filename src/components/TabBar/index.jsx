@@ -9,7 +9,7 @@ import AtTabBar from './tab-bar';
 import Ldanm from '../utils';
 import * as constants from './constants';
 
-import './index.less';
+import './index.scss';
 
 /**
  * 抽象底部自定义导航栏组件

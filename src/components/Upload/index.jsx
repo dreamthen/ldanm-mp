@@ -9,7 +9,7 @@ import cns from 'classnames';
 import AtIcon from '../../common/icon';
 import * as constants from './constants';
 
-import './index.less';
+import './index.scss';
 
 /**
  * 抽象上传文件组件

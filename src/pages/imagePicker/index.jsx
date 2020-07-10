@@ -1,25 +1,15 @@
-import Taro, {Component} from '@tarojs/taro';
+import React, {Component} from 'react';
 import {
   View
 } from '@tarojs/components';
 import ImagePicker from '../../components/ImagePicker';
 
-import 'taro-ui/dist/style/components/image-picker.scss';
-import 'taro-ui/dist/style/components/icon.scss';
-import './index.less';
+import './index.scss';
 
 
 class ImagePickerDemo extends Component {
-  static options = {
-    addGlobalClass: true
-  };
-
   state = {
     files: []
-  };
-
-  config = {
-    navigationBarTitleText: '图片选择器'
   };
 
   componentDidMount() {
@@ -92,6 +82,7 @@ class ImagePickerDemo extends Component {
         <ImagePicker
           action='https://pet.api.1jtec.com/tinyStatics/uploadImg/v2'
           name='file'
+          length={4}
           files={files}
           data={{type: 'ORMAL'}}
           onFail={onFail}

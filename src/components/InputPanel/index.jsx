@@ -11,7 +11,7 @@ import AtButton from "../../common/button";
 import Panel from "../Panel";
 import {imgs} from './assets';
 
-import './index.less';
+import './index.scss';
 
 /**
  * 抽象消息功能发送组件
@@ -71,21 +71,6 @@ class InputPanel extends Component {
   }
 
   /**
-   * 监听键盘高度发生变化的时候触发此事件
-   */
-  onKeyboardChangeHandler = (event = {}) => {
-    const {currentTarget: {height = 0}} = event || {};
-    const {
-      onKeyboardChange = () => {
-      }
-    } = this.props;
-    this.setState({
-      inputDistanceBoard: height
-    });
-    onKeyboardChange(height);
-  };
-
-  /**
    * 输入框失焦时触发
    * @尹文楷
    */
@@ -131,60 +116,69 @@ class InputPanel extends Component {
       onFocusHandler = () => {
       },
       onBlurHandler = () => {
-      },
-      onKeyboardChangeHandler = () => {
       }
     } = this;
     return (
-      React.createElement(Block, {},
-        React.createElement(
-          View, {
-            className: cns('at-row',
-              'at-row--no-wrap',
-              'ldm-communications-communicationsBar',
-              className),
-            style: {bottom: `${inputDistanceBoard}px`}
-          },
-          React.createElement(View, {
-              className: cns('at-col-10', 'ldm-communications-communicationsBar-input')
-            },
-            React.createElement(AtInput, {
-              type: 'text',
-              maxLength: 100,
-              customStyle: {padding: '16rpx 0'},
-              className: cns(
+      <Block>
+        <View
+          className={cns('at-row',
+            'at-row--no-wrap',
+            'ldm-communications-communicationsBar',
+            className)
+          }
+          style={{bottom: `${inputDistanceBoard}px`}}
+        >
+          <View className={cns('at-col-10',
+            'ldm-communications-communicationsBar-input')
+          }>
+            <AtInput
+              type='text'
+              cursorSpacing={16}
+              maxLength={100}
+              customStyle={{padding: '16rpx 0'}}
+              className={cns(
                 'ldm-communications-communicationsBar-communicationsValue',
                 {'ldm-communications-communicationsBar-communicationsValue-focus': !!isFocus}
-              ),
-              placeholder,
-              adjustPosition: false,
-              value,
-              onChange,
-              onFocus: onFocusHandler,
-              onKeyboardHeightChange: onKeyboardChangeHandler,
-              onBlur: onBlurHandler,
-              onConfirm
-            }, hasPanel && React.createElement(Image, {
-              src: imgs.addMoreFunc,
-              mode: 'widthFix',
-              style: {width: '52rpx'},
-              className: 'ldm-communications-communicationsBar-addFunc',
-              onClick: onGetMoreFunc
-            }))
-          ),
-          React.createElement(View, {
-            className: cns('at-col-2', 'ldm-communications-communicationsBar-post')
-          }, React.createElement(AtButton, {
-            size: 'small',
-            className: 'ldm-communications-communicationsBar-post-button',
-            onClick: onConfirm
-          }, '发送'))
-        ),
-        React.createElement(Panel, {
-          className: 'ldm-communications-panel',
-          isPanel
-        }, this.props.renderPanel)
-      )
+              )}
+              placeholder={placeholder}
+              adjustPosition={false}
+              value={value}
+              onChange={onChange}
+              onFocus={onFocusHandler}
+              onBlur={onBlurHandler}
+              onConfirm={onConfirm}
+            >
+              {
+                hasPanel && <Image
+                  src={imgs.addMoreFunc}
+                  mode='widthFix'
+                  style={{width: '52rpx'}}
+                  className='ldm-communications-communicationsBar-addFunc'
+                  onClick={onGetMoreFunc}
+                />
+              }
+            </AtInput>
+          </View>
+          <View className={cns('at-col-2',
+            'ldm-communications-communicationsBar-post'
+          )}>
+            {/*按钮发布区域: 使用formId进行发起一次有formId的模板消息请求*/}
+            <AtButton
+              size='small'
+              className='ldm-communications-communicationsBar-post-button'
+              onClick={onConfirm}
+            >
+              发送
+            </AtButton>
+          </View>
+        </View>
+        <Panel
+          className='ldm-communications-panel'
+          isPanel={isPanel}
+        >
+          {this.props.renderPanel}
+        </Panel>
+      </Block>
     )
   }
 }

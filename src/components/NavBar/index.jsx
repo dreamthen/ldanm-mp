@@ -36,7 +36,9 @@ class NavBar extends Component {
     //左边第一个图标类型点击事件
     onClickLeftIcon: PropTypes.func,
     //是否传入的是图片，而不是icon，如果为图片就使用图片，否则使用icon
-    imgs: PropTypes.any
+    imgs: PropTypes.any,
+    //处理滑动获取顶部导航高度的事件
+    refs: PropTypes.func
   };
 
   state = {
@@ -48,11 +50,18 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
+    const {
+      refs = () => {
+      }
+    } = this.props;
     Taro.createSelectorQuery().in(this.$scope).select('#navBar').fields({
       size: true
     }, (res = {}) => {
       const {height = 0} = res;
       this.setState({
+        height
+      });
+      refs({
         height
       });
     }).exec()

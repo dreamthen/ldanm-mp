@@ -37,6 +37,8 @@ class UserInfo extends Component {
     renderButtonDetail: PropTypes.element,
     //外部传入样式表
     className: PropTypes.string,
+    //外部传入的按钮点击样式表
+    activeClassName: PropTypes.string,
     //保存或者获取用户个人信息完成之后的回调
     done: PropTypes.func
   };
@@ -115,6 +117,7 @@ class UserInfo extends Component {
   render() {
     const {
       className = '',
+      activeClassName = '',
       size = 'default',
       text = '',
       type = 'userInfo',
@@ -134,6 +137,7 @@ class UserInfo extends Component {
             type={buttonType}
             lang={lang}
             className='ldm-userInfo-get'
+            hoverClass={activeClassName}
             openType={constants.typeConfig[type]}
             onGetUserInfo={getUserInfoHandler}
             onGetPhoneNumber={getUserInfoHandler}

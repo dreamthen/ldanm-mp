@@ -58,6 +58,8 @@ class ImagePicker extends Component {
     onRemove: PropTypes.func,
     //点击图片触发的回调
     onImageClick: PropTypes.func,
+    //添加完成功或者失败都会走的回调
+    done: PropTypes.func,
     //选择失败触发的回调
     onFail: PropTypes.func
   };
@@ -101,6 +103,8 @@ class ImagePicker extends Component {
       onAddUploadBefore = () => {
       },
       onRemoveBefore = () => {
+      },
+      done = () => {
       }
     } = this.props;
     if (operationType === 'add') {
@@ -128,6 +132,7 @@ class ImagePicker extends Component {
             fail: (res) => {
             },
             complete: (res) => {
+              done();
             }
           });
         }

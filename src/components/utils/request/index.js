@@ -103,8 +103,9 @@ function uploadFile({
     header,
     formData,
     success({data, statusCode}) {
+      const _data = JSON.parse(data);
       if (exception({
-        errMsg: data['errmsg'],
+        errMsg: _data['errmsg'],
         data: {data, statusCode},
       })) {
         success(data, statusCode);

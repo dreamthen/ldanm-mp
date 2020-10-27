@@ -86,6 +86,7 @@ class NavBar extends Component {
             statusBarClassName,
             className
           )}
+          style={{height: `${height}PX`}}
         >
           <View className={cns('at-row',
             'at-row--no-wrap',

@@ -103,7 +103,6 @@ function uploadFile({
     header,
     formData,
     success({data, statusCode}) {
-      console.log(data);
       if (exception({
         errMsg: data['errmsg'],
         data: {data, statusCode},

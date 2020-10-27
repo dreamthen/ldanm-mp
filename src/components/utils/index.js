@@ -49,23 +49,30 @@ const Ldanm = (() => {
       if (system.indexOf('iOS') !== -1 || system.indexOf('macOS') !== -1) {
         if (model === 'iPhone X') {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneX-navBar';
+          navBarAdaptation['statusPadding'] = 42.5;
           navBarAdaptation['isX'] = true;
         } else if (model.indexOf('iPhone X') !== -1) {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneXM-navBar';
+          navBarAdaptation['statusPadding'] = 38;
           navBarAdaptation['isX'] = true;
         } else if (model.indexOf('iPhone12') !== -1) {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhone12-navBar';
+          navBarAdaptation['statusPadding'] = 39;
           navBarAdaptation['isX'] = true;
         } else if (model.indexOf('-inch') !== -1) {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneInch-navBar';
+          navBarAdaptation['statusPadding'] = 20;
           navBarAdaptation['isX'] = true;
         } else if (model === 'iPhone 5') {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhone5-navBar';
+          navBarAdaptation['statusPadding'] = 26;
         } else if (model.indexOf('iPhone') !== -1) {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhone-navBar';
+          navBarAdaptation['statusPadding'] = 18;
         }
       } else if (system.indexOf('Android') !== -1) {
         navBarAdaptation['statusBarClassName'] = 'ldm-Android-navBar';
+        navBarAdaptation['statusPadding'] = 20;
       }
       return navBarAdaptation;
     }

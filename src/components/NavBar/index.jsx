@@ -79,7 +79,7 @@ class NavBar extends Component {
   render() {
     const {title, className = '', color, leftIconPrefixClass, leftIconType, onClickLeftIcon, imgs = ''} = this.props;
     const {height = 0, hasHeight = false} = this.state;
-    const {statusBarClassName} = Ldanm.adaptationNavBar() || {};
+    const {statusBarClassName = '', statusPadding = 0} = Ldanm.adaptationNavBar() || {};
     return (
       <Block>
         <View
@@ -89,7 +89,7 @@ class NavBar extends Component {
             statusBarClassName,
             className
           )}
-          style={{height: hasHeight ? `${height}PX` : 'auto'}}
+          style={{height: hasHeight ? `${height - statusPadding}PX` : 'auto'}}
         >
           <View className={cns('at-row',
             'at-row--no-wrap',

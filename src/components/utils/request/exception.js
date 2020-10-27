@@ -4,7 +4,7 @@ import Taro from '@tarojs/taro';
  * 异常处理方法函数
  * @尹文楷
  */
-function exception({errMsg, data: {statusCode}, request, params}) {
+function exception({errMsg, data: {statusCode}}) {
   switch (statusCode) {
     case 500:
       Taro.showModal({

@@ -1,7 +1,8 @@
 import Taro from '@tarojs/taro';
+import querystring from 'querystring';
+
 import {contentType} from '../../constants';
 import * as constants from '../constants';
-import querystring from 'querystring';
 import exception from './exception';
 
 /**
@@ -102,7 +103,12 @@ function uploadFile({
     header,
     formData,
     success({data, statusCode}) {
-      success(data, statusCode);
+      if (exception({
+        errMsg: data['errmsg'],
+        data: {data, statusCode,},
+      })) {
+        success(data, statusCode);
+      }
     },
     fail(res) {
       fail(res);

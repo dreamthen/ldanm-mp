@@ -43,7 +43,9 @@ class NavBar extends Component {
 
   state = {
     //fix底部的填充部分的高度
-    height: 0
+    height: 0,
+    //是否存在
+    hasHeight: false
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -59,7 +61,8 @@ class NavBar extends Component {
     }, (res = {}) => {
       const {height = 0} = res;
       this.setState({
-        height
+        height,
+        hasHeight: true
       });
       refs({
         height
@@ -75,7 +78,7 @@ class NavBar extends Component {
 
   render() {
     const {title, className = '', color, leftIconPrefixClass, leftIconType, onClickLeftIcon, imgs = ''} = this.props;
-    const {height = 0} = this.state;
+    const {height = 0, hasHeight = false} = this.state;
     const {statusBarClassName} = Ldanm.adaptationNavBar() || {};
     return (
       <Block>
@@ -86,7 +89,7 @@ class NavBar extends Component {
             statusBarClassName,
             className
           )}
-          style={{height: `${height}PX`}}
+          style={{height: hasHeight ? `${height}PX` : 'auto'}}
         >
           <View className={cns('at-row',
             'at-row--no-wrap',

@@ -5,7 +5,6 @@ import Taro from '@tarojs/taro';
  * @尹文楷
  */
 function exception({errMsg, data: {statusCode}}) {
-  console.log(errMsg, typeof errMsg);
   switch (statusCode) {
     case 500:
       Taro.showModal({

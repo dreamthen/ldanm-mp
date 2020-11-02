@@ -103,7 +103,7 @@ function uploadFile({
     header,
     formData,
     success({data, statusCode}) {
-      const _data = JSON.parse(data);
+      const _data = isJSON(data) ? JSON.parse(data) : data;
       if (exception({
         errMsg: _data['errmsg'],
         data: {data, statusCode},
@@ -118,6 +118,21 @@ function uploadFile({
       complete(res);
     }
   });
+}
+
+/**
+ * 判断字符串是否是JSON格式
+ * @param str
+ */
+function isJSON(str = '') {
+  if (typeof str === 'string') {
+    try {
+      JSON.parse(str);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
 
 export {

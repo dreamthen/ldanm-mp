@@ -59,6 +59,10 @@ const Ldanm = (() => {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhone12-navBar';
           navBarAdaptation['statusPadding'] = 39;
           navBarAdaptation['isX'] = true;
+        } else if (model.indexOf('iPhone13') !== -1) {
+          navBarAdaptation['statusBarClassName'] = 'ldm-iPhone13-navBar';
+          navBarAdaptation['statusPadding'] = 39;
+          navBarAdaptation['isX'] = true;
         } else if (model.indexOf('-inch') !== -1) {
           navBarAdaptation['statusBarClassName'] = 'ldm-iPhoneInch-navBar';
           navBarAdaptation['statusPadding'] = 20;

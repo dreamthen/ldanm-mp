@@ -58,6 +58,35 @@ class UserInfo extends Component {
 
   componentDidShow() {
     const {
+      type = 'userInfo'
+    } = this.props;
+    switch (type) {
+      case 'userInfo': {
+        Taro.getSetting({
+          success: ({authSetting = {}}) => {
+            if (!authSetting['scope.userInfo']) {
+              this.setState({
+                show: true
+              });
+            }
+          },
+          fail: (res) => {
+          },
+          complete: (res) => {
+          }
+        });
+      }
+      default: {
+        break;
+      }
+    }
+  }
+
+  /**
+   * 获取用户昵称和头像信息配置
+   */
+  userInfoConfig = (e = {}) => {
+    const {
       callBack = () => {
       },
       done = () => {
@@ -69,8 +98,8 @@ class UserInfo extends Component {
       case 'userInfo': {
         Taro.getSetting({
           success: ({authSetting = {}}) => {
-            if (authSetting['scope.userInfo']) {
-              Taro.getUserInfo({
+            if (!authSetting['scope.userInfo']) {
+              Taro.getUserProfile({
                 lang,
                 success: (res = {}) => {
                   callBack({detail: {...res}});
@@ -82,11 +111,6 @@ class UserInfo extends Component {
                   done(res);
                 }
               });
-            } else {
-              this.setState({
-                show: true
-              });
-              callBack({});
             }
           },
           fail: (res) => {
@@ -101,7 +125,9 @@ class UserInfo extends Component {
         break;
       }
     }
-  }
+    //取消冒泡事件
+    e.stopPropagation();
+  };
 
   /**
    * 点击按钮获取用户的个人信息
@@ -127,6 +153,8 @@ class UserInfo extends Component {
     const {show = false} = this.state;
     const {
       getUserInfoHandler = () => {
+      },
+      userInfoConfig = () => {
       }
     } = this;
     return (
@@ -139,7 +167,8 @@ class UserInfo extends Component {
             className='ldm-userInfo-get'
             hoverClass={activeClassName}
             openType={constants.typeConfig[type]}
-            onGetUserInfo={getUserInfoHandler}
+            onClick={userInfoConfig}
+            // onGetUserInfo={getUserInfoHandler}
             onGetPhoneNumber={getUserInfoHandler}
           >
             {text}

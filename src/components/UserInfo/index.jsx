@@ -62,18 +62,8 @@ class UserInfo extends Component {
     } = this.props;
     switch (type) {
       case 'userInfo': {
-        Taro.getSetting({
-          success: ({authSetting = {}}) => {
-            if (!authSetting['scope.userInfo']) {
-              this.setState({
-                show: true
-              });
-            }
-          },
-          fail: (res) => {
-          },
-          complete: (res) => {
-          }
+        this.setState({
+          show: true
         });
       }
       default: {
@@ -96,27 +86,15 @@ class UserInfo extends Component {
     } = this.props;
     switch (type) {
       case 'userInfo': {
-        Taro.getSetting({
-          success: ({authSetting = {}}) => {
-            if (!authSetting['scope.userInfo']) {
-              Taro.getUserProfile({
-                lang,
-                success: (res = {}) => {
-                  callBack({detail: {...res}});
-                },
-                fail: (res = {}) => {
-                  callBack(res);
-                },
-                complete: (res = {}) => {
-                  done(res);
-                }
-              });
-            }
+        Taro.getUserProfile({
+          lang,
+          success: (res = {}) => {
+            callBack({detail: {...res}});
           },
-          fail: (res) => {
+          fail: (res = {}) => {
             callBack(res);
           },
-          complete: (res) => {
+          complete: (res = {}) => {
             done(res);
           }
         });

@@ -70,9 +70,9 @@ class UserInfo extends Component {
 					this.setState({
 						show: true
 					});
-					callBack({});
+					callBack({isNeedUpdate});
 				} else {
-					callBack({});
+					callBack({isNeedUpdate});
 				}
 			}
 			default: {

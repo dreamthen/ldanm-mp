@@ -5,9 +5,9 @@ import {
   Block,
   View
 } from '@tarojs/components';
-import AtInput from "../../common/input";
-import AtButton from "../../common/button";
-import Panel from "../Panel";
+import AtInput from '../../common/input';
+import AtButton from '../../common/button';
+import Panel from '../Panel';
 import {imgs} from './assets';
 
 import './index.less';

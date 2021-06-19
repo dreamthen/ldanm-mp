@@ -7,8 +7,8 @@ import UserInfo from './pages/userInfo';
 import NavBar from './pages/NavBar';
 import TabBar from './pages/tabBar';
 import ImagePicker from './pages/imagePicker';
-import InputPanel from "./pages/InputPanel";
-import Upload from "./pages/Upload";
+import InputPanel from './pages/InputPanel';
+import Upload from './pages/Upload';
 
 import store from './store';
 

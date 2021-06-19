@@ -5,8 +5,8 @@ import {
 } from '@tarojs/components';
 import cns from 'classnames';
 
-import AtImagePicker from "./image-picker";
-import Ldanm from "../utils";
+import AtImagePicker from './image-picker';
+import Ldanm from '../utils';
 
 import './index.less';
 

@@ -71,6 +71,8 @@ class UserInfo extends Component {
 						show: true
 					});
 					callBack({});
+				} else {
+					callBack({});
 				}
 			}
 			default: {

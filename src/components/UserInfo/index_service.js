@@ -5,7 +5,7 @@ import Ldanm from '../utils/index';
  */
 function getNeedUpdateUserInfo() {
 	return Ldanm.request({
-		url: 'users/needUpdateUserInfo',
+		url: 'https://pet.api.1jtec.com/users/needUpdateUserInfo',
 		method: 'post',
 		header: {
 			'content-type': 'application/x-www-form-urlencoded'

@@ -7,6 +7,7 @@ import Taro from '@tarojs/taro';
 function exception({errMsg, data: {statusCode}, request, params}) {
 	switch (statusCode) {
 		case 401:
+			console.log(request, params);
 			this.loginSession(request, params);
 			return false;
 		case 500:

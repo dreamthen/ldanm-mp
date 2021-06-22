@@ -58,6 +58,9 @@ class UserInfo extends Component {
 	}
 
 	async componentDidShow() {
+		const {
+			type = 'userInfo'
+		} = this.props;
 		switch (type) {
 			case 'userInfo': {
 				await userInfoApi.getNeedUpdateUserInfo.call(this);

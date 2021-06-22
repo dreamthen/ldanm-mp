@@ -14,16 +14,16 @@ function getNeedUpdateUserInfo() {
 		header: {
 			'content-type': 'application/x-www-form-urlencoded'
 		},
-		success: (data = {}, header = {}) => {
-			const {isNeedUpdate = true} = data;
-			if (typeof isNeedUpdate === 'boolean') {
-				if (isNeedUpdate) {
+		success: (data = true, header = {}) => {
+			console.log(data);
+			if (typeof data === 'boolean') {
+				if (data) {
 					this.setState({
 						show: true
 					});
-					callBack({isNeedUpdate});
+					callBack({isNeedUpdate: data});
 				} else {
-					callBack({isNeedUpdate});
+					callBack({isNeedUpdate: data});
 				}
 			}
 			return data;

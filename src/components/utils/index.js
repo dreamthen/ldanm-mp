@@ -1,4 +1,5 @@
 import Taro from '@tarojs/taro';
+import * as wxAPI from './wxAPI';
 import * as requestApi from './request';
 import * as packageApi from './package';
 
@@ -38,6 +39,51 @@ const Ldanm = (() => {
     uuid = (...params) => {
       return packageApi.uuid.uuid(...params);
     };
+
+    /**
+     * 调用接口获取登录凭证（code）。通过凭证进而换取用户登录态信息，包括用户的唯一标识（openid）及本次登录的会话密钥（session_key）等。用户数据的加解密通讯需要依赖会话密钥完成
+     * @尹文楷
+     * @param params
+     */
+    login(...params) {
+      return wxAPI.loginCodeAPI.loginCode.apply(this.wx, params);
+    }
+
+    /**
+     * 登录,将微信与后台服务器绑定,建立会话
+     * @尹文楷
+     */
+    loginSession(request, params) {
+      this.login({
+        timeout: 5000,
+        success: async (code) => {
+          // 登录,将微信与后台服务器绑定,建立会话
+          // @尹文楷
+          await this.request({
+            url: 'https://pet.api.1jtec.com/tinySession/login',
+            data: {
+              code
+            },
+            success: async (data, header) => {
+              await Taro.setStorageSync('petPlanet', header['Set-Cookie']);
+              params['header']['cookie'] = header['Set-Cookie'];
+              await request(params);
+            },
+            fail: async (res) => {
+
+            },
+            complete: async (res) => {
+
+            }
+          });
+        },
+        fail: async (res) => {
+
+        },
+        complete: async (res) => {
+        }
+      });
+    }
 
     /**
      * 适配各类手机,自定义导航栏高度

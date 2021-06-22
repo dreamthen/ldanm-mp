@@ -58,24 +58,9 @@ class UserInfo extends Component {
 	}
 
 	async componentDidShow() {
-		const {
-			type = 'userInfo',
-			callBack = () => {
-			}
-		} = this.props;
 		switch (type) {
 			case 'userInfo': {
-				const {data: isNeedUpdate = true} = await userInfoApi.getNeedUpdateUserInfo();
-				if (typeof isNeedUpdate === 'boolean') {
-					if (isNeedUpdate) {
-						this.setState({
-							show: true
-						});
-						callBack({isNeedUpdate});
-					} else {
-						callBack({isNeedUpdate});
-					}
-				}
+				await userInfoApi.getNeedUpdateUserInfo.call(this);
 			}
 			default: {
 				break;

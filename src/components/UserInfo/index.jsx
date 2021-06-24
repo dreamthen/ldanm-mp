@@ -5,6 +5,7 @@ import {
 } from '@tarojs/components';
 import PropTypes from 'prop-types';
 import cns from 'classnames';
+import {needUserInfoDesc} from '../constants';
 import * as constants from './constants';
 import * as userInfoApi from './index_service';
 
@@ -87,6 +88,7 @@ class UserInfo extends Component {
 			case 'userInfo': {
 				Taro.getUserProfile({
 					lang,
+					desc: needUserInfoDesc,
 					success: (res = {}) => {
 						callBack({detail: {...res}});
 					},

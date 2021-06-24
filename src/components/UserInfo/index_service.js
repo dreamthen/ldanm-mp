@@ -15,7 +15,6 @@ function getNeedUpdateUserInfo() {
 			'content-type': 'application/x-www-form-urlencoded'
 		},
 		success: (data = true, header = {}) => {
-			console.log(data);
 			if (typeof data === 'boolean') {
 				if (data) {
 					this.setState({

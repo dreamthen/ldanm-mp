@@ -2,72 +2,38 @@
 const BundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
-  projectName: 'Ac_mp',
-  date: '2020-4-1',
+  projectName: 'ldanm-mp',
+  date: '2022-4-1',
   designWidth: 750,
   deviceRatio: {
     '640': 2.34 / 2,
     '750': 1,
     '828': 1.81 / 2
   },
-  plugins: [
-    '@tarojs/plugin-sass',
-    '@tarojs/plugin-terser'
-  ],
+  plugins: [],
   sourceRoot: 'src',
   outputRoot: 'dist',
-  babel: {
-    sourceMap: true,
-    presets: [
-      ['env', {
-        modules: false
-      }]
-    ],
-    plugins: [
-      'transform-decorators-legacy',
-      'transform-class-properties',
-      'transform-object-rest-spread',
-      ['transform-runtime', {
-        helpers: false,
-        polyfill: false,
-        regenerator: true,
-        moduleName: 'babel-runtime'
-      }
-      ]
-    ]
-  },
   defineConstants: {},
+  terser: {
+    enable: true,
+    config: {
+      toplevel: true,
+      compress: {
+        toplevel: true,
+        dead_code: true,
+        unused: true
+      }
+    }
+  },
+  csso: {
+    enable: true
+  },
+  framework: 'react',
   mini: {
     //自定义webpack插件
     webpackChain(chain, webpack) {
       chain.plugin('bundleAnalyzer').use(new BundleAnalyzer(), []);
       chain.plugin('contextReplacement').use(new webpack.ContextReplacementPlugin(/\/[\\]?locale/, /zh-cn/), []);
-      // chain.optimization.splitChunks({
-      //   chunks: 'all',
-      //   name: 'vendors',
-      //   maxInitialRequests: Infinity,
-      //   minSize: 0,
-      //   cacheGroups: {
-      //     common: {
-      //       name: !!chain.isBuildPlugin ? 'plugin/common' : 'common',
-      //       minSize: 0,
-      //       minChunks: 2,
-      //       chunks: 'initial',
-      //       priority: 1
-      //     },
-      //     vendors: {
-      //       name: !!chain.isBuildPlugin ? 'plugin/vendors' : 'vendors',
-      //       minSize: 0,
-      //       minChunks: 2,
-      //       chunks: 'initial',
-      //       priority: 10,
-      //       test: (module) => {
-      //         // 如果需要自定义配置，PARSE_AST_TYPE 可以从 webpackChain 第三个参数获得
-      //         return /[\\/]node_modules[\\/]/.test(module.resource);
-      //       }
-      //     }
-      //   }
-      // });
     },
     commonChunks: ['runtime', 'vendors', 'common', 'taro'],
     postcss: {
@@ -81,10 +47,12 @@ const config = {
           ]
         }
       },
+      // pxtransform 配置项，参考尺寸章节
       pxtransform: {
         enable: true,
         config: {}
       },
+      // 小程序端样式引用本地资源内联
       url: {
         enable: true,
         config: {
@@ -98,6 +66,10 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    miniCssExtractPluginOption: {
+      filename: '[name].[hash:6].css',
+      chunkFileName: '[name].[contenthash:6].css'
     }
   },
   h5: {

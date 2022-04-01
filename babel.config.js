@@ -5,14 +5,8 @@ module.exports = {
     ['taro', {
       // 以下参数为 @babel/preset-env 的参数：
       // https://babeljs.io/docs/en/babel-preset-env
-      loose: false,
-      modules: false,
-      useBuiltIns: false,
-      targets: {
-        ios: '9',
-        android: '5'
-      },
-      decoratorsLegacy: true
+      framework: 'react',
+      ts: false
     }]
   ]
 }

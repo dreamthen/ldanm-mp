@@ -3,9 +3,9 @@
 	"version": "0.7.4",
 	"description": "拉旦木小程序-功能组件(基于taro)",
 	"templateInfo": {
-		"name": "redux",
+		"name": "default",
 		"typescript": false,
-		"css": "less"
+		"css": "sass"
 	},
 	"keywords": [
 		"ldm",
@@ -56,6 +56,7 @@
 		"@tarojs/router": "3.4.4",
 		"@tarojs/runtime": "3.4.4",
 		"@tarojs/taro": "3.4.4",
+		"@tarojs/plugin-framework-react": "3.4.4",
 		"@tarojs/taro-h5": "3.4.4",
 		"classnames": "^2.3.1",
 		"moment": "^2.29.1",

@@ -6,7 +6,15 @@ module.exports = {
       // 以下参数为 @babel/preset-env 的参数：
       // https://babeljs.io/docs/en/babel-preset-env
       framework: 'react',
-      ts: false
+      ts: false,
+      loose: false,
+      modules: false,
+      targets: {
+        ios: '9',
+        android: '5'
+      },
+      useBuiltIns: false,
+      decoratorsLegacy: true
     }]
   ]
 }

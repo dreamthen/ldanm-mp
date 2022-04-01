@@ -30,7 +30,7 @@
 	"homepage": "https://github.com/dreamthen/ldanm-mp#readme",
 	"scripts": {
 		"build:component": "node scripts/build.js",
-		"build:weapp": "taro build --type weapp",
+		"build:weapp": "NODE_ENV=production taro build --type weapp",
 		"build:swan": "taro build --type swan",
 		"build:alipay": "taro build --type alipay",
 		"build:tt": "taro build --type tt",
@@ -95,5 +95,10 @@
 		"stylelint": "^14.6.1",
 		"webpack-bundle-analyzer": "^4.5.0",
 		"yargs": "^17.4.0"
-	}
+	},
+	"browserslist": [
+		"last 3 versions",
+		"Android >= 4.1",
+		"ios >= 8"
+	]
 }

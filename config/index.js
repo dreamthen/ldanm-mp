@@ -40,11 +40,6 @@ const config = {
       autoprefixer: {
         enable: true,
         config: {
-          browsers: [
-            'last 3 versions',
-            'Android >= 4.1',
-            'ios >= 8'
-          ]
         }
       },
       // pxtransform 配置项，参考尺寸章节
@@ -79,11 +74,6 @@ const config = {
       autoprefixer: {
         enable: true,
         config: {
-          browsers: [
-            'last 3 versions',
-            'Android >= 4.1',
-            'ios >= 8'
-          ]
         }
       },
       cssModules: {

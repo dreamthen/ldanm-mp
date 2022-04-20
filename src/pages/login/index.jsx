@@ -15,9 +15,9 @@ class LoginDemo extends Component {
   componentDidMount() {
     OutLogin({
       url: 'https://pet.api.1jtec.com/tinySession/login',
-      method: 'post',
+      method: 'get',
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/json'
       },
       callBack: (data, header) => {
         console.log(data);
@@ -35,9 +35,9 @@ class LoginDemo extends Component {
         <Login
           canClick={false}
           url='https://pet.api.1jtec.com/tinySession/login'
-          method='post'
+          method='get'
           header={{
-            'content-type': 'application/x-www-form-urlencoded'
+            'content-type': 'application/json'
           }}
           callBack={(data, header) => {
             console.log(data);
@@ -51,9 +51,9 @@ class LoginDemo extends Component {
           canClick
           className='ldm-login-button'
           url='https://pet.api.1jtec.com/tinySession/login'
-          method='post'
+          method='get'
           header={{
-            'content-type': 'application/x-www-form-urlencoded'
+            'content-type': 'application/json'
           }}
           callBack={(data, header) => {
             console.log(data);

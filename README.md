@@ -197,110 +197,107 @@ PS: 需要node > 8的node版本
 
 > UserInfo
 
-| 属性名 | 属性类型 | 属性描述 | 默认值 |
-| :----: | :----: | :----: | :----: |
-| lang | string | 返回用户信息的语言 | 'zh_CN' |
-| buttonType | string | 按钮类型 | 'primary' |
-| size | string | 按钮尺寸 | 'default' |
-| type | string | 选择个人信息的类型('userInfo' or 'phone') | 'userInfo' |
-| visible | boolean | 是否显示点击获取个人信息的按钮 | true |
-| callBack | function | 保存或者获取用户个人信息成功之后的回调 | (res) => void |
-| text | string | 点击获取用户个人信息按钮的文案 | '' |
-| renderButtonDetail | ReactElement | 是否自定义获取用户个人信息按钮的文案信息 | {} |
-| className | string | 外部传入样式表 | '' |
-| done | function | 保存或者获取用户个人信息完成之后的回调 | (res) => void |
+|        属性名         | 属性类型 |                        属性描述                        |      默认值      |
+|:------------------:| :----: |:--------------------------------------------------:|:-------------:|
+|        url         | string |                判断当前用户是否需要更新信息的后端接口                 |      ''       |
+|        lang        | string |                     返回用户信息的语言                      |    'zh_CN'    |
+|     buttonType     | string |                        按钮类型                        |   'primary'   |
+|        size        | string |                        按钮尺寸                        |   'default'   |
+|        type        | string |          选择个人信息的类型('userInfo' or 'phone')          |  'userInfo'   |
+|      visible       | boolean |                  是否显示点击获取个人信息的按钮                   |     true      |
+|      callBack      | function |                保存或者获取用户个人信息成功之后的回调                 | (res) => void |
+|        text        | string |                  点击获取用户个人信息按钮的文案                   |      ''       |
+| renderButtonDetail | ReactElement |                是否自定义获取用户个人信息按钮的文案信息                |      {}       |
+|     className      | string |                      外部传入样式表                       |      ''       |
+|        done        | function |                保存或者获取用户个人信息完成之后的回调                 | (res) => void |
 
 > 使用
 
 ```jsx
-    import Taro, {Component} from '@tarojs/taro';
+    import React, {Component} from 'react';
     import {
-      View
+        View
     } from '@tarojs/components';
-    import {
-        LdmUserInfo
-    } from 'ldm-taro-frc';
+    import UserInfo from '../../components/UserInfo';
     
     
     class UserInfoDemo extends Component {
-      static options = {
-        addGlobalClass: true
-      };
+        state = {
+            //用户昵称
+            nickName: '',
+            //用户头像
+            avatar: '',
+            //获取的手机号或者异常信息
+            phone: '',
+            //是否显示获取个人信息按钮
+            show: true,
+            //是否显示获取个人手机号码的按钮
+            showPhone: true,
+        };
     
-      state = {
-        //用户昵称
-        nickName: '',
-        //用户头像
-        avatar: '',
-        //获取的手机号或者异常信息
-        phone: '',
-        //是否显示获取个人信息按钮
-        show: true,
-        //是否显示获取个人手机号码的按钮
-        showPhone: true,
-      };
-    
-      config = {
-        navigationBarTitleText: '个人信息'
-      };
-    
-      componentDidMount() {
-        // 个人手机号码通过后台去判断是否已经存在这个手机号,然后去操作是否显示获取个人手机号码的按钮
-        // this.setState({
-        //   showPhone: false
-        // });
-      }
-    
-      /**
-       * 获取用户的个人信息
-       */
-      getUserInfoHandler = (res = {}) => {
-        const {detail = {}} = res;
-        const {userInfo} = detail;
-        if (userInfo) {
-          const {nickName = '', avatarUrl = ''} = userInfo;
-          this.setState({
-            nickName,
-            avatar: avatarUrl,
-            show: false
-          });
+        componentDidMount() {
+            // 个人手机号码通过后台去判断是否已经存在这个手机号,然后去操作是否显示获取个人手机号码的按钮
+            // this.setState({
+            //   showPhone: false
+            // });
         }
-      };
     
-      /**
-       * 获取用户的手机号码
-       */
-      getPhoneNumberHandler = (res = {}) => {
-        const {detail = {}} = res;
-        const {errMsg} = detail;
-        if (errMsg) {
-          this.setState({
-            showPhone: false,
-            phone: errMsg
-          });
+        /**
+         * 获取用户的个人信息
+         */
+        getUserInfoHandler = (res = {}) => {
+            const {detail = {}} = res;
+            const {userInfo} = detail;
+            if (userInfo) {
+                const {nickName = '', avatarUrl = ''} = userInfo;
+                this.setState({
+                    nickName,
+                    avatar: avatarUrl,
+                    show: false
+                });
+            }
+        };
+    
+        /**
+         * 获取用户的手机号码
+         */
+        getPhoneNumberHandler = (res = {}) => {
+            const {detail = {}} = res;
+            const {errMsg} = detail;
+            if (errMsg) {
+                this.setState({
+                    showPhone: false,
+                    phone: errMsg
+                });
+            }
         }
-      }
     
-      render() {
-        const {
-          getUserInfoHandler = () => {
-          },
-          getPhoneNumberHandler = () => {
-          }
-        } = this;
-        const {nickName = '', avatar = '', show = true, showPhone = true, phone = ''} = this.state;
-        return (
-          <View className='hupu-userInfo'>
-            <LdmUserInfo visible={show} type='userInfo' text='获取个人信息' callBack={getUserInfoHandler}>
-              用户名: {nickName}
-              头像: {avatar}
-            </LdmUserInfo>
-            <LdmUserInfo visible={showPhone} type='phone' text='获取手机号码' callBack={getPhoneNumberHandler}>
-              手机号码: {phone}
-            </LdmUserInfo>
-          </View>
-        )
-      }
+        render() {
+            const {
+                getUserInfoHandler = () => {
+                },
+                getPhoneNumberHandler = () => {
+                }
+            } = this;
+            const {nickName = '', avatar = '', show = true, showPhone = true, phone = ''} = this.state;
+            return (
+                <View className='ldm-userInfo'>
+                    <UserInfo
+                        url='https://pet.api.1jtec.com/users/needUpdateUserInfo'
+                        visible={show}
+                        type='userInfo'
+                        text='获取个人信息'
+                        callBack={getUserInfoHandler}
+                    >
+                        用户名: {nickName}
+                        头像: {avatar}
+                    </UserInfo>
+                    <UserInfo visible={showPhone} type='phone' text='获取手机号码' callBack={getPhoneNumberHandler}>
+                        手机号码: {phone}
+                    </UserInfo>
+                </View>
+            )
+        }
     }
     
     export default UserInfoDemo;

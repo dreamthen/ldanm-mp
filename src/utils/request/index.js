@@ -1,5 +1,4 @@
 import Taro from '@tarojs/taro';
-import {contentType} from '../../constants';
 import * as constants from '../constants';
 import querystring from 'querystring';
 import exception from './exception';
@@ -33,7 +32,7 @@ function requests({
     'content-type': 'application/json',
     'cookie': this.getStorageSync('petPlanet')
   }, header);
-  data = header['content-type'].includes(contentType.xWWWUrlEncoded) ? querystring.stringify(data) : data;
+  data = header['content-type'].includes(constants.contentType.xWWWUrlEncoded) ? querystring.stringify(data) : data;
 
   return this.request({
     url,

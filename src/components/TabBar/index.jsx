@@ -6,7 +6,7 @@ import {
 import cns from 'classnames';
 import AtTabBar from './tab-bar';
 
-import Ldanm from '../utils';
+import Ldanm from '../../utils';
 import * as constants from './constants';
 
 import './index.scss';

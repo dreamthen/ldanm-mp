@@ -6,7 +6,7 @@ import {
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 
-import Ldanm from '../utils';
+import Ldanm from '../../utils';
 
 /**
  * 功能组件

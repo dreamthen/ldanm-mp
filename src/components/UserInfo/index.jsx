@@ -7,6 +7,7 @@ import {
 import PropTypes from 'prop-types';
 import cns from 'classnames';
 import * as constants from './constants';
+import * as userInfoApi from './index_service';
 
 import './index.scss';
 
@@ -16,6 +17,8 @@ import './index.scss';
  */
 class UserInfo extends Component {
   static propTypes = {
+    //判断当前用户是否需要更新信息的后端接口
+    url: PropTypes.string,
     //指定返回用户信息的语言,zh_CN简体中文,zh_TW繁体中文,en英文
     lang: PropTypes.string,
     //按钮的尺寸
@@ -53,45 +56,13 @@ class UserInfo extends Component {
 
   componentDidMount() {
     const {
-      callBack = () => {
-      },
-      done = () => {
-      },
-      lang = 'zh_CN',
+      url = '',
       type = 'userInfo'
     } = this.props;
     Taro.nextTick(() => {
       switch (type) {
         case 'userInfo': {
-          Taro.getSetting({
-            success: ({authSetting = {}}) => {
-              if (authSetting['scope.userInfo']) {
-                Taro.getUserInfo({
-                  lang,
-                  success: (res = {}) => {
-                    callBack({detail: {...res}});
-                  },
-                  fail: (res = {}) => {
-                    callBack(res);
-                  },
-                  complete: (res = {}) => {
-                    done(res);
-                  }
-                });
-              } else {
-                this.setState({
-                  show: true
-                });
-                callBack({});
-              }
-            },
-            fail: (res) => {
-              callBack(res);
-            },
-            complete: (res) => {
-              done(res);
-            }
-          });
+          userInfoApi.getNeedUpdateUserInfo.call(this, url);
         }
         default: {
           break;
@@ -99,6 +70,42 @@ class UserInfo extends Component {
       }
     });
   }
+
+  /**
+   * 获取用户昵称和头像信息配置
+   */
+  userInfoConfig = (e = {}) => {
+    const {
+      callBack = () => {
+      },
+      done = () => {
+      },
+      lang = 'zh_CN',
+      type = 'userInfo'
+    } = this.props;
+    switch (type) {
+      case 'userInfo': {
+        Taro.getUserProfile({
+          lang,
+          desc: constants.needUserInfoDesc,
+          success: (res = {}) => {
+            callBack({detail: {...res}});
+          },
+          fail: (res = {}) => {
+            callBack(res);
+          },
+          complete: (res = {}) => {
+            done(res);
+          }
+        });
+      }
+      default: {
+        break;
+      }
+    }
+    //取消冒泡事件
+    e.stopPropagation();
+  };
 
   /**
    * 点击按钮获取用户的个人信息
@@ -123,6 +130,8 @@ class UserInfo extends Component {
     const {show = false} = this.state;
     const {
       getUserInfoHandler = () => {
+      },
+      userInfoConfig = () => {
       }
     } = this;
     return (
@@ -134,7 +143,8 @@ class UserInfo extends Component {
             lang={lang}
             className='ldm-userInfo-get'
             openType={constants.typeConfig[type]}
-            onGetUserInfo={getUserInfoHandler}
+            // onGetUserInfo={userInfoConfig}
+            onClick={userInfoConfig}
             onGetPhoneNumber={getUserInfoHandler}
           >
             {text}

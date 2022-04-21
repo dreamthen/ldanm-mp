@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Taro from '@tarojs/taro';
 import PropTypes from 'prop-types';
-import Ldanm from '../utils';
+import Ldanm from '../../utils';
 import {
   Block,
   Image,

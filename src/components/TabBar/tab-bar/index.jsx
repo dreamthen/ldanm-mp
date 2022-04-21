@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Image, Text, View } from '@tarojs/components';
-import Ldanm from '../../../components/utils';
+import Ldanm from '../../../utils';
 import AtBadge from '../../../common/bage';
 export default class AtTabBar extends React.Component {
   // constructor () {

@@ -8,3 +8,4 @@ cp -r ./components ../lib
 cp -r ./common ../lib
 cp -r ./assets ../lib
 cp -r ./stylesheets ../lib
+cp -r ./utils ../lib

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {Text} from '@tarojs/components';
-import Ldanm from '../../components/utils';
+import Ldanm from '../../utils';
 
 export default class AtIcon extends React.Component {
   handleClick() {

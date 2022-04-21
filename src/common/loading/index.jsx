@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {View} from '@tarojs/components';
-import Ldanm from '../../components/utils';
+import Ldanm from '../../utils';
 
 export default class AtLoading extends React.Component {
   render() {

@@ -66,7 +66,13 @@ class UserInfoDemo extends Component {
     const {nickName = '', avatar = '', show = true, showPhone = true, phone = ''} = this.state;
     return (
       <View className='ldm-userInfo'>
-        <UserInfo visible={show} type='userInfo' text='获取个人信息' callBack={getUserInfoHandler}>
+        <UserInfo
+          url='https://pet.api.1jtec.com/users/needUpdateUserInfo'
+          visible={show}
+          type='userInfo'
+          text='获取个人信息'
+          callBack={getUserInfoHandler}
+        >
           用户名: {nickName}
           头像: {avatar}
         </UserInfo>

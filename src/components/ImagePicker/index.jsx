@@ -6,7 +6,7 @@ import {
 import cns from 'classnames';
 
 import AtImagePicker from "./image-picker";
-import Ldanm from "../utils";
+import Ldanm from "../../utils";
 
 import './index.scss';
 

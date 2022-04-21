@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro';
-import Ldanm from '../utils';
+import Ldanm from '../../utils';
 
 export default function OutLogin({
                                    url = '',

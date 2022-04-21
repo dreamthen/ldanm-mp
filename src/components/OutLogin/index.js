@@ -5,13 +5,14 @@ export default function OutLogin({
                                    url = '',
                                    method = 'get',
                                    header = {},
+                                   timeout = '',
                                    callBack = () => {
                                    },
                                    done = () => {
                                    }
                                  }) {
   Taro.login({
-    timeout: 5000,
+    timeout,
     success: ({code}) => {
       Ldanm.request({
         url,

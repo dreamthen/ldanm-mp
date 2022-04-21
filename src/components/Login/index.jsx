@@ -20,6 +20,8 @@ class Login extends Component {
     url: PropTypes.string.isRequired,
     //使用code匹配token登录的请求方式
     method: PropTypes.string.isRequired,
+    //登录超时时间
+    timeout: PropTypes.number,
     //使用code匹配token登录的请求头部
     header: PropTypes.object.isRequired,
     //登录之后的回调
@@ -46,6 +48,7 @@ class Login extends Component {
     let {
       url = '',
       method = 'get',
+      timeout = '',
       header = {},
       callBack = () => {
       },
@@ -53,7 +56,7 @@ class Login extends Component {
       }
     } = this.props;
     Taro.login({
-      timeout: 5000,
+      timeout,
       success: ({code}) => {
         Ldanm.request({
           url,

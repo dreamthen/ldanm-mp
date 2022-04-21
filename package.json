@@ -1,6 +1,6 @@
 {
 	"name": "ldm-taro-frc",
-	"version": "0.7.5",
+	"version": "0.7.6",
 	"description": "拉旦木小程序-功能组件(基于taro)",
 	"templateInfo": {
 		"name": "default",

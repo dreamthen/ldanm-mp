@@ -4,10 +4,7 @@ import {
   View
 } from '@tarojs/components';
 import cns from 'classnames';
-import AtTabBar from './tab-bar';
-
-import Ldanm from '../../utils';
-import * as constants from './constants';
+import AtTabBar from './tab-bar';s
 
 import './index.scss';
 
@@ -67,12 +64,10 @@ class TabBar extends Component {
       onChange = () => {
       }
     } = this.props;
-    const {isX} = Ldanm.adaptationNavBar();
     return (
       <View className={cns('ldm-tabBar', className)}>
         <AtTabBar
           className='ldm-tabBar-component'
-          customStyle={{height: `${constants.tabBarConstantsHeight[isX]}PX`, padding: 0}}
           tabList={tabList}
           onClick={onChange}
           current={current}

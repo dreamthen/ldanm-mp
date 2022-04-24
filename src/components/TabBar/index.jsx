@@ -4,7 +4,7 @@ import {
   View
 } from '@tarojs/components';
 import cns from 'classnames';
-import AtTabBar from './tab-bar';s
+import AtTabBar from './tab-bar';
 
 import './index.scss';
 

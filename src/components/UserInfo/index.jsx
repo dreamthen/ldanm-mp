@@ -54,7 +54,7 @@ class UserInfo extends Component {
   componentWillMount() {
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps, prevState) {
     const {
       url = '',
       type = 'userInfo'

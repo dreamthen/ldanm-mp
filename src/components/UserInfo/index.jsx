@@ -51,24 +51,19 @@ class UserInfo extends Component {
     return {show: visible};
   }
 
-  componentWillMount() {
-  }
-
-  componentDidUpdate(prevProps, prevState) {
+  componentDidMount() {
     const {
       url = '',
       type = 'userInfo'
     } = this.props;
-    Taro.nextTick(() => {
-      switch (type) {
-        case 'userInfo': {
-          userInfoApi.getNeedUpdateUserInfo.call(this, url);
-        }
-        default: {
-          break;
-        }
+    switch (type) {
+      case 'userInfo': {
+        userInfoApi.getNeedUpdateUserInfo.call(this, url);
       }
-    });
+      default: {
+        break;
+      }
+    }
   }
 
   /**

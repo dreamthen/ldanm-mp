@@ -16,14 +16,12 @@ function getNeedUpdateUserInfo(url) {
     },
     success: (data = true, header = {}) => {
       if (typeof data === 'boolean') {
-        if (data && !this.show) {
+        if (data) {
           this.setState({
             show: true
           });
-          callBack({isNeedUpdate: data});
-        } else {
-          callBack({isNeedUpdate: data});
         }
+        callBack({isNeedUpdate: data});
       }
       return data;
     },

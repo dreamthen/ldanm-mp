@@ -6,6 +6,10 @@ import Taro from '@tarojs/taro';
  */
 function exception({errMsg, data: {statusCode}, request, params}) {
   switch (statusCode) {
+    case 401:
+      // 如果出现 401 用户未登录,则重新登录,直至登录完成
+      request(params);
+      return false;
     case 500:
       Taro.showModal({
         content: errMsg,

@@ -9,7 +9,7 @@ function exception({errMsg, data: {statusCode}, request, params}) {
     case 401:
       // 如果出现 401 用户未登录,则重新登录,直至登录完成
       // 每次执行之前重新获取 cookie
-      params.header.cookie = this.getStorageSync('petPlanet');
+      params.header.cookie = Taro.getStorageSync('petPlanet');
       request(params);
       return false;
     case 500:
